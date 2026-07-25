@@ -9,7 +9,7 @@ import (
 )
 
 // newTestPrinter returns a Printer that writes to a bytes.Buffer for assertion.
-func newTestPrinter(opts ...output.Option) (*output.Printer, *bytes.Buffer, *bytes.Buffer) {
+func newTestPrinter(opts ...output.Option) (p *output.Printer, outBuf *bytes.Buffer, errOutBuf *bytes.Buffer) {
 	var out, errOut bytes.Buffer
 	base := []output.Option{
 		output.WithWriter(&out),

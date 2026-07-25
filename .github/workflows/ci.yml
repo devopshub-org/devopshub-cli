@@ -87,6 +87,7 @@ jobs:
         run: go test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
 
       - name: Coverage report
+        shell: bash
         run: go tool cover -func=coverage.out
 
       - name: Upload coverage to Codecov

@@ -155,7 +155,7 @@ brews:
     homepage: "https://github.com/devopshub-org/devopshub-cli"
     description: "The open-source DevOps toolkit for engineers"
     license: "Apache-2.0"
-    tap:
+    repository:
       owner: devopshub-org
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"

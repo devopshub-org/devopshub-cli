@@ -13,14 +13,14 @@ import (
 )
 
 // newTestPrinter returns a Printer writing to a buffer for assertion.
-func newTestPrinter(opts ...output.Option) (*output.Printer, *bytes.Buffer) {
+func newTestPrinter(opts ...output.Option) *output.Printer {
 	var buf bytes.Buffer
 	base := []output.Option{
 		output.WithWriter(&buf),
 		output.WithErrWriter(&buf),
 		output.WithNoColor(true),
 	}
-	return output.New(append(base, opts...)...), &buf
+	return output.New(append(base, opts...)...)
 }
 
 // execute creates a new root command for the cheat group and executes it
@@ -45,7 +45,7 @@ func execute(args []string, opts ...output.Option) (string, error) {
 // --- Structure ---
 
 func TestNewCheatCmd_NotNil(t *testing.T) {
-	p, _ := newTestPrinter()
+	p := newTestPrinter()
 	c := cheat.NewCheatCmd(p)
 	if c == nil {
 		t.Fatal("NewCheatCmd returned nil")
@@ -53,7 +53,7 @@ func TestNewCheatCmd_NotNil(t *testing.T) {
 }
 
 func TestCheatCmd_HasExpectedSubcommands(t *testing.T) {
-	p, _ := newTestPrinter()
+	p := newTestPrinter()
 	c := cheat.NewCheatCmd(p)
 	cmd := c.CobraCmd()
 
@@ -144,7 +144,7 @@ func TestK8sCheat_JSONOutputIsValid(t *testing.T) {
 }
 
 func TestK8sCheat_KubernetesAlias(t *testing.T) {
-	p, _ := newTestPrinter()
+	p := newTestPrinter()
 	c := cheat.NewCheatCmd(p)
 	for _, sub := range c.CobraCmd().Commands() {
 		if sub.Name() == "k8s" {

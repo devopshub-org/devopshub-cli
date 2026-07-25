@@ -13,7 +13,7 @@ import (
 // output buffers and executes it with the provided arguments.
 // Writers are injected via rootCmd.out/errOut fields, which PersistentPreRunE
 // picks up when rebuilding the printer after flag parsing.
-func executeRoot(args []string) (stdout, stderr string, err error) {
+func executeRoot(args []string) (string, error) {
 	var outBuf, errBuf bytes.Buffer
 	root := newRootCmd()
 	root.out = &outBuf
@@ -21,14 +21,14 @@ func executeRoot(args []string) (stdout, stderr string, err error) {
 	root.cmd.SetOut(&outBuf)
 	root.cmd.SetErr(&errBuf)
 	root.cmd.SetArgs(args)
-	err = root.cmd.Execute()
-	return outBuf.String(), errBuf.String(), err
+	err := root.cmd.Execute()
+	return outBuf.String(), err
 }
 
 // --- Root command ---
 
 func TestRootCmd_NoArgs_ShowsHelp(t *testing.T) {
-	out, _, err := executeRoot(nil)
+	out, err := executeRoot(nil)
 	if err != nil {
 		t.Fatalf("root with no args returned error: %v", err)
 	}
@@ -96,7 +96,7 @@ func TestRootCmd_HasCompletionSubcommand(t *testing.T) {
 // --- Version command ---
 
 func TestVersionCmd_DefaultOutput(t *testing.T) {
-	out, _, err := executeRoot([]string{"version"})
+	out, err := executeRoot([]string{"version"})
 	if err != nil {
 		t.Fatalf("version returned error: %v", err)
 	}
@@ -106,7 +106,7 @@ func TestVersionCmd_DefaultOutput(t *testing.T) {
 }
 
 func TestVersionCmd_ContainsBuildVersion(t *testing.T) {
-	out, _, err := executeRoot([]string{"version"})
+	out, err := executeRoot([]string{"version"})
 	if err != nil {
 		t.Fatalf("version returned error: %v", err)
 	}
@@ -117,7 +117,7 @@ func TestVersionCmd_ContainsBuildVersion(t *testing.T) {
 }
 
 func TestVersionCmd_JSONOutput_IsValidJSON(t *testing.T) {
-	out, _, err := executeRoot([]string{"--json", "version"})
+	out, err := executeRoot([]string{"--json", "version"})
 	if err != nil {
 		t.Fatalf("version --json returned error: %v", err)
 	}
@@ -128,7 +128,7 @@ func TestVersionCmd_JSONOutput_IsValidJSON(t *testing.T) {
 }
 
 func TestVersionCmd_JSONOutput_ContainsRequiredFields(t *testing.T) {
-	out, _, err := executeRoot([]string{"--json", "version"})
+	out, err := executeRoot([]string{"--json", "version"})
 	if err != nil {
 		t.Fatalf("version --json returned error: %v", err)
 	}
@@ -140,7 +140,7 @@ func TestVersionCmd_JSONOutput_ContainsRequiredFields(t *testing.T) {
 }
 
 func TestVersionCmd_VerboseOutput(t *testing.T) {
-	out, _, err := executeRoot([]string{"version", "--verbose"})
+	out, err := executeRoot([]string{"version", "--verbose"})
 	if err != nil {
 		t.Fatalf("version --verbose returned error: %v", err)
 	}
