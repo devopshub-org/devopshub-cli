@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  GO_VERSION: "1.22"
+  GO_VERSION: "1.23"
 
 jobs:
   # ─────────────────────────────────────────────────────────────────────────────
@@ -83,6 +83,7 @@ jobs:
           cache: true
 
       - name: Run tests with race detector
+        shell: bash
         run: go test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
 
       - name: Coverage report

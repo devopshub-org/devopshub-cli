@@ -8,8 +8,8 @@ import (
 
 // versionCmd implements the `devopshub version` command.
 type versionCmd struct {
-	cmd    *cobra.Command
-	root   *rootCmd
+	cmd     *cobra.Command
+	root    *rootCmd
 	verbose bool
 }
 

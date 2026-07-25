@@ -1,6 +1,6 @@
 module github.com/devopshub-org/devopshub-cli
 
-go 1.22
+go 1.23.0
 
 require (
 	github.com/rs/zerolog v1.33.0
