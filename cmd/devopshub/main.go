@@ -1,19 +1,26 @@
+// Package main is the entry point for the DevOpsHub CLI.
+// It delegates all work to the root Cobra command defined in root.go.
 package main
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat"
 )
 
-var version = "dev"
-
 func main() {
-	if len(os.Args) > 1 && (os.Args[1] == "version" || os.Args[1] == "--version" || os.Args[1] == "-v") {
-		fmt.Printf("devopshub-cli version %s\n", version)
-		return
+	if err := newRootCmd().Execute(); err != nil {
+		// Cobra already printed the error. Exit with a non-zero code.
+		os.Exit(1)
 	}
+}
 
-	fmt.Println("DevOpsHub CLI - Open-source DevOps toolkit")
-	fmt.Println("Usage: devopshub <command> [flags]")
-	fmt.Println("\nRun 'devopshub --help' for more details.")
+// registerSubcommands wires all top-level subcommands into the root command.
+// Adding a new top-level command only requires a single line here.
+func registerSubcommands(root *rootCmd) {
+	root.cmd.AddCommand(
+		newVersionCmd(root).cmd,
+		newCompletionCmd(root).cmd,
+		cheat.NewCheatCmd(root.printer).CobraCmd(),
+	)
 }
