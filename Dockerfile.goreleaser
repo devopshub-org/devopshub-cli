@@ -1,0 +1,12 @@
+FROM gcr.io/distroless/static-debian12:nonroot
+
+LABEL org.opencontainers.image.title="devopshub-cli"
+LABEL org.opencontainers.image.description="The open-source DevOps toolkit for engineers"
+LABEL org.opencontainers.image.url="https://github.com/devopshub-org/devopshub-cli"
+LABEL org.opencontainers.image.source="https://github.com/devopshub-org/devopshub-cli"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+
+COPY devopshub /devopshub
+
+USER nonroot:nonroot
+ENTRYPOINT ["/devopshub"]

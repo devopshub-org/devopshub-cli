@@ -113,7 +113,7 @@ dockers:
       - "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}-amd64"
       - "ghcr.io/devopshub-org/devopshub-cli:latest-amd64"
     use: buildx
-    dockerfile: Dockerfile
+    dockerfile: Dockerfile.goreleaser
     build_flag_templates:
       - "--platform=linux/amd64"
       - "--label=org.opencontainers.image.created={{ .Date }}"
@@ -130,7 +130,7 @@ dockers:
       - "ghcr.io/devopshub-org/devopshub-cli:latest-arm64"
     use: buildx
     goarch: arm64
-    dockerfile: Dockerfile
+    dockerfile: Dockerfile.goreleaser
     build_flag_templates:
       - "--platform=linux/arm64"
       - "--label=org.opencontainers.image.created={{ .Date }}"
