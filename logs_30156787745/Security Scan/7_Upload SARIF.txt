@@ -1,0 +1,13 @@
+﻿2026-07-25T11:46:48.3698198Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:48.3699495Z ##[group]Run github/codeql-action/upload-sarif@v3
+2026-07-25T11:46:48.3699780Z with:
+2026-07-25T11:46:48.3699967Z   sarif_file: results.sarif
+2026-07-25T11:46:48.3700276Z   checkout_path: /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:48.3702867Z   token: ***
+2026-07-25T11:46:48.3703223Z   matrix: null
+2026-07-25T11:46:48.3703422Z   wait-for-processing: true
+2026-07-25T11:46:48.3703647Z env:
+2026-07-25T11:46:48.3703817Z   GO_VERSION: 1.23
+2026-07-25T11:46:48.3704008Z ##[endgroup]
+2026-07-25T11:46:48.6181674Z ##[warning]CodeQL Action v3 will be deprecated in December 2026. Please update all occurrences of the CodeQL Action in your workflow files to v4. For more information, see https://github.blog/changelog/2025-10-28-upcoming-deprecation-of-codeql-action-v3/
+2026-07-25T11:46:49.2138717Z ##[error]Path does not exist: results.sarif

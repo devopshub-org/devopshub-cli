@@ -1,0 +1,34 @@
+﻿2026-07-25T11:56:20.7818932Z Current runner version: '2.335.1'
+2026-07-25T11:56:20.7841113Z ##[group]Runner Image Provisioner
+2026-07-25T11:56:20.7841989Z Hosted Compute Agent
+2026-07-25T11:56:20.7842523Z Version: 20260707.563
+2026-07-25T11:56:20.7843113Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T11:56:20.7843852Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T11:56:20.7844466Z Worker ID: {b5ac20a4-5254-4122-90df-3f18c91e3cac}
+2026-07-25T11:56:20.7845136Z Azure Region: westus3
+2026-07-25T11:56:20.7845642Z ##[endgroup]
+2026-07-25T11:56:20.7846956Z ##[group]Operating System
+2026-07-25T11:56:20.7847553Z Ubuntu
+2026-07-25T11:56:20.7848225Z 24.04.4
+2026-07-25T11:56:20.7848733Z LTS
+2026-07-25T11:56:20.7849217Z ##[endgroup]
+2026-07-25T11:56:20.7849717Z ##[group]Runner Image
+2026-07-25T11:56:20.7850321Z Image: ubuntu-24.04
+2026-07-25T11:56:20.7850841Z Version: 20260720.247.2
+2026-07-25T11:56:20.7851818Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T11:56:20.7853354Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T11:56:20.7854532Z ##[endgroup]
+2026-07-25T11:56:20.7855644Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T11:56:20.7857632Z Contents: read
+2026-07-25T11:56:20.7858615Z Metadata: read
+2026-07-25T11:56:20.7859144Z SecurityEvents: write
+2026-07-25T11:56:20.7859773Z ##[endgroup]
+2026-07-25T11:56:20.7861682Z Secret source: Actions
+2026-07-25T11:56:20.7862600Z Prepare workflow directory
+2026-07-25T11:56:20.8206581Z Prepare all required actions
+2026-07-25T11:56:20.8244079Z Getting action download info
+2026-07-25T11:56:21.2046172Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T11:56:22.3939582Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T11:56:23.3443998Z Download action repository 'securego/gosec@master' (SHA:45b083a0cb42119d61b1e0e364d8c62c68f6f5cd)
+2026-07-25T11:56:24.1230013Z Download action repository 'github/codeql-action@v3' (SHA:4187e74d05793876e9989daffde9c3e66b4acd07)
+2026-07-25T11:56:25.3638235Z Complete job name: Security Scan

@@ -1,0 +1,44 @@
+﻿2026-07-25T12:09:19.2733853Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:09:19.2735612Z ##[group]Run golangci/golangci-lint-action@v6
+2026-07-25T12:09:19.2735913Z with:
+2026-07-25T12:09:19.2736106Z   version: latest
+2026-07-25T12:09:19.2736346Z   args: --timeout=5m
+2026-07-25T12:09:19.2736574Z   install-mode: binary
+2026-07-25T12:09:19.2738955Z   github-token: ***
+2026-07-25T12:09:19.2739173Z   verify: true
+2026-07-25T12:09:19.2739378Z   only-new-issues: false
+2026-07-25T12:09:19.2739618Z   skip-cache: false
+2026-07-25T12:09:19.2739829Z   skip-save-cache: false
+2026-07-25T12:09:19.2740077Z   problem-matchers: false
+2026-07-25T12:09:19.2740327Z   cache-invalidation-interval: 7
+2026-07-25T12:09:19.2740573Z env:
+2026-07-25T12:09:19.2740755Z   GO_VERSION: 1.23
+2026-07-25T12:09:19.2740988Z ##[endgroup]
+2026-07-25T12:09:19.4268481Z ##[group]prepare environment
+2026-07-25T12:09:19.4273518Z Checking for go.mod: go.mod
+2026-07-25T12:09:19.4279607Z (node:10500) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:09:19.4280879Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:09:19.6967480Z Cache hit for: golangci-lint.cache-Linux-2951-4c3666d74b0cca5e1bc4454d002859c4b79f272b
+2026-07-25T12:09:19.7086301Z (node:10500) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-07-25T12:09:20.3027926Z Received 151125 of 151125 (100.0%), 0.5 MBs/sec
+2026-07-25T12:09:20.3028661Z Cache Size: ~0 MB (151125 B)
+2026-07-25T12:09:20.3060490Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f87e17e8-f150-4951-8db8-fcb323e58f87/cache.tzst -P -C /home/runner/work/devopshub-cli/devopshub-cli --use-compress-program unzstd
+2026-07-25T12:09:20.3575225Z Cache restored successfully
+2026-07-25T12:09:20.3579277Z Restored cache for golangci-lint from key 'golangci-lint.cache-Linux-2951-4c3666d74b0cca5e1bc4454d002859c4b79f272b' in 930ms
+2026-07-25T12:09:20.3581276Z Finding needed golangci-lint version...
+2026-07-25T12:09:20.3583649Z Installation mode: binary
+2026-07-25T12:09:20.3585620Z Installing golangci-lint binary v1.64.8...
+2026-07-25T12:09:20.3587148Z Downloading binary https://github.com/golangci/golangci-lint/releases/download/v1.64.8/golangci-lint-1.64.8-linux-amd64.tar.gz ...
+2026-07-25T12:09:20.6738529Z [command]/usr/bin/tar xz --overwrite --warning=no-unknown-keyword --overwrite -C /home/runner -f /home/runner/work/_temp/c1222893-f97d-4619-a713-953f1d380bf2
+2026-07-25T12:09:20.8901410Z Installed golangci-lint into /home/runner/golangci-lint-1.64.8-linux-amd64/golangci-lint in 531ms
+2026-07-25T12:09:20.8902787Z Prepared env in 1464ms
+2026-07-25T12:09:20.8903891Z ##[endgroup]
+2026-07-25T12:09:20.8906591Z ##[group]run golangci-lint
+2026-07-25T12:09:20.8913645Z Running [/home/runner/golangci-lint-1.64.8-linux-amd64/golangci-lint config path] in [/home/runner/work/devopshub-cli/devopshub-cli] ...
+2026-07-25T12:09:20.9885099Z Running [/home/runner/golangci-lint-1.64.8-linux-amd64/golangci-lint run  --timeout=5m] in [/home/runner/work/devopshub-cli/devopshub-cli] ...
+2026-07-25T12:09:21.0873741Z Error: can't load config: the Go language version (go1.24) used to build golangci-lint is lower than the targeted Go version (1.25.0)
+2026-07-25T12:09:21.0876008Z Failed executing command with error: can't load config: the Go language version (go1.24) used to build golangci-lint is lower than the targeted Go version (1.25.0)
+2026-07-25T12:09:21.0877001Z 
+2026-07-25T12:09:21.0880612Z ##[error]golangci-lint exit with code 3
+2026-07-25T12:09:21.0882566Z Ran golangci-lint in 99ms
+2026-07-25T12:09:21.0883356Z ##[endgroup]

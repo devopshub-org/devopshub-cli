@@ -1,0 +1,14 @@
+﻿2026-07-25T12:10:29.3879000Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:10:29.3880372Z Post job cleanup.
+2026-07-25T12:10:29.5397330Z (node:1756) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:10:29.5398201Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:10:29.6599161Z [command]C:\hostedtoolcache\windows\go\1.23.12\x64\bin\go.exe env GOCACHE
+2026-07-25T12:10:29.6674367Z [command]C:\hostedtoolcache\windows\go\1.23.12\x64\bin\go.exe env GOMODCACHE
+2026-07-25T12:10:29.7614810Z C:\Users\runneradmin\go\pkg\mod
+2026-07-25T12:10:29.7713742Z C:\Users\runneradmin\AppData\Local\go-build
+2026-07-25T12:10:29.8891160Z [command]"C:\Program Files\Git\usr\bin\tar.exe" --posix -cf cache.tzst --exclude cache.tzst -P -C D:/a/devopshub-cli/devopshub-cli --files-from manifest.txt --force-local --use-compress-program "zstd -T0"
+2026-07-25T12:10:39.8140302Z (node:1756) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-07-25T12:10:40.8053929Z Sent 0 of 303831718 (0.0%), 0.0 MBs/sec
+2026-07-25T12:10:41.8156333Z Sent 0 of 303831718 (0.0%), 0.0 MBs/sec
+2026-07-25T12:10:42.2479352Z Sent 303831718 of 303831718 (100.0%), 118.3 MBs/sec
+2026-07-25T12:10:42.5259639Z Cache saved with the key: setup-go-Windows-x64-go-1.25.0-7010d143ac82aa7cb4a5a671fd805f4c8a6e4e5359c5a261e0248fec5111b41b

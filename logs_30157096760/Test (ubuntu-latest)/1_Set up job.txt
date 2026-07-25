@@ -1,0 +1,33 @@
+﻿2026-07-25T11:56:19.6116765Z Current runner version: '2.336.0'
+2026-07-25T11:56:19.6136447Z ##[group]Runner Image Provisioner
+2026-07-25T11:56:19.6137236Z Hosted Compute Agent
+2026-07-25T11:56:19.6137693Z Version: 20260707.563
+2026-07-25T11:56:19.6138187Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T11:56:19.6138750Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T11:56:19.6139249Z Worker ID: {2b070199-035a-4370-a403-dc203b3caead}
+2026-07-25T11:56:19.6139815Z Azure Region: centralus
+2026-07-25T11:56:19.6140477Z ##[endgroup]
+2026-07-25T11:56:19.6141520Z ##[group]Operating System
+2026-07-25T11:56:19.6141985Z Ubuntu
+2026-07-25T11:56:19.6142389Z 24.04.4
+2026-07-25T11:56:19.6142779Z LTS
+2026-07-25T11:56:19.6143169Z ##[endgroup]
+2026-07-25T11:56:19.6143589Z ##[group]Runner Image
+2026-07-25T11:56:19.6144014Z Image: ubuntu-24.04
+2026-07-25T11:56:19.6144460Z Version: 20260720.247.2
+2026-07-25T11:56:19.6145248Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T11:56:19.6147032Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T11:56:19.6147748Z ##[endgroup]
+2026-07-25T11:56:19.6148672Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T11:56:19.6150563Z Contents: read
+2026-07-25T11:56:19.6151051Z Metadata: read
+2026-07-25T11:56:19.6151495Z SecurityEvents: write
+2026-07-25T11:56:19.6151936Z ##[endgroup]
+2026-07-25T11:56:19.6153560Z Secret source: Actions
+2026-07-25T11:56:19.6154292Z Prepare workflow directory
+2026-07-25T11:56:19.6488636Z Prepare all required actions
+2026-07-25T11:56:19.6524395Z Getting action download info
+2026-07-25T11:56:19.8674884Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T11:56:21.6238053Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T11:56:22.0842981Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2026-07-25T11:56:22.5098512Z Complete job name: Test (ubuntu-latest)

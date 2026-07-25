@@ -1,0 +1,76 @@
+﻿2026-07-25T11:45:57.6555067Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:45:57.6557065Z ##[group]Run actions/setup-go@v5
+2026-07-25T11:45:57.6557496Z with:
+2026-07-25T11:45:57.6557854Z   go-version: 1.23
+2026-07-25T11:45:57.6558215Z   cache: true
+2026-07-25T11:45:57.6558567Z   check-latest: false
+2026-07-25T11:45:57.6561464Z   token: ***
+2026-07-25T11:45:57.6561805Z env:
+2026-07-25T11:45:57.6562127Z   GO_VERSION: 1.23
+2026-07-25T11:45:57.6562469Z ##[endgroup]
+2026-07-25T11:45:57.7842090Z Setup go version spec 1.23
+2026-07-25T11:45:57.8323068Z Attempting to download 1.23...
+2026-07-25T11:45:57.8435205Z (node:2263) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T11:45:57.8436549Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T11:45:58.6472484Z matching 1.23...
+2026-07-25T11:45:58.6507904Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-linux-x64.tar.gz
+2026-07-25T11:45:59.2005148Z Extracting Go...
+2026-07-25T11:45:59.2143604Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/589cd533-fb13-4a17-8b1a-67da7415df64 -f /home/runner/work/_temp/a65c6fcb-7437-41d1-9195-9b4cda6ec16b
+2026-07-25T11:46:00.9672334Z Successfully extracted go to /home/runner/work/_temp/589cd533-fb13-4a17-8b1a-67da7415df64
+2026-07-25T11:46:00.9673535Z Adding to the cache ...
+2026-07-25T11:46:07.0012942Z Successfully cached go to /opt/hostedtoolcache/go/1.23.12/x64
+2026-07-25T11:46:07.0014474Z Added go to the path
+2026-07-25T11:46:07.0018016Z Successfully set up Go version 1.23
+2026-07-25T11:46:07.0224080Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T11:46:07.0263927Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T11:46:07.0304950Z /home/runner/go/pkg/mod
+2026-07-25T11:46:07.0322123Z /home/runner/.cache/go-build
+2026-07-25T11:46:07.2907274Z Cache is not found
+2026-07-25T11:46:07.2929170Z go version go1.23.12 linux/amd64
+2026-07-25T11:46:07.2929404Z 
+2026-07-25T11:46:07.2929709Z ##[group]go env
+2026-07-25T11:46:07.4200967Z GO111MODULE=''
+2026-07-25T11:46:07.4201480Z GOARCH='amd64'
+2026-07-25T11:46:07.4201813Z GOBIN=''
+2026-07-25T11:46:07.4202180Z GOCACHE='/home/runner/.cache/go-build'
+2026-07-25T11:46:07.4202718Z GOENV='/home/runner/.config/go/env'
+2026-07-25T11:46:07.4203147Z GOEXE=''
+2026-07-25T11:46:07.4203466Z GOEXPERIMENT=''
+2026-07-25T11:46:07.4203822Z GOFLAGS=''
+2026-07-25T11:46:07.4204436Z GOHOSTARCH='amd64'
+2026-07-25T11:46:07.4204847Z GOHOSTOS='linux'
+2026-07-25T11:46:07.4205223Z GOINSECURE=''
+2026-07-25T11:46:07.4302445Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-07-25T11:46:07.4303036Z GONOPROXY=''
+2026-07-25T11:46:07.4303446Z GONOSUMDB=''
+2026-07-25T11:46:07.4303893Z GOOS='linux'
+2026-07-25T11:46:07.4304555Z GOPATH='/home/runner/go'
+2026-07-25T11:46:07.4305093Z GOPRIVATE=''
+2026-07-25T11:46:07.4305629Z GOPROXY='https://proxy.golang.org,direct'
+2026-07-25T11:46:07.4306179Z GOROOT='/opt/hostedtoolcache/go/1.23.12/x64'
+2026-07-25T11:46:07.4306640Z GOSUMDB='sum.golang.org'
+2026-07-25T11:46:07.4307038Z GOTMPDIR=''
+2026-07-25T11:46:07.4307394Z GOTOOLCHAIN='auto'
+2026-07-25T11:46:07.4307900Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.12/x64/pkg/tool/linux_amd64'
+2026-07-25T11:46:07.4308483Z GOVCS=''
+2026-07-25T11:46:07.4308809Z GOVERSION='go1.23.12'
+2026-07-25T11:46:07.4309137Z GODEBUG=''
+2026-07-25T11:46:07.4309436Z GOTELEMETRY='local'
+2026-07-25T11:46:07.4309849Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-07-25T11:46:07.4310397Z GCCGO='gccgo'
+2026-07-25T11:46:07.4310734Z GOAMD64='v1'
+2026-07-25T11:46:07.4311053Z AR='ar'
+2026-07-25T11:46:07.4311785Z CC='gcc'
+2026-07-25T11:46:07.4312116Z CXX='g++'
+2026-07-25T11:46:07.4312790Z CGO_ENABLED='1'
+2026-07-25T11:46:07.4313328Z GOMOD='/home/runner/work/devopshub-cli/devopshub-cli/go.mod'
+2026-07-25T11:46:07.4313895Z GOWORK=''
+2026-07-25T11:46:07.4315950Z CGO_CFLAGS='-O2 -g'
+2026-07-25T11:46:07.4316471Z CGO_CPPFLAGS=''
+2026-07-25T11:46:07.4316864Z CGO_CXXFLAGS='-O2 -g'
+2026-07-25T11:46:07.4317248Z CGO_FFLAGS='-O2 -g'
+2026-07-25T11:46:07.4317612Z CGO_LDFLAGS='-O2 -g'
+2026-07-25T11:46:07.4318046Z PKG_CONFIG='pkg-config'
+2026-07-25T11:46:07.4319204Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build3708776407=/tmp/go-build -gno-record-gcc-switches'
+2026-07-25T11:46:07.4320229Z 
+2026-07-25T11:46:07.4320755Z ##[endgroup]

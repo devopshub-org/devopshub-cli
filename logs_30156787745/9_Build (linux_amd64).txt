@@ -1,0 +1,284 @@
+﻿2026-07-25T11:45:51.7206955Z Current runner version: '2.335.1'
+2026-07-25T11:45:51.7232364Z ##[group]Runner Image Provisioner
+2026-07-25T11:45:51.7233195Z Hosted Compute Agent
+2026-07-25T11:45:51.7233793Z Version: 20260707.563
+2026-07-25T11:45:51.7234497Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T11:45:51.7235197Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T11:45:51.7235904Z Worker ID: {1854f35c-985d-4e49-a57d-2f6f4e2e2ad5}
+2026-07-25T11:45:51.7236611Z Azure Region: eastus
+2026-07-25T11:45:51.7237222Z ##[endgroup]
+2026-07-25T11:45:51.7239595Z ##[group]Operating System
+2026-07-25T11:45:51.7240450Z Ubuntu
+2026-07-25T11:45:51.7241054Z 24.04.4
+2026-07-25T11:45:51.7241566Z LTS
+2026-07-25T11:45:51.7242108Z ##[endgroup]
+2026-07-25T11:45:51.7242699Z ##[group]Runner Image
+2026-07-25T11:45:51.7243280Z Image: ubuntu-24.04
+2026-07-25T11:45:51.7243818Z Version: 20260720.247.2
+2026-07-25T11:45:51.7245149Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T11:45:51.7247188Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T11:45:51.7248137Z ##[endgroup]
+2026-07-25T11:45:51.7249410Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T11:45:51.7251859Z Contents: read
+2026-07-25T11:45:51.7252586Z Metadata: read
+2026-07-25T11:45:51.7253182Z SecurityEvents: write
+2026-07-25T11:45:51.7253761Z ##[endgroup]
+2026-07-25T11:45:51.7256335Z Secret source: Actions
+2026-07-25T11:45:51.7257231Z Prepare workflow directory
+2026-07-25T11:45:51.7656567Z Prepare all required actions
+2026-07-25T11:45:51.7694232Z Getting action download info
+2026-07-25T11:45:51.9677032Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T11:45:52.2033834Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T11:45:52.4497171Z Complete job name: Build (linux/amd64)
+2026-07-25T11:45:52.5260845Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:45:52.5270310Z ##[group]Run actions/checkout@v4
+2026-07-25T11:45:52.5271199Z with:
+2026-07-25T11:45:52.5271671Z   repository: devopshub-org/devopshub-cli
+2026-07-25T11:45:52.5275528Z   token: ***
+2026-07-25T11:45:52.5275949Z   ssh-strict: true
+2026-07-25T11:45:52.5276371Z   ssh-user: git
+2026-07-25T11:45:52.5276918Z   persist-credentials: true
+2026-07-25T11:45:52.5277424Z   clean: true
+2026-07-25T11:45:52.5277864Z   sparse-checkout-cone-mode: true
+2026-07-25T11:45:52.5278375Z   fetch-depth: 1
+2026-07-25T11:45:52.5278806Z   fetch-tags: false
+2026-07-25T11:45:52.5279242Z   show-progress: true
+2026-07-25T11:45:52.5279687Z   lfs: false
+2026-07-25T11:45:52.5280303Z   submodules: false
+2026-07-25T11:45:52.5280761Z   set-safe-directory: true
+2026-07-25T11:45:52.5281274Z   allow-unsafe-pr-checkout: false
+2026-07-25T11:45:52.5282043Z env:
+2026-07-25T11:45:52.5282450Z   GO_VERSION: 1.23
+2026-07-25T11:45:52.5282866Z ##[endgroup]
+2026-07-25T11:45:52.6288968Z Syncing repository: devopshub-org/devopshub-cli
+2026-07-25T11:45:52.6292164Z ##[group]Getting Git version info
+2026-07-25T11:45:52.6293411Z Working directory is '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:45:52.6295375Z [command]/usr/bin/git version
+2026-07-25T11:45:52.6370439Z git version 2.54.0
+2026-07-25T11:45:52.6429712Z ##[endgroup]
+2026-07-25T11:45:52.6447554Z Temporarily overriding HOME='/home/runner/work/_temp/2d8f732a-ea3a-4394-bf09-73d35a05305a' before making global git config changes
+2026-07-25T11:45:52.6450397Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T11:45:52.6456625Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:45:52.6516914Z Deleting the contents of '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:45:52.6520940Z ##[group]Initializing the repository
+2026-07-25T11:45:52.6526719Z [command]/usr/bin/git init /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:45:52.6679654Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-25T11:45:52.6681830Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-25T11:45:52.6683494Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-25T11:45:52.6684884Z hint: call:
+2026-07-25T11:45:52.6685676Z hint:
+2026-07-25T11:45:52.6686639Z hint: 	git config --global init.defaultBranch <name>
+2026-07-25T11:45:52.6687759Z hint:
+2026-07-25T11:45:52.6688809Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-25T11:45:52.6690770Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-25T11:45:52.6692141Z hint:
+2026-07-25T11:45:52.6692917Z hint: 	git branch -m <name>
+2026-07-25T11:45:52.6693835Z hint:
+2026-07-25T11:45:52.6694970Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-25T11:45:52.6696894Z Initialized empty Git repository in /home/runner/work/devopshub-cli/devopshub-cli/.git/
+2026-07-25T11:45:52.6700483Z [command]/usr/bin/git remote add origin https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:45:52.6749221Z ##[endgroup]
+2026-07-25T11:45:52.6750719Z ##[group]Disabling automatic garbage collection
+2026-07-25T11:45:52.6753299Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-25T11:45:52.6793939Z ##[endgroup]
+2026-07-25T11:45:52.6797863Z ##[group]Setting up auth
+2026-07-25T11:45:52.6801899Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T11:45:52.6865421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T11:45:52.7336614Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T11:45:52.7381691Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T11:45:52.7661528Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T11:45:52.7713627Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T11:45:52.7969579Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-25T11:45:52.8011155Z ##[endgroup]
+2026-07-25T11:45:52.8012481Z ##[group]Fetching the repository
+2026-07-25T11:45:52.8021660Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8469e85754e81f596aa5db6f774f0ce3b14b0ad2:refs/remotes/origin/main
+2026-07-25T11:45:52.9929139Z From https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:45:52.9930439Z  * [new ref]         8469e85754e81f596aa5db6f774f0ce3b14b0ad2 -> origin/main
+2026-07-25T11:45:52.9971411Z ##[endgroup]
+2026-07-25T11:45:52.9972746Z ##[group]Determining the checkout info
+2026-07-25T11:45:52.9974410Z ##[endgroup]
+2026-07-25T11:45:52.9980725Z [command]/usr/bin/git sparse-checkout disable
+2026-07-25T11:45:53.0035294Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-25T11:45:53.0069031Z ##[group]Checking out the ref
+2026-07-25T11:45:53.0075121Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-25T11:45:53.0180366Z Switched to a new branch 'main'
+2026-07-25T11:45:53.0182069Z branch 'main' set up to track 'origin/main'.
+2026-07-25T11:45:53.0189830Z ##[endgroup]
+2026-07-25T11:45:53.0246966Z [command]/usr/bin/git log -1 --format=%H
+2026-07-25T11:45:53.0275453Z 8469e85754e81f596aa5db6f774f0ce3b14b0ad2
+2026-07-25T11:45:53.0531335Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:45:53.0534198Z ##[group]Run actions/setup-go@v5
+2026-07-25T11:45:53.0534711Z with:
+2026-07-25T11:45:53.0535104Z   go-version: 1.23
+2026-07-25T11:45:53.0535524Z   cache: true
+2026-07-25T11:45:53.0535938Z   check-latest: false
+2026-07-25T11:45:53.0539762Z   token: ***
+2026-07-25T11:45:53.0540510Z env:
+2026-07-25T11:45:53.0540970Z   GO_VERSION: 1.23
+2026-07-25T11:45:53.0541401Z ##[endgroup]
+2026-07-25T11:45:53.1836242Z Setup go version spec 1.23
+2026-07-25T11:45:53.2039391Z Attempting to download 1.23...
+2026-07-25T11:45:53.2151882Z (node:2158) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T11:45:53.2153583Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T11:45:53.5095187Z matching 1.23...
+2026-07-25T11:45:53.5160356Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-linux-x64.tar.gz
+2026-07-25T11:45:54.0064422Z Extracting Go...
+2026-07-25T11:45:54.0188688Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/067c2309-4a5c-4f6c-9138-8bf05509aa2b -f /home/runner/work/_temp/03230781-3237-437b-8863-fb8e60c46dcc
+2026-07-25T11:45:55.7382994Z Successfully extracted go to /home/runner/work/_temp/067c2309-4a5c-4f6c-9138-8bf05509aa2b
+2026-07-25T11:45:55.7384828Z Adding to the cache ...
+2026-07-25T11:46:00.6526699Z Successfully cached go to /opt/hostedtoolcache/go/1.23.12/x64
+2026-07-25T11:46:00.6534564Z Added go to the path
+2026-07-25T11:46:00.6535179Z Successfully set up Go version 1.23
+2026-07-25T11:46:00.6762083Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T11:46:00.6806105Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T11:46:00.6857445Z /home/runner/go/pkg/mod
+2026-07-25T11:46:00.6901348Z /home/runner/.cache/go-build
+2026-07-25T11:46:00.7466195Z Cache is not found
+2026-07-25T11:46:00.7488470Z go version go1.23.12 linux/amd64
+2026-07-25T11:46:00.7489116Z 
+2026-07-25T11:46:00.7489785Z ##[group]go env
+2026-07-25T11:46:01.3536345Z GO111MODULE=''
+2026-07-25T11:46:01.3536993Z GOARCH='amd64'
+2026-07-25T11:46:01.3537667Z GOBIN=''
+2026-07-25T11:46:01.3538261Z GOCACHE='/home/runner/.cache/go-build'
+2026-07-25T11:46:01.3539247Z GOENV='/home/runner/.config/go/env'
+2026-07-25T11:46:01.3539838Z GOEXE=''
+2026-07-25T11:46:01.3540640Z GOEXPERIMENT=''
+2026-07-25T11:46:01.3541160Z GOFLAGS=''
+2026-07-25T11:46:01.3541725Z GOHOSTARCH='amd64'
+2026-07-25T11:46:01.3542253Z GOHOSTOS='linux'
+2026-07-25T11:46:01.3542800Z GOINSECURE=''
+2026-07-25T11:46:01.3543375Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-07-25T11:46:01.3544108Z GONOPROXY=''
+2026-07-25T11:46:01.3544600Z GONOSUMDB=''
+2026-07-25T11:46:01.3545095Z GOOS='linux'
+2026-07-25T11:46:01.3545616Z GOPATH='/home/runner/go'
+2026-07-25T11:46:01.3546161Z GOPRIVATE=''
+2026-07-25T11:46:01.3546772Z GOPROXY='https://proxy.golang.org,direct'
+2026-07-25T11:46:01.3547505Z GOROOT='/opt/hostedtoolcache/go/1.23.12/x64'
+2026-07-25T11:46:01.3548215Z GOSUMDB='sum.golang.org'
+2026-07-25T11:46:01.3548810Z GOTMPDIR=''
+2026-07-25T11:46:01.3549365Z GOTOOLCHAIN='auto'
+2026-07-25T11:46:01.3550255Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.12/x64/pkg/tool/linux_amd64'
+2026-07-25T11:46:01.3551191Z GOVCS=''
+2026-07-25T11:46:01.3551700Z GOVERSION='go1.23.12'
+2026-07-25T11:46:01.3552237Z GODEBUG=''
+2026-07-25T11:46:01.3552726Z GOTELEMETRY='local'
+2026-07-25T11:46:01.3553363Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-07-25T11:46:01.3554153Z GCCGO='gccgo'
+2026-07-25T11:46:01.3554713Z GOAMD64='v1'
+2026-07-25T11:46:01.3555257Z AR='ar'
+2026-07-25T11:46:01.3556273Z CC='gcc'
+2026-07-25T11:46:01.3650376Z CXX='g++'
+2026-07-25T11:46:01.3651331Z CGO_ENABLED='1'
+2026-07-25T11:46:01.3652040Z GOMOD='/home/runner/work/devopshub-cli/devopshub-cli/go.mod'
+2026-07-25T11:46:01.3652755Z GOWORK=''
+2026-07-25T11:46:01.3653246Z CGO_CFLAGS='-O2 -g'
+2026-07-25T11:46:01.3653743Z CGO_CPPFLAGS=''
+2026-07-25T11:46:01.3654231Z CGO_CXXFLAGS='-O2 -g'
+2026-07-25T11:46:01.3654771Z CGO_FFLAGS='-O2 -g'
+2026-07-25T11:46:01.3655264Z CGO_LDFLAGS='-O2 -g'
+2026-07-25T11:46:01.3655797Z PKG_CONFIG='pkg-config'
+2026-07-25T11:46:01.3657157Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build327124080=/tmp/go-build -gno-record-gcc-switches'
+2026-07-25T11:46:01.3658341Z 
+2026-07-25T11:46:01.3659192Z ##[endgroup]
+2026-07-25T11:46:01.3784108Z ##[group]Run go build \
+2026-07-25T11:46:01.3784468Z [36;1mgo build \[0m
+2026-07-25T11:46:01.3784704Z [36;1m  -trimpath \[0m
+2026-07-25T11:46:01.3784948Z [36;1m  -ldflags="-s -w \[0m
+2026-07-25T11:46:01.3785552Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Version=ci-8469e85754e81f596aa5db6f774f0ce3b14b0ad2 \[0m
+2026-07-25T11:46:01.3786433Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Commit=8469e85754e81f596aa5db6f774f0ce3b14b0ad2 \[0m
+2026-07-25T11:46:01.3787218Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) \[0m
+2026-07-25T11:46:01.3787916Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.BuiltBy=github-actions" \[0m
+2026-07-25T11:46:01.3788388Z [36;1m  -o bin/devopshub-linux-amd64 \[0m
+2026-07-25T11:46:01.3788674Z [36;1m  ./cmd/devopshub[0m
+2026-07-25T11:46:01.3839341Z shell: /usr/bin/bash -e {0}
+2026-07-25T11:46:01.3839641Z env:
+2026-07-25T11:46:01.3839875Z   GO_VERSION: 1.23
+2026-07-25T11:46:01.3840393Z   GOOS: linux
+2026-07-25T11:46:01.3840665Z   GOARCH: amd64
+2026-07-25T11:46:01.3840864Z   CGO_ENABLED: 0
+2026-07-25T11:46:01.3841066Z ##[endgroup]
+2026-07-25T11:46:01.4001124Z go: downloading github.com/rs/zerolog v1.33.0
+2026-07-25T11:46:01.4031759Z go: downloading github.com/spf13/cobra v1.8.1
+2026-07-25T11:46:01.4883959Z go: downloading github.com/spf13/viper v1.19.0
+2026-07-25T11:46:01.4885013Z go: downloading k8s.io/api v0.31.0
+2026-07-25T11:46:01.4885653Z go: downloading k8s.io/apimachinery v0.31.0
+2026-07-25T11:46:01.4894981Z go: downloading k8s.io/client-go v0.31.0
+2026-07-25T11:46:02.0548901Z go: downloading github.com/mattn/go-colorable v0.1.13
+2026-07-25T11:46:02.0580870Z go: downloading github.com/spf13/pflag v1.0.5
+2026-07-25T11:46:02.0771211Z go: downloading github.com/fsnotify/fsnotify v1.7.0
+2026-07-25T11:46:02.0772452Z go: downloading github.com/mitchellh/mapstructure v1.5.0
+2026-07-25T11:46:02.0821649Z go: downloading github.com/sagikazarmark/slog-shim v0.1.0
+2026-07-25T11:46:02.0897829Z go: downloading github.com/spf13/afero v1.11.0
+2026-07-25T11:46:02.0978358Z go: downloading github.com/spf13/cast v1.6.0
+2026-07-25T11:46:02.1076259Z go: downloading github.com/gogo/protobuf v1.3.2
+2026-07-25T11:46:02.3114291Z go: downloading github.com/google/gofuzz v1.2.0
+2026-07-25T11:46:02.3234620Z go: downloading k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
+2026-07-25T11:46:02.4072173Z go: downloading github.com/imdario/mergo v0.3.6
+2026-07-25T11:46:02.4490862Z go: downloading golang.org/x/term v0.21.0
+2026-07-25T11:46:02.4787987Z go: downloading k8s.io/klog/v2 v2.130.1
+2026-07-25T11:46:02.4801228Z go: downloading github.com/mattn/go-isatty v0.0.20
+2026-07-25T11:46:02.5078689Z go: downloading github.com/subosito/gotenv v1.6.0
+2026-07-25T11:46:02.5103691Z go: downloading github.com/hashicorp/hcl v1.0.0
+2026-07-25T11:46:02.5434129Z go: downloading gopkg.in/ini.v1 v1.67.0
+2026-07-25T11:46:02.5439512Z go: downloading github.com/magiconair/properties v1.8.7
+2026-07-25T11:46:02.5592479Z go: downloading github.com/pelletier/go-toml/v2 v2.2.2
+2026-07-25T11:46:02.5611434Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2026-07-25T11:46:02.5802516Z go: downloading golang.org/x/sys v0.24.0
+2026-07-25T11:46:02.5898383Z go: downloading golang.org/x/text v0.16.0
+2026-07-25T11:46:03.1055791Z go: downloading gopkg.in/inf.v0 v0.9.1
+2026-07-25T11:46:03.1216638Z go: downloading sigs.k8s.io/structured-merge-diff/v4 v4.4.1
+2026-07-25T11:46:03.1861420Z go: downloading sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
+2026-07-25T11:46:03.1887422Z go: downloading github.com/golang/protobuf v1.5.4
+2026-07-25T11:46:03.1888726Z go: downloading github.com/google/gnostic-models v0.6.8
+2026-07-25T11:46:03.1967026Z go: downloading golang.org/x/net v0.26.0
+2026-07-25T11:46:03.2189267Z go: downloading golang.org/x/time v0.5.0
+2026-07-25T11:46:03.2313726Z go: downloading github.com/go-logr/logr v1.4.2
+2026-07-25T11:46:03.2391324Z go: downloading github.com/json-iterator/go v1.1.12
+2026-07-25T11:46:03.2591733Z go: downloading gopkg.in/yaml.v2 v2.4.0
+2026-07-25T11:46:03.2745464Z go: downloading github.com/fxamacker/cbor/v2 v2.7.0
+2026-07-25T11:46:03.2910346Z go: downloading k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340
+2026-07-25T11:46:03.4811146Z go: downloading golang.org/x/oauth2 v0.21.0
+2026-07-25T11:46:03.5170649Z go: downloading google.golang.org/protobuf v1.34.2
+2026-07-25T11:46:03.7088074Z go: downloading sigs.k8s.io/yaml v1.4.0
+2026-07-25T11:46:03.7105764Z go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+2026-07-25T11:46:03.7106612Z go: downloading github.com/modern-go/reflect2 v1.0.2
+2026-07-25T11:46:03.7107428Z go: downloading github.com/x448/float16 v0.8.4
+2026-07-25T11:46:03.7217639Z go: downloading github.com/google/go-cmp v0.6.0
+2026-07-25T11:46:03.7351592Z go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
+2026-07-25T11:46:03.7355907Z go: downloading github.com/google/uuid v1.6.0
+2026-07-25T11:46:03.7526194Z go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+2026-07-25T11:46:03.7532157Z go: downloading github.com/go-openapi/swag v0.22.4
+2026-07-25T11:46:03.7567327Z go: downloading github.com/go-openapi/jsonreference v0.20.2
+2026-07-25T11:46:03.7641113Z go: downloading github.com/emicklei/go-restful/v3 v3.11.0
+2026-07-25T11:46:03.7708168Z go: downloading github.com/mailru/easyjson v0.7.7
+2026-07-25T11:46:03.7720324Z go: downloading github.com/go-openapi/jsonpointer v0.19.6
+2026-07-25T11:46:03.7938333Z go: downloading github.com/josharian/intern v1.0.0
+2026-07-25T11:46:45.0216654Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:45.0217928Z Post job cleanup.
+2026-07-25T11:46:45.1479396Z (node:5830) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T11:46:45.1480598Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T11:46:45.1587480Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T11:46:45.1635355Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T11:46:45.1670647Z /home/runner/go/pkg/mod
+2026-07-25T11:46:45.1694188Z /home/runner/.cache/go-build
+2026-07-25T11:46:45.1949226Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/devopshub-cli/devopshub-cli --files-from manifest.txt --use-compress-program zstdmt
+2026-07-25T11:46:46.9159760Z Failed to save: Unable to reserve cache with key setup-go-Linux-x64-ubuntu24-go-1.23.12-c68f5d8575d96bdeee0f36fb7cd63d91b0dfaf6aa60956b3ddc418ee30fb9240, another job may be creating this cache.
+2026-07-25T11:46:46.9464156Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:46.9465620Z Post job cleanup.
+2026-07-25T11:46:47.0355541Z [command]/usr/bin/git version
+2026-07-25T11:46:47.0404599Z git version 2.54.0
+2026-07-25T11:46:47.0450850Z Temporarily overriding HOME='/home/runner/work/_temp/e7edb1d9-6773-4920-a6d8-f25047762d1f' before making global git config changes
+2026-07-25T11:46:47.0452438Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T11:46:47.0458130Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:47.0503937Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T11:46:47.0548358Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T11:46:47.0809153Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T11:46:47.0841924Z http.https://github.com/.extraheader
+2026-07-25T11:46:47.0856435Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-25T11:46:47.0897658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T11:46:47.1174049Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T11:46:47.1217690Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T11:46:47.1706383Z Cleaning up orphan processes
+2026-07-25T11:46:47.2027371Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

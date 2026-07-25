@@ -1,0 +1,284 @@
+﻿2026-07-25T11:46:15.6800868Z ##[group]Run go install golang.org/x/vuln/cmd/govulncheck@latest
+2026-07-25T11:46:15.6801440Z [36;1mgo install golang.org/x/vuln/cmd/govulncheck@latest[0m
+2026-07-25T11:46:15.6801795Z [36;1mgovulncheck ./...[0m
+2026-07-25T11:46:15.6853270Z shell: /usr/bin/bash -e {0}
+2026-07-25T11:46:15.6853743Z env:
+2026-07-25T11:46:15.6853926Z   GO_VERSION: 1.23
+2026-07-25T11:46:15.6854127Z ##[endgroup]
+2026-07-25T11:46:15.8326574Z go: downloading golang.org/x/vuln v1.6.0
+2026-07-25T11:46:16.0126612Z go: golang.org/x/vuln@v1.6.0 requires go >= 1.25.0; switching to go1.25.12
+2026-07-25T11:46:16.0127893Z go: downloading go1.25.12 (linux/amd64)
+2026-07-25T11:46:19.5760417Z go: downloading golang.org/x/telemetry v0.0.0-20260708182218-49f421fb7959
+2026-07-25T11:46:19.5905704Z go: downloading golang.org/x/mod v0.38.0
+2026-07-25T11:46:19.5939779Z go: downloading golang.org/x/tools v0.48.0
+2026-07-25T11:46:19.7731923Z go: downloading golang.org/x/sync v0.22.0
+2026-07-25T11:46:48.3385729Z === Symbol Results ===
+2026-07-25T11:46:48.3386354Z 
+2026-07-25T11:46:48.3386587Z Vulnerability #1: GO-2026-5970
+2026-07-25T11:46:48.3387386Z     Infinite loop on invalid input in golang.org/x/text
+2026-07-25T11:46:48.3388210Z   More info: https://pkg.go.dev/vuln/GO-2026-5970
+2026-07-25T11:46:48.3388902Z   Module: golang.org/x/text
+2026-07-25T11:46:48.3389509Z     Found in: golang.org/x/text@v0.16.0
+2026-07-25T11:46:48.3390174Z     Fixed in: golang.org/x/text@v0.39.0
+2026-07-25T11:46:48.3390813Z     Example traces found:
+2026-07-25T11:46:48.3414473Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.Bytes
+2026-07-25T11:46:48.3424059Z ##[error]      #2: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.IsNormalString
+2026-07-25T11:46:48.3426124Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.QuickSpan
+2026-07-25T11:46:48.3428428Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.String
+2026-07-25T11:46:48.3429330Z 
+2026-07-25T11:46:48.3429460Z Vulnerability #2: GO-2026-5856
+2026-07-25T11:46:48.3429855Z     Invoking Encrypted Client Hello privacy leak in crypto/tls
+2026-07-25T11:46:48.3430270Z   More info: https://pkg.go.dev/vuln/GO-2026-5856
+2026-07-25T11:46:48.3430577Z   Standard library
+2026-07-25T11:46:48.3430838Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3431127Z     Fixed in: crypto/tls@go1.25.12
+2026-07-25T11:46:48.3431405Z     Example traces found:
+2026-07-25T11:46:48.3432522Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3434274Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3435789Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3437843Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3438852Z 
+2026-07-25T11:46:48.3438972Z Vulnerability #3: GO-2026-5039
+2026-07-25T11:46:48.3439381Z     Arbitrary inputs are included in errors without any escaping in
+2026-07-25T11:46:48.3439745Z     net/textproto
+2026-07-25T11:46:48.3440076Z   More info: https://pkg.go.dev/vuln/GO-2026-5039
+2026-07-25T11:46:48.3440384Z   Standard library
+2026-07-25T11:46:48.3440635Z     Found in: net/textproto@go1.23.12
+2026-07-25T11:46:48.3440945Z     Fixed in: net/textproto@go1.25.11
+2026-07-25T11:46:48.3441268Z     Example traces found:
+2026-07-25T11:46:48.3442278Z ##[error]      #1: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls textproto.Reader.ReadMIMEHeader
+2026-07-25T11:46:48.3443704Z 
+2026-07-25T11:46:48.3443819Z Vulnerability #4: GO-2026-5038
+2026-07-25T11:46:48.3444197Z     Quadratic complexity in WordDecoder.DecodeHeader in mime
+2026-07-25T11:46:48.3444983Z   More info: https://pkg.go.dev/vuln/GO-2026-5038
+2026-07-25T11:46:48.3445454Z   Standard library
+2026-07-25T11:46:48.3445698Z     Found in: mime@go1.23.12
+2026-07-25T11:46:48.3445957Z     Fixed in: mime@go1.25.11
+2026-07-25T11:46:48.3446491Z     Example traces found:
+2026-07-25T11:46:48.3447926Z ##[error]      #1: pkg/k8s/client.go:164:56: k8s.K8sClient.ListPods calls gentype.alsoLister[*k8s.io/api/core/v1.Pod, *k8s.io/api/core/v1.PodList].List, which eventually calls mime.WordDecoder.DecodeHeader
+2026-07-25T11:46:48.3449077Z 
+2026-07-25T11:46:48.3449184Z Vulnerability #5: GO-2026-5037
+2026-07-25T11:46:48.3449543Z     Inefficient candidate hostname parsing in crypto/x509
+2026-07-25T11:46:48.3450075Z   More info: https://pkg.go.dev/vuln/GO-2026-5037
+2026-07-25T11:46:48.3450397Z   Standard library
+2026-07-25T11:46:48.3450660Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3450959Z     Fixed in: crypto/x509@go1.25.11
+2026-07-25T11:46:48.3451237Z     Example traces found:
+2026-07-25T11:46:48.3452136Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3453826Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.VerifyHostname
+2026-07-25T11:46:48.3455478Z ##[error]      #3: internal/output/output.go:214:14: output.Printer.Section calls fmt.Fprintln, which eventually calls x509.HostnameError.Error
+2026-07-25T11:46:48.3456698Z 
+2026-07-25T11:46:48.3456818Z Vulnerability #6: GO-2026-5026
+2026-07-25T11:46:48.3457262Z     Invoking failure to reject ASCII-only Punycode-encoded labels in
+2026-07-25T11:46:48.3457648Z     golang.org/x/net/idna
+2026-07-25T11:46:48.3457961Z   More info: https://pkg.go.dev/vuln/GO-2026-5026
+2026-07-25T11:46:48.3458279Z   Module: golang.org/x/net
+2026-07-25T11:46:48.3458560Z     Found in: golang.org/x/net@v0.26.0
+2026-07-25T11:46:48.3458863Z     Fixed in: golang.org/x/net@v0.55.0
+2026-07-25T11:46:48.3459149Z     Example traces found:
+2026-07-25T11:46:48.3460191Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls idna.ToASCII
+2026-07-25T11:46:48.3461201Z 
+2026-07-25T11:46:48.3461306Z Vulnerability #7: GO-2026-4971
+2026-07-25T11:46:48.3461724Z     Panic in Dial and LookupPort when handling NUL byte on Windows in net
+2026-07-25T11:46:48.3462152Z   More info: https://pkg.go.dev/vuln/GO-2026-4971
+2026-07-25T11:46:48.3462451Z   Standard library
+2026-07-25T11:46:48.3462686Z     Found in: net@go1.23.12
+2026-07-25T11:46:48.3462938Z     Fixed in: net@go1.25.10
+2026-07-25T11:46:48.3463249Z     Example traces found:
+2026-07-25T11:46:48.3464311Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls net.Dialer.DialContext
+2026-07-25T11:46:48.3465276Z 
+2026-07-25T11:46:48.3465384Z Vulnerability #8: GO-2026-4947
+2026-07-25T11:46:48.3465738Z     Unexpected work during chain building in crypto/x509
+2026-07-25T11:46:48.3466339Z   More info: https://pkg.go.dev/vuln/GO-2026-4947
+2026-07-25T11:46:48.3466672Z   Standard library
+2026-07-25T11:46:48.3466923Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3467213Z     Fixed in: crypto/x509@go1.25.9
+2026-07-25T11:46:48.3467485Z     Example traces found:
+2026-07-25T11:46:48.3468365Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3469270Z 
+2026-07-25T11:46:48.3469373Z Vulnerability #9: GO-2026-4946
+2026-07-25T11:46:48.3469697Z     Inefficient policy validation in crypto/x509
+2026-07-25T11:46:48.3470057Z   More info: https://pkg.go.dev/vuln/GO-2026-4946
+2026-07-25T11:46:48.3470564Z   Standard library
+2026-07-25T11:46:48.3470817Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3471110Z     Fixed in: crypto/x509@go1.25.9
+2026-07-25T11:46:48.3471381Z     Example traces found:
+2026-07-25T11:46:48.3472375Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3473267Z 
+2026-07-25T11:46:48.3473381Z Vulnerability #10: GO-2026-4918
+2026-07-25T11:46:48.3473822Z     Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in
+2026-07-25T11:46:48.3474276Z     net/http/internal/http2 in golang.org/x/net
+2026-07-25T11:46:48.3474622Z   More info: https://pkg.go.dev/vuln/GO-2026-4918
+2026-07-25T11:46:48.3474930Z   Module: golang.org/x/net
+2026-07-25T11:46:48.3475205Z     Found in: golang.org/x/net@v0.26.0
+2026-07-25T11:46:48.3475503Z     Fixed in: golang.org/x/net@v0.53.0
+2026-07-25T11:46:48.3475779Z     Example traces found:
+2026-07-25T11:46:48.3477128Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.Transport.NewClientConn
+2026-07-25T11:46:48.3479085Z ##[error]      #2: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.Transport.RoundTrip
+2026-07-25T11:46:48.3481056Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.noDialH2RoundTripper.RoundTrip
+2026-07-25T11:46:48.3482039Z 
+2026-07-25T11:46:48.3482142Z   Standard library
+2026-07-25T11:46:48.3482396Z     Found in: net/http@go1.23.12
+2026-07-25T11:46:48.3482674Z     Fixed in: net/http@go1.25.10
+2026-07-25T11:46:48.3482939Z     Example traces found:
+2026-07-25T11:46:48.3483957Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http.Client.Do
+2026-07-25T11:46:48.3484877Z 
+2026-07-25T11:46:48.3484991Z Vulnerability #11: GO-2026-4870
+2026-07-25T11:46:48.3485431Z     Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection
+2026-07-25T11:46:48.3485859Z     retention and DoS in crypto/tls
+2026-07-25T11:46:48.3486422Z   More info: https://pkg.go.dev/vuln/GO-2026-4870
+2026-07-25T11:46:48.3486736Z   Standard library
+2026-07-25T11:46:48.3486987Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3487279Z     Fixed in: crypto/tls@go1.25.9
+2026-07-25T11:46:48.3487553Z     Example traces found:
+2026-07-25T11:46:48.3488656Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3490297Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3491744Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3493458Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3494439Z 
+2026-07-25T11:46:48.3494545Z Vulnerability #12: GO-2026-4602
+2026-07-25T11:46:48.3494850Z     FileInfo can escape from a Root in os
+2026-07-25T11:46:48.3495189Z   More info: https://pkg.go.dev/vuln/GO-2026-4602
+2026-07-25T11:46:48.3495488Z   Standard library
+2026-07-25T11:46:48.3495721Z     Found in: os@go1.23.12
+2026-07-25T11:46:48.3495971Z     Fixed in: os@go1.25.8
+2026-07-25T11:46:48.3496480Z     Example traces found:
+2026-07-25T11:46:48.3497103Z ##[error]      #1: pkg/plugin/plugin.go:35:31: plugin.Manager.DiscoverPlugins calls os.ReadDir
+2026-07-25T11:46:48.3497852Z 
+2026-07-25T11:46:48.3497957Z Vulnerability #13: GO-2026-4601
+2026-07-25T11:46:48.3498298Z     Incorrect parsing of IPv6 host literals in net/url
+2026-07-25T11:46:48.3498993Z   More info: https://pkg.go.dev/vuln/GO-2026-4601
+2026-07-25T11:46:48.3499294Z   Standard library
+2026-07-25T11:46:48.3499534Z     Found in: net/url@go1.23.12
+2026-07-25T11:46:48.3499805Z     Fixed in: net/url@go1.25.8
+2026-07-25T11:46:48.3500185Z     Example traces found:
+2026-07-25T11:46:48.3500999Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.Parse
+2026-07-25T11:46:48.3502579Z ##[error]      #2: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.ParseRequestURI
+2026-07-25T11:46:48.3504276Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls url.URL.Parse
+2026-07-25T11:46:48.3505195Z 
+2026-07-25T11:46:48.3505298Z Vulnerability #14: GO-2026-4340
+2026-07-25T11:46:48.3505737Z     Handshake messages may be processed at the incorrect encryption level in
+2026-07-25T11:46:48.3506363Z     crypto/tls
+2026-07-25T11:46:48.3506659Z   More info: https://pkg.go.dev/vuln/GO-2026-4340
+2026-07-25T11:46:48.3506976Z   Standard library
+2026-07-25T11:46:48.3507226Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3507515Z     Fixed in: crypto/tls@go1.24.12
+2026-07-25T11:46:48.3507792Z     Example traces found:
+2026-07-25T11:46:48.3508911Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3510562Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3511971Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3513669Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3514625Z 
+2026-07-25T11:46:48.3514729Z Vulnerability #15: GO-2026-4337
+2026-07-25T11:46:48.3515055Z     Unexpected session resumption in crypto/tls
+2026-07-25T11:46:48.3515420Z   More info: https://pkg.go.dev/vuln/GO-2026-4337
+2026-07-25T11:46:48.3515723Z   Standard library
+2026-07-25T11:46:48.3515974Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3516504Z     Fixed in: crypto/tls@go1.24.13
+2026-07-25T11:46:48.3516779Z     Example traces found:
+2026-07-25T11:46:48.3517878Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3519503Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3520896Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3522564Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3523495Z 
+2026-07-25T11:46:48.3523603Z Vulnerability #16: GO-2025-4175
+2026-07-25T11:46:48.3524026Z     Improper application of excluded DNS name constraints when verifying
+2026-07-25T11:46:48.3524427Z     wildcard names in crypto/x509
+2026-07-25T11:46:48.3524748Z   More info: https://pkg.go.dev/vuln/GO-2025-4175
+2026-07-25T11:46:48.3525044Z   Standard library
+2026-07-25T11:46:48.3525292Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3525580Z     Fixed in: crypto/x509@go1.24.11
+2026-07-25T11:46:48.3525849Z     Example traces found:
+2026-07-25T11:46:48.3526927Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3527827Z 
+2026-07-25T11:46:48.3527948Z Vulnerability #17: GO-2025-4155
+2026-07-25T11:46:48.3528365Z     Excessive resource consumption when printing error string for host
+2026-07-25T11:46:48.3528941Z     certificate validation in crypto/x509
+2026-07-25T11:46:48.3529279Z   More info: https://pkg.go.dev/vuln/GO-2025-4155
+2026-07-25T11:46:48.3529575Z   Standard library
+2026-07-25T11:46:48.3529932Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3530225Z     Fixed in: crypto/x509@go1.24.11
+2026-07-25T11:46:48.3530492Z     Example traces found:
+2026-07-25T11:46:48.3531376Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3554278Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.VerifyHostname
+2026-07-25T11:46:48.3555544Z 
+2026-07-25T11:46:48.3555756Z Vulnerability #18: GO-2025-4013
+2026-07-25T11:46:48.3556752Z     Panic when validating certificates with DSA public keys in crypto/x509
+2026-07-25T11:46:48.3557258Z   More info: https://pkg.go.dev/vuln/GO-2025-4013
+2026-07-25T11:46:48.3557609Z   Standard library
+2026-07-25T11:46:48.3557873Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3558169Z     Fixed in: crypto/x509@go1.24.8
+2026-07-25T11:46:48.3558446Z     Example traces found:
+2026-07-25T11:46:48.3559864Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3561459Z 
+2026-07-25T11:46:48.3561657Z Vulnerability #19: GO-2025-4012
+2026-07-25T11:46:48.3562153Z     Lack of limit when parsing cookies can cause memory exhaustion in net/http
+2026-07-25T11:46:48.3562624Z   More info: https://pkg.go.dev/vuln/GO-2025-4012
+2026-07-25T11:46:48.3562937Z   Standard library
+2026-07-25T11:46:48.3563195Z     Found in: net/http@go1.23.12
+2026-07-25T11:46:48.3563485Z     Fixed in: net/http@go1.24.8
+2026-07-25T11:46:48.3563750Z     Example traces found:
+2026-07-25T11:46:48.3564824Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http.Client.Do
+2026-07-25T11:46:48.3565789Z 
+2026-07-25T11:46:48.3565895Z Vulnerability #20: GO-2025-4011
+2026-07-25T11:46:48.3566662Z     Parsing DER payload can cause memory exhaustion in encoding/asn1
+2026-07-25T11:46:48.3567126Z   More info: https://pkg.go.dev/vuln/GO-2025-4011
+2026-07-25T11:46:48.3567432Z   Standard library
+2026-07-25T11:46:48.3567704Z     Found in: encoding/asn1@go1.23.12
+2026-07-25T11:46:48.3568018Z     Fixed in: encoding/asn1@go1.24.8
+2026-07-25T11:46:48.3568327Z     Example traces found:
+2026-07-25T11:46:48.3569228Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls asn1.Unmarshal
+2026-07-25T11:46:48.3570132Z 
+2026-07-25T11:46:48.3570239Z Vulnerability #21: GO-2025-4010
+2026-07-25T11:46:48.3570643Z     Insufficient validation of bracketed IPv6 hostnames in net/url
+2026-07-25T11:46:48.3571074Z   More info: https://pkg.go.dev/vuln/GO-2025-4010
+2026-07-25T11:46:48.3571381Z   Standard library
+2026-07-25T11:46:48.3571625Z     Found in: net/url@go1.23.12
+2026-07-25T11:46:48.3571899Z     Fixed in: net/url@go1.24.8
+2026-07-25T11:46:48.3572166Z     Example traces found:
+2026-07-25T11:46:48.3572992Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.Parse
+2026-07-25T11:46:48.3574583Z ##[error]      #2: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.ParseRequestURI
+2026-07-25T11:46:48.3576586Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls url.URL.Parse
+2026-07-25T11:46:48.3577586Z 
+2026-07-25T11:46:48.3577708Z Vulnerability #22: GO-2025-4009
+2026-07-25T11:46:48.3578146Z     Quadratic complexity when parsing some invalid inputs in encoding/pem
+2026-07-25T11:46:48.3578593Z   More info: https://pkg.go.dev/vuln/GO-2025-4009
+2026-07-25T11:46:48.3579147Z   Standard library
+2026-07-25T11:46:48.3579409Z     Found in: encoding/pem@go1.23.12
+2026-07-25T11:46:48.3579728Z     Fixed in: encoding/pem@go1.24.8
+2026-07-25T11:46:48.3580012Z     Example traces found:
+2026-07-25T11:46:48.3580878Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls pem.Decode
+2026-07-25T11:46:48.3581876Z 
+2026-07-25T11:46:48.3581983Z Vulnerability #23: GO-2025-4008
+2026-07-25T11:46:48.3582404Z     ALPN negotiation error contains attacker controlled information in
+2026-07-25T11:46:48.3582770Z     crypto/tls
+2026-07-25T11:46:48.3583043Z   More info: https://pkg.go.dev/vuln/GO-2025-4008
+2026-07-25T11:46:48.3583343Z   Standard library
+2026-07-25T11:46:48.3583593Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3583879Z     Fixed in: crypto/tls@go1.24.8
+2026-07-25T11:46:48.3584150Z     Example traces found:
+2026-07-25T11:46:48.3585241Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3587236Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3588710Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3590408Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3591351Z 
+2026-07-25T11:46:48.3591457Z Vulnerability #24: GO-2025-4007
+2026-07-25T11:46:48.3591879Z     Quadratic complexity when checking name constraints in crypto/x509
+2026-07-25T11:46:48.3592316Z   More info: https://pkg.go.dev/vuln/GO-2025-4007
+2026-07-25T11:46:48.3592623Z   Standard library
+2026-07-25T11:46:48.3592879Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3593171Z     Fixed in: crypto/x509@go1.24.9
+2026-07-25T11:46:48.3593451Z     Example traces found:
+2026-07-25T11:46:48.3594415Z ##[error]      #1: pkg/plugin/plugin.go:73:21: plugin.Manager.ExecutePlugin calls exec.Command, which eventually calls x509.CertPool.AppendCertsFromPEM
+2026-07-25T11:46:48.3596072Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3598024Z ##[error]      #3: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls x509.ParseCertificate
+2026-07-25T11:46:48.3599591Z ##[error]      #4: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParseECPrivateKey
+2026-07-25T11:46:48.3601218Z ##[error]      #5: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParsePKCS1PrivateKey
+2026-07-25T11:46:48.3602799Z ##[error]      #6: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParsePKCS8PrivateKey
+2026-07-25T11:46:48.3603652Z 
+2026-07-25T11:46:48.3603913Z Your code is affected by 24 vulnerabilities from 2 modules and the Go standard library.
+2026-07-25T11:46:48.3604442Z This scan also found 9 vulnerabilities in packages you import and 20
+2026-07-25T11:46:48.3604944Z vulnerabilities in modules you require, but your code doesn't appear to call
+2026-07-25T11:46:48.3605341Z these vulnerabilities.
+2026-07-25T11:46:48.3605582Z Use '-show verbose' for more details.
+2026-07-25T11:46:48.3612089Z ##[error]Process completed with exit code 3.

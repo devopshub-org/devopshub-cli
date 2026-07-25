@@ -1,0 +1,14 @@
+﻿2026-07-25T12:15:50.3546220Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:15:50.3547150Z Post job cleanup.
+2026-07-25T12:15:50.6701840Z (node:13960) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:15:50.6703000Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:15:50.6753890Z [command]/Users/runner/hostedtoolcache/go/1.23.12/arm64/bin/go env GOMODCACHE
+2026-07-25T12:15:50.6794660Z [command]/Users/runner/hostedtoolcache/go/1.23.12/arm64/bin/go env GOCACHE
+2026-07-25T12:15:50.6854550Z /Users/runner/go/pkg/mod
+2026-07-25T12:15:50.6866280Z /Users/runner/Library/Caches/go-build
+2026-07-25T12:15:50.7125210Z [command]/opt/homebrew/bin/gtar --posix -cf cache.tzst --exclude cache.tzst -P -C /Users/runner/work/devopshub-cli/devopshub-cli --files-from manifest.txt --delay-directory-restore --use-compress-program zstdmt
+2026-07-25T12:15:55.2815620Z (node:13960) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-07-25T12:15:56.2766200Z Sent 0 of 179425089 (0.0%), 0.0 MBs/sec
+2026-07-25T12:15:57.2911280Z Sent 45207361 of 179425089 (25.2%), 21.4 MBs/sec
+2026-07-25T12:15:58.0227390Z Sent 179425089 of 179425089 (100.0%), 62.2 MBs/sec
+2026-07-25T12:15:58.2224640Z Cache saved with the key: setup-go-macOS-arm64-go-1.23.12-e36abb838196578da856bdb86f828eb86056a86299e1a206aef1f11c0a07ac3f

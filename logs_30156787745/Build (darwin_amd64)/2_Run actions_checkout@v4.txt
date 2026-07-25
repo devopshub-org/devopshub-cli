@@ -1,0 +1,76 @@
+﻿2026-07-25T11:45:53.3115665Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:45:53.3125699Z ##[group]Run actions/checkout@v4
+2026-07-25T11:45:53.3126574Z with:
+2026-07-25T11:45:53.3127110Z   repository: devopshub-org/devopshub-cli
+2026-07-25T11:45:53.3131791Z   token: ***
+2026-07-25T11:45:53.3132293Z   ssh-strict: true
+2026-07-25T11:45:53.3132784Z   ssh-user: git
+2026-07-25T11:45:53.3133268Z   persist-credentials: true
+2026-07-25T11:45:53.3133807Z   clean: true
+2026-07-25T11:45:53.3134298Z   sparse-checkout-cone-mode: true
+2026-07-25T11:45:53.3134878Z   fetch-depth: 1
+2026-07-25T11:45:53.3135359Z   fetch-tags: false
+2026-07-25T11:45:53.3135856Z   show-progress: true
+2026-07-25T11:45:53.3136369Z   lfs: false
+2026-07-25T11:45:53.3136821Z   submodules: false
+2026-07-25T11:45:53.3137390Z   set-safe-directory: true
+2026-07-25T11:45:53.3138136Z   allow-unsafe-pr-checkout: false
+2026-07-25T11:45:53.3139089Z env:
+2026-07-25T11:45:53.3139578Z   GO_VERSION: 1.23
+2026-07-25T11:45:53.3140059Z ##[endgroup]
+2026-07-25T11:45:53.4301699Z Syncing repository: devopshub-org/devopshub-cli
+2026-07-25T11:45:53.4305168Z ##[group]Getting Git version info
+2026-07-25T11:45:53.4306477Z Working directory is '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:45:53.4308259Z [command]/usr/bin/git version
+2026-07-25T11:45:53.4395801Z git version 2.54.0
+2026-07-25T11:45:53.4425167Z ##[endgroup]
+2026-07-25T11:45:53.4443582Z Temporarily overriding HOME='/home/runner/work/_temp/cfdc3393-01c9-4478-9466-6afdd7352777' before making global git config changes
+2026-07-25T11:45:53.4447268Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T11:45:53.4451809Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:45:53.4518565Z Deleting the contents of '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:45:53.4526778Z ##[group]Initializing the repository
+2026-07-25T11:45:53.4533097Z [command]/usr/bin/git init /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:45:53.4659538Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-25T11:45:53.4661618Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-25T11:45:53.4664564Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-25T11:45:53.4666073Z hint: call:
+2026-07-25T11:45:53.4666798Z hint:
+2026-07-25T11:45:53.4667714Z hint: 	git config --global init.defaultBranch <name>
+2026-07-25T11:45:53.4669057Z hint:
+2026-07-25T11:45:53.4670189Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-25T11:45:53.4671914Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-25T11:45:53.4673320Z hint:
+2026-07-25T11:45:53.4675039Z hint: 	git branch -m <name>
+2026-07-25T11:45:53.4676039Z hint:
+2026-07-25T11:45:53.4677167Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-25T11:45:53.4679275Z Initialized empty Git repository in /home/runner/work/devopshub-cli/devopshub-cli/.git/
+2026-07-25T11:45:53.4691191Z [command]/usr/bin/git remote add origin https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:45:53.4787055Z ##[endgroup]
+2026-07-25T11:45:53.4799577Z ##[group]Disabling automatic garbage collection
+2026-07-25T11:45:53.4801320Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-25T11:45:53.4884313Z ##[endgroup]
+2026-07-25T11:45:53.4886456Z ##[group]Setting up auth
+2026-07-25T11:45:53.4889584Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T11:45:53.4953050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T11:45:53.5426524Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T11:45:53.5480438Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T11:45:53.5770286Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T11:45:53.5814864Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T11:45:53.6070689Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-25T11:45:53.6118067Z ##[endgroup]
+2026-07-25T11:45:53.6119478Z ##[group]Fetching the repository
+2026-07-25T11:45:53.6129805Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8469e85754e81f596aa5db6f774f0ce3b14b0ad2:refs/remotes/origin/main
+2026-07-25T11:45:53.7977436Z From https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:45:53.7979879Z  * [new ref]         8469e85754e81f596aa5db6f774f0ce3b14b0ad2 -> origin/main
+2026-07-25T11:45:53.8022678Z ##[endgroup]
+2026-07-25T11:45:53.8026250Z ##[group]Determining the checkout info
+2026-07-25T11:45:53.8028487Z ##[endgroup]
+2026-07-25T11:45:53.8032271Z [command]/usr/bin/git sparse-checkout disable
+2026-07-25T11:45:53.8096128Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-25T11:45:53.8137269Z ##[group]Checking out the ref
+2026-07-25T11:45:53.8142719Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-25T11:45:53.8263847Z Switched to a new branch 'main'
+2026-07-25T11:45:53.8265892Z branch 'main' set up to track 'origin/main'.
+2026-07-25T11:45:53.8273582Z ##[endgroup]
+2026-07-25T11:45:53.8327746Z [command]/usr/bin/git log -1 --format=%H
+2026-07-25T11:45:53.8363721Z 8469e85754e81f596aa5db6f774f0ce3b14b0ad2

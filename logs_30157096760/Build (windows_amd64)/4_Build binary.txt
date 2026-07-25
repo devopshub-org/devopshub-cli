@@ -1,0 +1,74 @@
+﻿2026-07-25T11:56:41.9038153Z ##[group]Run go build \
+2026-07-25T11:56:41.9038761Z [36;1mgo build \[0m
+2026-07-25T11:56:41.9039185Z [36;1m  -trimpath \[0m
+2026-07-25T11:56:41.9039535Z [36;1m  -ldflags="-s -w \[0m
+2026-07-25T11:56:41.9040240Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Version=ci-24558cafa4ab48ea8c2bf07e09fbb5b5ec9863be \[0m
+2026-07-25T11:56:41.9041066Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Commit=24558cafa4ab48ea8c2bf07e09fbb5b5ec9863be \[0m
+2026-07-25T11:56:41.9041849Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) \[0m
+2026-07-25T11:56:41.9042552Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.BuiltBy=github-actions" \[0m
+2026-07-25T11:56:41.9043097Z [36;1m  -o bin/devopshub-windows-amd64 \[0m
+2026-07-25T11:56:41.9043497Z [36;1m  ./cmd/devopshub[0m
+2026-07-25T11:56:41.9083364Z shell: /usr/bin/bash -e {0}
+2026-07-25T11:56:41.9083930Z env:
+2026-07-25T11:56:41.9084243Z   GO_VERSION: 1.23
+2026-07-25T11:56:41.9084710Z   GOOS: windows
+2026-07-25T11:56:41.9085032Z   GOARCH: amd64
+2026-07-25T11:56:41.9085314Z   CGO_ENABLED: 0
+2026-07-25T11:56:41.9085641Z ##[endgroup]
+2026-07-25T11:56:41.9281580Z go: downloading github.com/rs/zerolog v1.33.0
+2026-07-25T11:56:41.9282675Z go: downloading github.com/spf13/cobra v1.8.1
+2026-07-25T11:56:41.9917136Z go: downloading k8s.io/api v0.31.0
+2026-07-25T11:56:41.9917797Z go: downloading k8s.io/apimachinery v0.31.0
+2026-07-25T11:56:41.9918213Z go: downloading k8s.io/client-go v0.31.0
+2026-07-25T11:56:42.2331116Z go: downloading github.com/spf13/viper v1.19.0
+2026-07-25T11:56:42.4013893Z go: downloading github.com/mattn/go-colorable v0.1.13
+2026-07-25T11:56:42.4275781Z go: downloading github.com/inconshreveable/mousetrap v1.1.0
+2026-07-25T11:56:42.4391436Z go: downloading github.com/spf13/pflag v1.0.5
+2026-07-25T11:56:42.4602055Z go: downloading github.com/gogo/protobuf v1.3.2
+2026-07-25T11:56:42.6161753Z go: downloading github.com/google/gofuzz v1.2.0
+2026-07-25T11:56:42.6167664Z go: downloading k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
+2026-07-25T11:56:42.6296824Z go: downloading github.com/fsnotify/fsnotify v1.7.0
+2026-07-25T11:56:42.6712601Z go: downloading github.com/mitchellh/mapstructure v1.5.0
+2026-07-25T11:56:42.6792404Z go: downloading github.com/sagikazarmark/slog-shim v0.1.0
+2026-07-25T11:56:42.6797179Z go: downloading github.com/spf13/afero v1.11.0
+2026-07-25T11:56:42.6896745Z go: downloading github.com/spf13/cast v1.6.0
+2026-07-25T11:56:42.6987239Z go: downloading github.com/mattn/go-isatty v0.0.20
+2026-07-25T11:56:42.7079235Z go: downloading github.com/imdario/mergo v0.3.6
+2026-07-25T11:56:42.7080328Z go: downloading golang.org/x/term v0.45.0
+2026-07-25T11:56:42.7269693Z go: downloading k8s.io/klog/v2 v2.130.1
+2026-07-25T11:56:42.7270787Z go: downloading gopkg.in/inf.v0 v0.9.1
+2026-07-25T11:56:42.7409090Z go: downloading sigs.k8s.io/structured-merge-diff/v4 v4.4.1
+2026-07-25T11:56:42.7410730Z go: downloading sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
+2026-07-25T11:56:42.7420543Z go: downloading golang.org/x/sys v0.47.0
+2026-07-25T11:56:42.7644885Z go: downloading github.com/subosito/gotenv v1.6.0
+2026-07-25T11:56:42.7699526Z go: downloading github.com/hashicorp/hcl v1.0.0
+2026-07-25T11:56:42.7854470Z go: downloading gopkg.in/ini.v1 v1.67.0
+2026-07-25T11:56:42.8007825Z go: downloading github.com/magiconair/properties v1.8.7
+2026-07-25T11:56:42.8008975Z go: downloading github.com/pelletier/go-toml/v2 v2.2.2
+2026-07-25T11:56:42.8094765Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2026-07-25T11:56:42.8121035Z go: downloading golang.org/x/text v0.40.0
+2026-07-25T11:56:42.9332873Z go: downloading github.com/golang/protobuf v1.5.4
+2026-07-25T11:56:42.9663241Z go: downloading github.com/google/gnostic-models v0.6.8
+2026-07-25T11:56:42.9915182Z go: downloading golang.org/x/net v0.57.0
+2026-07-25T11:56:43.1808521Z go: downloading golang.org/x/time v0.5.0
+2026-07-25T11:56:43.1919349Z go: downloading github.com/fxamacker/cbor/v2 v2.7.0
+2026-07-25T11:56:43.2103458Z go: downloading github.com/go-logr/logr v1.4.2
+2026-07-25T11:56:43.2674753Z go: downloading github.com/json-iterator/go v1.1.12
+2026-07-25T11:56:43.2675567Z go: downloading gopkg.in/yaml.v2 v2.4.0
+2026-07-25T11:56:43.2681213Z go: downloading google.golang.org/protobuf v1.34.2
+2026-07-25T11:56:43.4249890Z go: downloading k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340
+2026-07-25T11:56:43.4349938Z go: downloading golang.org/x/oauth2 v0.21.0
+2026-07-25T11:56:43.4659769Z go: downloading sigs.k8s.io/yaml v1.4.0
+2026-07-25T11:56:43.4919003Z go: downloading github.com/x448/float16 v0.8.4
+2026-07-25T11:56:43.4981425Z go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+2026-07-25T11:56:43.5050692Z go: downloading github.com/modern-go/reflect2 v1.0.2
+2026-07-25T11:56:43.6469411Z go: downloading github.com/google/go-cmp v0.6.0
+2026-07-25T11:56:43.6512307Z go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
+2026-07-25T11:56:43.6527720Z go: downloading github.com/google/uuid v1.6.0
+2026-07-25T11:56:43.6542302Z go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+2026-07-25T11:56:43.6647537Z go: downloading github.com/go-openapi/swag v0.22.4
+2026-07-25T11:56:43.6667928Z go: downloading github.com/go-openapi/jsonreference v0.20.2
+2026-07-25T11:56:43.6689090Z go: downloading github.com/emicklei/go-restful/v3 v3.11.0
+2026-07-25T11:56:43.6758275Z go: downloading github.com/go-openapi/jsonpointer v0.19.6
+2026-07-25T11:56:43.6767010Z go: downloading github.com/mailru/easyjson v0.7.7
+2026-07-25T11:56:43.6921398Z go: downloading github.com/josharian/intern v1.0.0

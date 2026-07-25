@@ -1,0 +1,8 @@
+2026-07-25T11:45:50.1430000Z Evaluating test.if
+2026-07-25T11:45:50.1430000Z Evaluating: success()
+2026-07-25T11:45:50.1430000Z Result: true
+2026-07-25T11:45:50.1570000Z Job is about to start running on the hosted runner: GitHub Actions 1000000270
+2026-07-25T11:45:50.1570000Z Job is waiting for a hosted runner to come online.
+2026-07-25T11:45:50.1450000Z Requested labels: macos-latest
+2026-07-25T11:45:50.1450000Z Job defined at: devopshub-org/devopshub-cli/.github/workflows/ci.yml@refs/heads/main
+2026-07-25T11:45:50.1450000Z Waiting for a runner to pick up this job...

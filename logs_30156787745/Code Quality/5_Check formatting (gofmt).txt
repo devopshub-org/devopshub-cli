@@ -1,0 +1,14 @@
+﻿2026-07-25T11:46:05.4767926Z ##[group]Run files=$(gofmt -l .)
+2026-07-25T11:46:05.4768269Z [36;1mfiles=$(gofmt -l .)[0m
+2026-07-25T11:46:05.4768523Z [36;1mif [ -n "$files" ]; then[0m
+2026-07-25T11:46:05.4768862Z [36;1m  echo "::error::The following files are not formatted:"[0m
+2026-07-25T11:46:05.4769213Z [36;1m  echo "$files"[0m
+2026-07-25T11:46:05.4769426Z [36;1m  exit 1[0m
+2026-07-25T11:46:05.4769610Z [36;1mfi[0m
+2026-07-25T11:46:05.4814624Z shell: /usr/bin/bash -e {0}
+2026-07-25T11:46:05.4814896Z env:
+2026-07-25T11:46:05.4815089Z   GO_VERSION: 1.23
+2026-07-25T11:46:05.4815301Z ##[endgroup]
+2026-07-25T11:46:05.4984508Z ##[error]The following files are not formatted:
+2026-07-25T11:46:05.4992374Z pkg/k8s/client.go
+2026-07-25T11:46:05.4995156Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,10 @@
+﻿2026-07-25T12:09:00.7921348Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:09:00.7922593Z Post job cleanup.
+2026-07-25T12:09:00.9179706Z (node:6186) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:09:00.9180764Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:09:00.9253570Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T12:09:00.9304861Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T12:09:00.9374508Z /home/runner/go/pkg/mod
+2026-07-25T12:09:00.9397981Z /home/runner/.cache/go-build
+2026-07-25T12:09:00.9623745Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/devopshub-cli/devopshub-cli --files-from manifest.txt --use-compress-program zstdmt
+2026-07-25T12:09:04.6082525Z Failed to save: Unable to reserve cache with key setup-go-Linux-x64-ubuntu24-go-1.25.0-2253fcec175b5d51de4931cc16e6b8d48d3fd5f32fb4d4f91c2aab2b8b2f2e01, another job may be creating this cache.

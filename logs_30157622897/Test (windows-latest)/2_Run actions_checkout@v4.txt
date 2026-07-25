@@ -1,0 +1,63 @@
+﻿2026-07-25T12:14:40.0956792Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:14:40.0967782Z ##[group]Run actions/checkout@v4
+2026-07-25T12:14:40.0969002Z with:
+2026-07-25T12:14:40.0969831Z   repository: devopshub-org/devopshub-cli
+2026-07-25T12:14:40.0977637Z   token: ***
+2026-07-25T12:14:40.0978449Z   ssh-strict: true
+2026-07-25T12:14:40.0979258Z   ssh-user: git
+2026-07-25T12:14:40.0980085Z   persist-credentials: true
+2026-07-25T12:14:40.0980971Z   clean: true
+2026-07-25T12:14:40.0981785Z   sparse-checkout-cone-mode: true
+2026-07-25T12:14:40.0982740Z   fetch-depth: 1
+2026-07-25T12:14:40.0983557Z   fetch-tags: false
+2026-07-25T12:14:40.0984399Z   show-progress: true
+2026-07-25T12:14:40.0985230Z   lfs: false
+2026-07-25T12:14:40.0985991Z   submodules: false
+2026-07-25T12:14:40.0986845Z   set-safe-directory: true
+2026-07-25T12:14:40.0987783Z   allow-unsafe-pr-checkout: false
+2026-07-25T12:14:40.0989013Z env:
+2026-07-25T12:14:40.0989759Z   GO_VERSION: 1.23
+2026-07-25T12:14:40.0990560Z ##[endgroup]
+2026-07-25T12:14:40.2583937Z Syncing repository: devopshub-org/devopshub-cli
+2026-07-25T12:14:40.2588477Z ##[group]Getting Git version info
+2026-07-25T12:14:40.2592676Z Working directory is 'D:\a\devopshub-cli\devopshub-cli'
+2026-07-25T12:14:40.3869789Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-07-25T12:14:40.7369797Z git version 2.55.0.windows.2
+2026-07-25T12:14:40.7421812Z ##[endgroup]
+2026-07-25T12:14:40.7443395Z Temporarily overriding HOME='D:\a\_temp\4ac73e24-0e5b-4c50-96d4-50e63aa9c430' before making global git config changes
+2026-07-25T12:14:40.7444952Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T12:14:40.7456205Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\devopshub-cli\devopshub-cli
+2026-07-25T12:14:40.8040914Z Deleting the contents of 'D:\a\devopshub-cli\devopshub-cli'
+2026-07-25T12:14:40.8047459Z ##[group]Initializing the repository
+2026-07-25T12:14:40.8059552Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\devopshub-cli\devopshub-cli
+2026-07-25T12:14:40.9013327Z Initialized empty Git repository in D:/a/devopshub-cli/devopshub-cli/.git/
+2026-07-25T12:14:40.9075238Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/devopshub-org/devopshub-cli
+2026-07-25T12:14:40.9797648Z ##[endgroup]
+2026-07-25T12:14:40.9798821Z ##[group]Disabling automatic garbage collection
+2026-07-25T12:14:40.9809068Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-07-25T12:14:41.0195377Z ##[endgroup]
+2026-07-25T12:14:41.0196289Z ##[group]Setting up auth
+2026-07-25T12:14:41.0209007Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T12:14:41.0533372Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-07-25T12:14:42.3967972Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T12:14:42.4298368Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-07-25T12:14:42.9994430Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T12:14:43.0326524Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-07-25T12:14:43.5539985Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-07-25T12:14:43.5857884Z ##[endgroup]
+2026-07-25T12:14:43.5858746Z ##[group]Fetching the repository
+2026-07-25T12:14:43.5871343Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d91dd7a249488f11e539512894ef17de375c718a:refs/remotes/origin/main
+2026-07-25T12:14:45.4765408Z From https://github.com/devopshub-org/devopshub-cli
+2026-07-25T12:14:45.4766416Z  * [new ref]         d91dd7a249488f11e539512894ef17de375c718a -> origin/main
+2026-07-25T12:14:45.4817073Z ##[endgroup]
+2026-07-25T12:14:45.4820649Z ##[group]Determining the checkout info
+2026-07-25T12:14:45.4821519Z ##[endgroup]
+2026-07-25T12:14:45.4832246Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-07-25T12:14:45.5300965Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-07-25T12:14:45.5620914Z ##[group]Checking out the ref
+2026-07-25T12:14:45.5630275Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2026-07-25T12:14:45.6386326Z Switched to a new branch 'main'
+2026-07-25T12:14:45.6445341Z branch 'main' set up to track 'origin/main'.
+2026-07-25T12:14:45.6493233Z ##[endgroup]
+2026-07-25T12:14:45.6854478Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-07-25T12:14:45.7116124Z d91dd7a249488f11e539512894ef17de375c718a

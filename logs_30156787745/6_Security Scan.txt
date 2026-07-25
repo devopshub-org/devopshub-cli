@@ -1,0 +1,543 @@
+﻿2026-07-25T11:45:52.9093058Z Current runner version: '2.336.0'
+2026-07-25T11:45:52.9118862Z ##[group]Runner Image Provisioner
+2026-07-25T11:45:52.9119705Z Hosted Compute Agent
+2026-07-25T11:45:52.9120386Z Version: 20260707.563
+2026-07-25T11:45:52.9121034Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T11:45:52.9121760Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T11:45:52.9122475Z Worker ID: {0e38e822-0551-4a7a-9d41-7df46e027780}
+2026-07-25T11:45:52.9123184Z Azure Region: westus2
+2026-07-25T11:45:52.9123773Z ##[endgroup]
+2026-07-25T11:45:52.9125304Z ##[group]Operating System
+2026-07-25T11:45:52.9125941Z Ubuntu
+2026-07-25T11:45:52.9126925Z 24.04.4
+2026-07-25T11:45:52.9127467Z LTS
+2026-07-25T11:45:52.9128015Z ##[endgroup]
+2026-07-25T11:45:52.9128609Z ##[group]Runner Image
+2026-07-25T11:45:52.9129220Z Image: ubuntu-24.04
+2026-07-25T11:45:52.9129773Z Version: 20260720.247.2
+2026-07-25T11:45:52.9131111Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T11:45:52.9133095Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T11:45:52.9134064Z ##[endgroup]
+2026-07-25T11:45:52.9135280Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T11:45:52.9137646Z Contents: read
+2026-07-25T11:45:52.9138290Z Metadata: read
+2026-07-25T11:45:52.9138929Z SecurityEvents: write
+2026-07-25T11:45:52.9139519Z ##[endgroup]
+2026-07-25T11:45:52.9141596Z Secret source: Actions
+2026-07-25T11:45:52.9143011Z Prepare workflow directory
+2026-07-25T11:45:52.9602137Z Prepare all required actions
+2026-07-25T11:45:52.9645922Z Getting action download info
+2026-07-25T11:45:53.2962728Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T11:45:53.6350310Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T11:45:53.8974830Z Download action repository 'securego/gosec@master' (SHA:45b083a0cb42119d61b1e0e364d8c62c68f6f5cd)
+2026-07-25T11:45:54.1288862Z Download action repository 'github/codeql-action@v3' (SHA:4187e74d05793876e9989daffde9c3e66b4acd07)
+2026-07-25T11:45:54.5588443Z Complete job name: Security Scan
+2026-07-25T11:45:54.6238566Z ##[group]Pull down action image 'ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0'
+2026-07-25T11:45:54.6299536Z ##[command]/usr/bin/docker pull ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:45:55.0999455Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0: Pulling from securego/gosec
+2026-07-25T11:45:55.2125136Z 55afa1ecc21d: Already exists
+2026-07-25T11:45:55.2163299Z 6563b0ba6ce9: Pulling fs layer
+2026-07-25T11:45:55.2164157Z cea3d467f844: Pulling fs layer
+2026-07-25T11:45:55.2165057Z 56bd32640bdf: Pulling fs layer
+2026-07-25T11:45:55.2165865Z 4f4fb700ef54: Pulling fs layer
+2026-07-25T11:45:55.2166659Z db03667ab1c3: Pulling fs layer
+2026-07-25T11:45:55.2167080Z f8b1d69f1c0f: Pulling fs layer
+2026-07-25T11:45:55.2167547Z efbc8bb3a63f: Pulling fs layer
+2026-07-25T11:45:55.2167958Z db03667ab1c3: Waiting
+2026-07-25T11:45:55.2168403Z 4f4fb700ef54: Waiting
+2026-07-25T11:45:55.2168764Z f8b1d69f1c0f: Waiting
+2026-07-25T11:45:55.2169148Z efbc8bb3a63f: Waiting
+2026-07-25T11:45:55.4245838Z 56bd32640bdf: Verifying Checksum
+2026-07-25T11:45:55.4246938Z 56bd32640bdf: Download complete
+2026-07-25T11:45:55.4499185Z 6563b0ba6ce9: Download complete
+2026-07-25T11:45:55.5626305Z 4f4fb700ef54: Verifying Checksum
+2026-07-25T11:45:55.5627159Z 4f4fb700ef54: Download complete
+2026-07-25T11:45:56.0115368Z f8b1d69f1c0f: Verifying Checksum
+2026-07-25T11:45:56.0119546Z f8b1d69f1c0f: Download complete
+2026-07-25T11:45:56.2539451Z efbc8bb3a63f: Verifying Checksum
+2026-07-25T11:45:56.2540028Z efbc8bb3a63f: Download complete
+2026-07-25T11:45:57.3857424Z cea3d467f844: Verifying Checksum
+2026-07-25T11:45:57.3857949Z cea3d467f844: Download complete
+2026-07-25T11:45:58.0459895Z db03667ab1c3: Verifying Checksum
+2026-07-25T11:45:58.0461226Z db03667ab1c3: Download complete
+2026-07-25T11:45:58.6475121Z 6563b0ba6ce9: Pull complete
+2026-07-25T11:46:03.9269381Z cea3d467f844: Pull complete
+2026-07-25T11:46:03.9380101Z 56bd32640bdf: Pull complete
+2026-07-25T11:46:03.9481066Z 4f4fb700ef54: Pull complete
+2026-07-25T11:46:05.5581019Z db03667ab1c3: Pull complete
+2026-07-25T11:46:05.8094216Z f8b1d69f1c0f: Pull complete
+2026-07-25T11:46:05.8184223Z efbc8bb3a63f: Pull complete
+2026-07-25T11:46:05.8224257Z Digest: sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8231363Z Status: Downloaded newer image for ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8238179Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8261744Z ##[endgroup]
+2026-07-25T11:46:05.8570416Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:05.8578392Z ##[group]Run actions/checkout@v4
+2026-07-25T11:46:05.8578968Z with:
+2026-07-25T11:46:05.8579208Z   repository: devopshub-org/devopshub-cli
+2026-07-25T11:46:05.8581852Z   token: ***
+2026-07-25T11:46:05.8582076Z   ssh-strict: true
+2026-07-25T11:46:05.8582284Z   ssh-user: git
+2026-07-25T11:46:05.8582537Z   persist-credentials: true
+2026-07-25T11:46:05.8582795Z   clean: true
+2026-07-25T11:46:05.8583042Z   sparse-checkout-cone-mode: true
+2026-07-25T11:46:05.8583320Z   fetch-depth: 1
+2026-07-25T11:46:05.8583518Z   fetch-tags: false
+2026-07-25T11:46:05.8583778Z   show-progress: true
+2026-07-25T11:46:05.8583983Z   lfs: false
+2026-07-25T11:46:05.8584226Z   submodules: false
+2026-07-25T11:46:05.8584433Z   set-safe-directory: true
+2026-07-25T11:46:05.8584670Z   allow-unsafe-pr-checkout: false
+2026-07-25T11:46:05.8585164Z env:
+2026-07-25T11:46:05.8585365Z   GO_VERSION: 1.23
+2026-07-25T11:46:05.8585590Z ##[endgroup]
+2026-07-25T11:46:05.9645259Z Syncing repository: devopshub-org/devopshub-cli
+2026-07-25T11:46:05.9647415Z ##[group]Getting Git version info
+2026-07-25T11:46:05.9648101Z Working directory is '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:46:05.9649129Z [command]/usr/bin/git version
+2026-07-25T11:46:05.9713099Z git version 2.54.0
+2026-07-25T11:46:05.9845769Z ##[endgroup]
+2026-07-25T11:46:05.9852170Z Temporarily overriding HOME='/home/runner/work/_temp/4afa9b84-afc1-4bef-8d3c-a19cb1523db1' before making global git config changes
+2026-07-25T11:46:05.9853087Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T11:46:05.9853834Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:05.9854812Z Deleting the contents of '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T11:46:05.9855843Z ##[group]Initializing the repository
+2026-07-25T11:46:05.9857016Z [command]/usr/bin/git init /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:05.9964374Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-25T11:46:05.9965333Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-25T11:46:05.9966072Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-25T11:46:05.9966819Z hint: call:
+2026-07-25T11:46:05.9967026Z hint:
+2026-07-25T11:46:05.9967378Z hint: 	git config --global init.defaultBranch <name>
+2026-07-25T11:46:05.9967712Z hint:
+2026-07-25T11:46:05.9968034Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-25T11:46:05.9968593Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-25T11:46:05.9968995Z hint:
+2026-07-25T11:46:05.9969214Z hint: 	git branch -m <name>
+2026-07-25T11:46:05.9969698Z hint:
+2026-07-25T11:46:05.9970043Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-25T11:46:05.9977202Z Initialized empty Git repository in /home/runner/work/devopshub-cli/devopshub-cli/.git/
+2026-07-25T11:46:05.9991534Z [command]/usr/bin/git remote add origin https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:46:06.0041491Z ##[endgroup]
+2026-07-25T11:46:06.0042175Z ##[group]Disabling automatic garbage collection
+2026-07-25T11:46:06.0047001Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-25T11:46:06.0088775Z ##[endgroup]
+2026-07-25T11:46:06.0089557Z ##[group]Setting up auth
+2026-07-25T11:46:06.0097179Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T11:46:06.0141286Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T11:46:06.0592498Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T11:46:06.0633617Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T11:46:06.0873663Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T11:46:06.0914791Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T11:46:06.1144148Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-25T11:46:06.1186628Z ##[endgroup]
+2026-07-25T11:46:06.1187247Z ##[group]Fetching the repository
+2026-07-25T11:46:06.1196407Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8469e85754e81f596aa5db6f774f0ce3b14b0ad2:refs/remotes/origin/main
+2026-07-25T11:46:06.3865866Z From https://github.com/devopshub-org/devopshub-cli
+2026-07-25T11:46:06.3902366Z  * [new ref]         8469e85754e81f596aa5db6f774f0ce3b14b0ad2 -> origin/main
+2026-07-25T11:46:06.3904203Z ##[endgroup]
+2026-07-25T11:46:06.3904841Z ##[group]Determining the checkout info
+2026-07-25T11:46:06.3907174Z ##[endgroup]
+2026-07-25T11:46:06.3913727Z [command]/usr/bin/git sparse-checkout disable
+2026-07-25T11:46:06.3967107Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-25T11:46:06.3997941Z ##[group]Checking out the ref
+2026-07-25T11:46:06.4002599Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-25T11:46:06.4137850Z Switched to a new branch 'main'
+2026-07-25T11:46:06.4140882Z branch 'main' set up to track 'origin/main'.
+2026-07-25T11:46:06.4146418Z ##[endgroup]
+2026-07-25T11:46:06.4190111Z [command]/usr/bin/git log -1 --format=%H
+2026-07-25T11:46:06.4217857Z 8469e85754e81f596aa5db6f774f0ce3b14b0ad2
+2026-07-25T11:46:06.4455572Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:06.4458007Z ##[group]Run actions/setup-go@v5
+2026-07-25T11:46:06.4458257Z with:
+2026-07-25T11:46:06.4458443Z   go-version: 1.23
+2026-07-25T11:46:06.4458641Z   cache: true
+2026-07-25T11:46:06.4458832Z   check-latest: false
+2026-07-25T11:46:06.4461313Z   token: ***
+2026-07-25T11:46:06.4461496Z env:
+2026-07-25T11:46:06.4461665Z   GO_VERSION: 1.23
+2026-07-25T11:46:06.4461854Z ##[endgroup]
+2026-07-25T11:46:06.5804845Z Setup go version spec 1.23
+2026-07-25T11:46:06.6329794Z Attempting to download 1.23...
+2026-07-25T11:46:06.6445412Z (node:2315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T11:46:06.6447567Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T11:46:07.1264868Z matching 1.23...
+2026-07-25T11:46:07.1302543Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-linux-x64.tar.gz
+2026-07-25T11:46:07.6609666Z Extracting Go...
+2026-07-25T11:46:07.6731929Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ff7af0ab-ac1f-40c6-86f8-7c8f7b290cb2 -f /home/runner/work/_temp/c89ec04d-30f5-400a-8499-083b250df265
+2026-07-25T11:46:09.3844004Z Successfully extracted go to /home/runner/work/_temp/ff7af0ab-ac1f-40c6-86f8-7c8f7b290cb2
+2026-07-25T11:46:09.3844662Z Adding to the cache ...
+2026-07-25T11:46:14.6521285Z Successfully cached go to /opt/hostedtoolcache/go/1.23.12/x64
+2026-07-25T11:46:14.6524439Z Added go to the path
+2026-07-25T11:46:14.6526948Z Successfully set up Go version 1.23
+2026-07-25T11:46:14.6742600Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T11:46:14.6782042Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T11:46:14.6821512Z /home/runner/go/pkg/mod
+2026-07-25T11:46:14.6838021Z /home/runner/.cache/go-build
+2026-07-25T11:46:14.9488748Z Cache is not found
+2026-07-25T11:46:14.9511417Z go version go1.23.12 linux/amd64
+2026-07-25T11:46:14.9511716Z 
+2026-07-25T11:46:14.9512096Z ##[group]go env
+2026-07-25T11:46:15.6597711Z GO111MODULE=''
+2026-07-25T11:46:15.6598151Z GOARCH='amd64'
+2026-07-25T11:46:15.6598497Z GOBIN=''
+2026-07-25T11:46:15.6598863Z GOCACHE='/home/runner/.cache/go-build'
+2026-07-25T11:46:15.6599369Z GOENV='/home/runner/.config/go/env'
+2026-07-25T11:46:15.6599790Z GOEXE=''
+2026-07-25T11:46:15.6600104Z GOEXPERIMENT=''
+2026-07-25T11:46:15.6600434Z GOFLAGS=''
+2026-07-25T11:46:15.6600753Z GOHOSTARCH='amd64'
+2026-07-25T11:46:15.6601100Z GOHOSTOS='linux'
+2026-07-25T11:46:15.6601437Z GOINSECURE=''
+2026-07-25T11:46:15.6601774Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-07-25T11:46:15.6602113Z GONOPROXY=''
+2026-07-25T11:46:15.6602337Z GONOSUMDB=''
+2026-07-25T11:46:15.6602540Z GOOS='linux'
+2026-07-25T11:46:15.6602763Z GOPATH='/home/runner/go'
+2026-07-25T11:46:15.6603008Z GOPRIVATE=''
+2026-07-25T11:46:15.6603282Z GOPROXY='https://proxy.golang.org,direct'
+2026-07-25T11:46:15.6603677Z GOROOT='/opt/hostedtoolcache/go/1.23.12/x64'
+2026-07-25T11:46:15.6604007Z GOSUMDB='sum.golang.org'
+2026-07-25T11:46:15.6604253Z GOTMPDIR=''
+2026-07-25T11:46:15.6604464Z GOTOOLCHAIN='auto'
+2026-07-25T11:46:15.6604818Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.12/x64/pkg/tool/linux_amd64'
+2026-07-25T11:46:15.6605225Z GOVCS=''
+2026-07-25T11:46:15.6605434Z GOVERSION='go1.23.12'
+2026-07-25T11:46:15.6605666Z GODEBUG=''
+2026-07-25T11:46:15.6605883Z GOTELEMETRY='local'
+2026-07-25T11:46:15.6606461Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-07-25T11:46:15.6606866Z GCCGO='gccgo'
+2026-07-25T11:46:15.6607064Z GOAMD64='v1'
+2026-07-25T11:46:15.6607249Z AR='ar'
+2026-07-25T11:46:15.6607424Z CC='gcc'
+2026-07-25T11:46:15.6607924Z CXX='g++'
+2026-07-25T11:46:15.6608124Z CGO_ENABLED='1'
+2026-07-25T11:46:15.6608415Z GOMOD='/home/runner/work/devopshub-cli/devopshub-cli/go.mod'
+2026-07-25T11:46:15.6608737Z GOWORK=''
+2026-07-25T11:46:15.6608944Z CGO_CFLAGS='-O2 -g'
+2026-07-25T11:46:15.6609160Z CGO_CPPFLAGS=''
+2026-07-25T11:46:15.6609370Z CGO_CXXFLAGS='-O2 -g'
+2026-07-25T11:46:15.6609579Z CGO_FFLAGS='-O2 -g'
+2026-07-25T11:46:15.6609822Z CGO_LDFLAGS='-O2 -g'
+2026-07-25T11:46:15.6610046Z PKG_CONFIG='pkg-config'
+2026-07-25T11:46:15.6610728Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2710416200=/tmp/go-build -gno-record-gcc-switches'
+2026-07-25T11:46:15.6611330Z 
+2026-07-25T11:46:15.6611650Z ##[endgroup]
+2026-07-25T11:46:15.6800879Z ##[group]Run go install golang.org/x/vuln/cmd/govulncheck@latest
+2026-07-25T11:46:15.6801444Z [36;1mgo install golang.org/x/vuln/cmd/govulncheck@latest[0m
+2026-07-25T11:46:15.6801797Z [36;1mgovulncheck ./...[0m
+2026-07-25T11:46:15.6853280Z shell: /usr/bin/bash -e {0}
+2026-07-25T11:46:15.6853747Z env:
+2026-07-25T11:46:15.6853929Z   GO_VERSION: 1.23
+2026-07-25T11:46:15.6854129Z ##[endgroup]
+2026-07-25T11:46:15.8326620Z go: downloading golang.org/x/vuln v1.6.0
+2026-07-25T11:46:16.0126656Z go: golang.org/x/vuln@v1.6.0 requires go >= 1.25.0; switching to go1.25.12
+2026-07-25T11:46:16.0127908Z go: downloading go1.25.12 (linux/amd64)
+2026-07-25T11:46:19.5760462Z go: downloading golang.org/x/telemetry v0.0.0-20260708182218-49f421fb7959
+2026-07-25T11:46:19.5905730Z go: downloading golang.org/x/mod v0.38.0
+2026-07-25T11:46:19.5939797Z go: downloading golang.org/x/tools v0.48.0
+2026-07-25T11:46:19.7731964Z go: downloading golang.org/x/sync v0.22.0
+2026-07-25T11:46:48.3385851Z === Symbol Results ===
+2026-07-25T11:46:48.3386360Z 
+2026-07-25T11:46:48.3386592Z Vulnerability #1: GO-2026-5970
+2026-07-25T11:46:48.3387391Z     Infinite loop on invalid input in golang.org/x/text
+2026-07-25T11:46:48.3388214Z   More info: https://pkg.go.dev/vuln/GO-2026-5970
+2026-07-25T11:46:48.3388907Z   Module: golang.org/x/text
+2026-07-25T11:46:48.3389513Z     Found in: golang.org/x/text@v0.16.0
+2026-07-25T11:46:48.3390177Z     Fixed in: golang.org/x/text@v0.39.0
+2026-07-25T11:46:48.3390819Z     Example traces found:
+2026-07-25T11:46:48.3414486Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.Bytes
+2026-07-25T11:46:48.3424070Z ##[error]      #2: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.IsNormalString
+2026-07-25T11:46:48.3426426Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.QuickSpan
+2026-07-25T11:46:48.3428431Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls norm.Form.String
+2026-07-25T11:46:48.3429332Z 
+2026-07-25T11:46:48.3429463Z Vulnerability #2: GO-2026-5856
+2026-07-25T11:46:48.3429857Z     Invoking Encrypted Client Hello privacy leak in crypto/tls
+2026-07-25T11:46:48.3430273Z   More info: https://pkg.go.dev/vuln/GO-2026-5856
+2026-07-25T11:46:48.3430579Z   Standard library
+2026-07-25T11:46:48.3430840Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3431129Z     Fixed in: crypto/tls@go1.25.12
+2026-07-25T11:46:48.3431407Z     Example traces found:
+2026-07-25T11:46:48.3432525Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3434282Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3435799Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3437857Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3438855Z 
+2026-07-25T11:46:48.3438974Z Vulnerability #3: GO-2026-5039
+2026-07-25T11:46:48.3439383Z     Arbitrary inputs are included in errors without any escaping in
+2026-07-25T11:46:48.3439747Z     net/textproto
+2026-07-25T11:46:48.3440084Z   More info: https://pkg.go.dev/vuln/GO-2026-5039
+2026-07-25T11:46:48.3440386Z   Standard library
+2026-07-25T11:46:48.3440642Z     Found in: net/textproto@go1.23.12
+2026-07-25T11:46:48.3440947Z     Fixed in: net/textproto@go1.25.11
+2026-07-25T11:46:48.3441270Z     Example traces found:
+2026-07-25T11:46:48.3442712Z ##[error]      #1: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls textproto.Reader.ReadMIMEHeader
+2026-07-25T11:46:48.3443707Z 
+2026-07-25T11:46:48.3443822Z Vulnerability #4: GO-2026-5038
+2026-07-25T11:46:48.3444199Z     Quadratic complexity in WordDecoder.DecodeHeader in mime
+2026-07-25T11:46:48.3444987Z   More info: https://pkg.go.dev/vuln/GO-2026-5038
+2026-07-25T11:46:48.3445456Z   Standard library
+2026-07-25T11:46:48.3445700Z     Found in: mime@go1.23.12
+2026-07-25T11:46:48.3445959Z     Fixed in: mime@go1.25.11
+2026-07-25T11:46:48.3446494Z     Example traces found:
+2026-07-25T11:46:48.3447930Z ##[error]      #1: pkg/k8s/client.go:164:56: k8s.K8sClient.ListPods calls gentype.alsoLister[*k8s.io/api/core/v1.Pod, *k8s.io/api/core/v1.PodList].List, which eventually calls mime.WordDecoder.DecodeHeader
+2026-07-25T11:46:48.3449079Z 
+2026-07-25T11:46:48.3449187Z Vulnerability #5: GO-2026-5037
+2026-07-25T11:46:48.3449545Z     Inefficient candidate hostname parsing in crypto/x509
+2026-07-25T11:46:48.3450085Z   More info: https://pkg.go.dev/vuln/GO-2026-5037
+2026-07-25T11:46:48.3450399Z   Standard library
+2026-07-25T11:46:48.3450663Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3450961Z     Fixed in: crypto/x509@go1.25.11
+2026-07-25T11:46:48.3451239Z     Example traces found:
+2026-07-25T11:46:48.3452139Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3453829Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.VerifyHostname
+2026-07-25T11:46:48.3455480Z ##[error]      #3: internal/output/output.go:214:14: output.Printer.Section calls fmt.Fprintln, which eventually calls x509.HostnameError.Error
+2026-07-25T11:46:48.3456701Z 
+2026-07-25T11:46:48.3456821Z Vulnerability #6: GO-2026-5026
+2026-07-25T11:46:48.3457265Z     Invoking failure to reject ASCII-only Punycode-encoded labels in
+2026-07-25T11:46:48.3457657Z     golang.org/x/net/idna
+2026-07-25T11:46:48.3457963Z   More info: https://pkg.go.dev/vuln/GO-2026-5026
+2026-07-25T11:46:48.3458281Z   Module: golang.org/x/net
+2026-07-25T11:46:48.3458562Z     Found in: golang.org/x/net@v0.26.0
+2026-07-25T11:46:48.3458865Z     Fixed in: golang.org/x/net@v0.55.0
+2026-07-25T11:46:48.3459151Z     Example traces found:
+2026-07-25T11:46:48.3460194Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls idna.ToASCII
+2026-07-25T11:46:48.3461204Z 
+2026-07-25T11:46:48.3461308Z Vulnerability #7: GO-2026-4971
+2026-07-25T11:46:48.3461727Z     Panic in Dial and LookupPort when handling NUL byte on Windows in net
+2026-07-25T11:46:48.3462155Z   More info: https://pkg.go.dev/vuln/GO-2026-4971
+2026-07-25T11:46:48.3462453Z   Standard library
+2026-07-25T11:46:48.3462688Z     Found in: net@go1.23.12
+2026-07-25T11:46:48.3462940Z     Fixed in: net@go1.25.10
+2026-07-25T11:46:48.3463251Z     Example traces found:
+2026-07-25T11:46:48.3464319Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls net.Dialer.DialContext
+2026-07-25T11:46:48.3465278Z 
+2026-07-25T11:46:48.3465386Z Vulnerability #8: GO-2026-4947
+2026-07-25T11:46:48.3465741Z     Unexpected work during chain building in crypto/x509
+2026-07-25T11:46:48.3466345Z   More info: https://pkg.go.dev/vuln/GO-2026-4947
+2026-07-25T11:46:48.3466674Z   Standard library
+2026-07-25T11:46:48.3466925Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3467216Z     Fixed in: crypto/x509@go1.25.9
+2026-07-25T11:46:48.3467487Z     Example traces found:
+2026-07-25T11:46:48.3468368Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3469273Z 
+2026-07-25T11:46:48.3469375Z Vulnerability #9: GO-2026-4946
+2026-07-25T11:46:48.3469700Z     Inefficient policy validation in crypto/x509
+2026-07-25T11:46:48.3470250Z   More info: https://pkg.go.dev/vuln/GO-2026-4946
+2026-07-25T11:46:48.3470566Z   Standard library
+2026-07-25T11:46:48.3470819Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3471113Z     Fixed in: crypto/x509@go1.25.9
+2026-07-25T11:46:48.3471383Z     Example traces found:
+2026-07-25T11:46:48.3472378Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3473270Z 
+2026-07-25T11:46:48.3473384Z Vulnerability #10: GO-2026-4918
+2026-07-25T11:46:48.3473825Z     Infinite loop in HTTP/2 transport when given bad SETTINGS_MAX_FRAME_SIZE in
+2026-07-25T11:46:48.3474278Z     net/http/internal/http2 in golang.org/x/net
+2026-07-25T11:46:48.3474624Z   More info: https://pkg.go.dev/vuln/GO-2026-4918
+2026-07-25T11:46:48.3474932Z   Module: golang.org/x/net
+2026-07-25T11:46:48.3475207Z     Found in: golang.org/x/net@v0.26.0
+2026-07-25T11:46:48.3475505Z     Fixed in: golang.org/x/net@v0.53.0
+2026-07-25T11:46:48.3475787Z     Example traces found:
+2026-07-25T11:46:48.3477138Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.Transport.NewClientConn
+2026-07-25T11:46:48.3479089Z ##[error]      #2: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.Transport.RoundTrip
+2026-07-25T11:46:48.3481059Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http2.noDialH2RoundTripper.RoundTrip
+2026-07-25T11:46:48.3482042Z 
+2026-07-25T11:46:48.3482144Z   Standard library
+2026-07-25T11:46:48.3482398Z     Found in: net/http@go1.23.12
+2026-07-25T11:46:48.3482676Z     Fixed in: net/http@go1.25.10
+2026-07-25T11:46:48.3482941Z     Example traces found:
+2026-07-25T11:46:48.3483965Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http.Client.Do
+2026-07-25T11:46:48.3484879Z 
+2026-07-25T11:46:48.3484993Z Vulnerability #11: GO-2026-4870
+2026-07-25T11:46:48.3485434Z     Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection
+2026-07-25T11:46:48.3485861Z     retention and DoS in crypto/tls
+2026-07-25T11:46:48.3486426Z   More info: https://pkg.go.dev/vuln/GO-2026-4870
+2026-07-25T11:46:48.3486739Z   Standard library
+2026-07-25T11:46:48.3486989Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3487281Z     Fixed in: crypto/tls@go1.25.9
+2026-07-25T11:46:48.3487555Z     Example traces found:
+2026-07-25T11:46:48.3488659Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3490300Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3491753Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3493467Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3494442Z 
+2026-07-25T11:46:48.3494547Z Vulnerability #12: GO-2026-4602
+2026-07-25T11:46:48.3494852Z     FileInfo can escape from a Root in os
+2026-07-25T11:46:48.3495191Z   More info: https://pkg.go.dev/vuln/GO-2026-4602
+2026-07-25T11:46:48.3495490Z   Standard library
+2026-07-25T11:46:48.3495723Z     Found in: os@go1.23.12
+2026-07-25T11:46:48.3495973Z     Fixed in: os@go1.25.8
+2026-07-25T11:46:48.3496484Z     Example traces found:
+2026-07-25T11:46:48.3497107Z ##[error]      #1: pkg/plugin/plugin.go:35:31: plugin.Manager.DiscoverPlugins calls os.ReadDir
+2026-07-25T11:46:48.3497854Z 
+2026-07-25T11:46:48.3497959Z Vulnerability #13: GO-2026-4601
+2026-07-25T11:46:48.3498615Z     Incorrect parsing of IPv6 host literals in net/url
+2026-07-25T11:46:48.3498995Z   More info: https://pkg.go.dev/vuln/GO-2026-4601
+2026-07-25T11:46:48.3499296Z   Standard library
+2026-07-25T11:46:48.3499536Z     Found in: net/url@go1.23.12
+2026-07-25T11:46:48.3499807Z     Fixed in: net/url@go1.25.8
+2026-07-25T11:46:48.3500188Z     Example traces found:
+2026-07-25T11:46:48.3501002Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.Parse
+2026-07-25T11:46:48.3502582Z ##[error]      #2: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.ParseRequestURI
+2026-07-25T11:46:48.3504279Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls url.URL.Parse
+2026-07-25T11:46:48.3505198Z 
+2026-07-25T11:46:48.3505301Z Vulnerability #14: GO-2026-4340
+2026-07-25T11:46:48.3505744Z     Handshake messages may be processed at the incorrect encryption level in
+2026-07-25T11:46:48.3506368Z     crypto/tls
+2026-07-25T11:46:48.3506661Z   More info: https://pkg.go.dev/vuln/GO-2026-4340
+2026-07-25T11:46:48.3506978Z   Standard library
+2026-07-25T11:46:48.3507228Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3507517Z     Fixed in: crypto/tls@go1.24.12
+2026-07-25T11:46:48.3507795Z     Example traces found:
+2026-07-25T11:46:48.3508914Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3510565Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3511981Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3513676Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3514628Z 
+2026-07-25T11:46:48.3514739Z Vulnerability #15: GO-2026-4337
+2026-07-25T11:46:48.3515063Z     Unexpected session resumption in crypto/tls
+2026-07-25T11:46:48.3515422Z   More info: https://pkg.go.dev/vuln/GO-2026-4337
+2026-07-25T11:46:48.3515726Z   Standard library
+2026-07-25T11:46:48.3515976Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3516507Z     Fixed in: crypto/tls@go1.24.13
+2026-07-25T11:46:48.3516781Z     Example traces found:
+2026-07-25T11:46:48.3517881Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3519506Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3520900Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3522572Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3523498Z 
+2026-07-25T11:46:48.3523605Z Vulnerability #16: GO-2025-4175
+2026-07-25T11:46:48.3524029Z     Improper application of excluded DNS name constraints when verifying
+2026-07-25T11:46:48.3524429Z     wildcard names in crypto/x509
+2026-07-25T11:46:48.3524750Z   More info: https://pkg.go.dev/vuln/GO-2025-4175
+2026-07-25T11:46:48.3525046Z   Standard library
+2026-07-25T11:46:48.3525294Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3525582Z     Fixed in: crypto/x509@go1.24.11
+2026-07-25T11:46:48.3525851Z     Example traces found:
+2026-07-25T11:46:48.3526931Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3527830Z 
+2026-07-25T11:46:48.3527950Z Vulnerability #17: GO-2025-4155
+2026-07-25T11:46:48.3528515Z     Excessive resource consumption when printing error string for host
+2026-07-25T11:46:48.3528943Z     certificate validation in crypto/x509
+2026-07-25T11:46:48.3529281Z   More info: https://pkg.go.dev/vuln/GO-2025-4155
+2026-07-25T11:46:48.3529577Z   Standard library
+2026-07-25T11:46:48.3529934Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3530226Z     Fixed in: crypto/x509@go1.24.11
+2026-07-25T11:46:48.3530494Z     Example traces found:
+2026-07-25T11:46:48.3531379Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3554292Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.VerifyHostname
+2026-07-25T11:46:48.3555550Z 
+2026-07-25T11:46:48.3555761Z Vulnerability #18: GO-2025-4013
+2026-07-25T11:46:48.3556759Z     Panic when validating certificates with DSA public keys in crypto/x509
+2026-07-25T11:46:48.3557273Z   More info: https://pkg.go.dev/vuln/GO-2025-4013
+2026-07-25T11:46:48.3557611Z   Standard library
+2026-07-25T11:46:48.3557876Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3558171Z     Fixed in: crypto/x509@go1.24.8
+2026-07-25T11:46:48.3558448Z     Example traces found:
+2026-07-25T11:46:48.3559873Z ##[error]      #1: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3561465Z 
+2026-07-25T11:46:48.3561662Z Vulnerability #19: GO-2025-4012
+2026-07-25T11:46:48.3562156Z     Lack of limit when parsing cookies can cause memory exhaustion in net/http
+2026-07-25T11:46:48.3562627Z   More info: https://pkg.go.dev/vuln/GO-2025-4012
+2026-07-25T11:46:48.3562940Z   Standard library
+2026-07-25T11:46:48.3563197Z     Found in: net/http@go1.23.12
+2026-07-25T11:46:48.3563486Z     Fixed in: net/http@go1.24.8
+2026-07-25T11:46:48.3563752Z     Example traces found:
+2026-07-25T11:46:48.3564835Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls http.Client.Do
+2026-07-25T11:46:48.3565792Z 
+2026-07-25T11:46:48.3565897Z Vulnerability #20: GO-2025-4011
+2026-07-25T11:46:48.3566669Z     Parsing DER payload can cause memory exhaustion in encoding/asn1
+2026-07-25T11:46:48.3567129Z   More info: https://pkg.go.dev/vuln/GO-2025-4011
+2026-07-25T11:46:48.3567434Z   Standard library
+2026-07-25T11:46:48.3567706Z     Found in: encoding/asn1@go1.23.12
+2026-07-25T11:46:48.3568020Z     Fixed in: encoding/asn1@go1.24.8
+2026-07-25T11:46:48.3568329Z     Example traces found:
+2026-07-25T11:46:48.3569232Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls asn1.Unmarshal
+2026-07-25T11:46:48.3570135Z 
+2026-07-25T11:46:48.3570241Z Vulnerability #21: GO-2025-4010
+2026-07-25T11:46:48.3570646Z     Insufficient validation of bracketed IPv6 hostnames in net/url
+2026-07-25T11:46:48.3571082Z   More info: https://pkg.go.dev/vuln/GO-2025-4010
+2026-07-25T11:46:48.3571383Z   Standard library
+2026-07-25T11:46:48.3571627Z     Found in: net/url@go1.23.12
+2026-07-25T11:46:48.3571901Z     Fixed in: net/url@go1.24.8
+2026-07-25T11:46:48.3572168Z     Example traces found:
+2026-07-25T11:46:48.3572995Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.Parse
+2026-07-25T11:46:48.3574586Z ##[error]      #2: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls url.ParseRequestURI
+2026-07-25T11:46:48.3576591Z ##[error]      #3: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls url.URL.Parse
+2026-07-25T11:46:48.3577590Z 
+2026-07-25T11:46:48.3577710Z Vulnerability #22: GO-2025-4009
+2026-07-25T11:46:48.3578148Z     Quadratic complexity when parsing some invalid inputs in encoding/pem
+2026-07-25T11:46:48.3578833Z   More info: https://pkg.go.dev/vuln/GO-2025-4009
+2026-07-25T11:46:48.3579149Z   Standard library
+2026-07-25T11:46:48.3579411Z     Found in: encoding/pem@go1.23.12
+2026-07-25T11:46:48.3579730Z     Fixed in: encoding/pem@go1.24.8
+2026-07-25T11:46:48.3580014Z     Example traces found:
+2026-07-25T11:46:48.3580881Z ##[error]      #1: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls pem.Decode
+2026-07-25T11:46:48.3581879Z 
+2026-07-25T11:46:48.3581985Z Vulnerability #23: GO-2025-4008
+2026-07-25T11:46:48.3582406Z     ALPN negotiation error contains attacker controlled information in
+2026-07-25T11:46:48.3582772Z     crypto/tls
+2026-07-25T11:46:48.3583045Z   More info: https://pkg.go.dev/vuln/GO-2025-4008
+2026-07-25T11:46:48.3583345Z   Standard library
+2026-07-25T11:46:48.3583595Z     Found in: crypto/tls@go1.23.12
+2026-07-25T11:46:48.3583881Z     Fixed in: crypto/tls@go1.24.8
+2026-07-25T11:46:48.3584152Z     Example traces found:
+2026-07-25T11:46:48.3585248Z ##[error]      #1: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Conn.HandshakeContext
+2026-07-25T11:46:48.3587241Z ##[error]      #2: internal/config/config.go:74:30: config.InitConfig calls viper.ReadInConfig, which eventually calls tls.Conn.Read
+2026-07-25T11:46:48.3588713Z ##[error]      #3: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which calls tls.Conn.Write
+2026-07-25T11:46:48.3590412Z ##[error]      #4: pkg/k8s/client.go:127:61: k8s.K8sClient.Inspect calls discovery.DiscoveryClient.ServerVersion, which eventually calls tls.Dialer.DialContext
+2026-07-25T11:46:48.3591354Z 
+2026-07-25T11:46:48.3591459Z Vulnerability #24: GO-2025-4007
+2026-07-25T11:46:48.3591881Z     Quadratic complexity when checking name constraints in crypto/x509
+2026-07-25T11:46:48.3592319Z   More info: https://pkg.go.dev/vuln/GO-2025-4007
+2026-07-25T11:46:48.3592625Z   Standard library
+2026-07-25T11:46:48.3592881Z     Found in: crypto/x509@go1.23.12
+2026-07-25T11:46:48.3593178Z     Fixed in: crypto/x509@go1.24.9
+2026-07-25T11:46:48.3593453Z     Example traces found:
+2026-07-25T11:46:48.3594418Z ##[error]      #1: pkg/plugin/plugin.go:73:21: plugin.Manager.ExecutePlugin calls exec.Command, which eventually calls x509.CertPool.AppendCertsFromPEM
+2026-07-25T11:46:48.3596075Z ##[error]      #2: internal/output/output.go:223:13: output.Printer.Command calls fmt.Fprintf, which eventually calls x509.Certificate.Verify
+2026-07-25T11:46:48.3598028Z ##[error]      #3: pkg/k8s/client.go:71:47: k8s.NewClient calls clientcmd.BuildConfigFromFlags, which eventually calls x509.ParseCertificate
+2026-07-25T11:46:48.3599595Z ##[error]      #4: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParseECPrivateKey
+2026-07-25T11:46:48.3601221Z ##[error]      #5: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParsePKCS1PrivateKey
+2026-07-25T11:46:48.3602809Z ##[error]      #6: pkg/k8s/client.go:76:43: k8s.NewClient calls kubernetes.NewForConfig, which eventually calls x509.ParsePKCS8PrivateKey
+2026-07-25T11:46:48.3603654Z 
+2026-07-25T11:46:48.3603915Z Your code is affected by 24 vulnerabilities from 2 modules and the Go standard library.
+2026-07-25T11:46:48.3604444Z This scan also found 9 vulnerabilities in packages you import and 20
+2026-07-25T11:46:48.3604947Z vulnerabilities in modules you require, but your code doesn't appear to call
+2026-07-25T11:46:48.3605343Z these vulnerabilities.
+2026-07-25T11:46:48.3605585Z Use '-show verbose' for more details.
+2026-07-25T11:46:48.3612099Z ##[error]Process completed with exit code 3.
+2026-07-25T11:46:48.3698208Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:48.3699499Z ##[group]Run github/codeql-action/upload-sarif@v3
+2026-07-25T11:46:48.3699782Z with:
+2026-07-25T11:46:48.3699969Z   sarif_file: results.sarif
+2026-07-25T11:46:48.3700285Z   checkout_path: /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:48.3702869Z   token: ***
+2026-07-25T11:46:48.3703225Z   matrix: null
+2026-07-25T11:46:48.3703424Z   wait-for-processing: true
+2026-07-25T11:46:48.3703649Z env:
+2026-07-25T11:46:48.3703820Z   GO_VERSION: 1.23
+2026-07-25T11:46:48.3704010Z ##[endgroup]
+2026-07-25T11:46:48.6181756Z ##[warning]CodeQL Action v3 will be deprecated in December 2026. Please update all occurrences of the CodeQL Action in your workflow files to v4. For more information, see https://github.blog/changelog/2025-10-28-upcoming-deprecation-of-codeql-action-v3/
+2026-07-25T11:46:49.2138752Z ##[error]Path does not exist: results.sarif
+2026-07-25T11:46:49.4783838Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:49.4785061Z Post job cleanup.
+2026-07-25T11:46:49.7260474Z ##[group]Uploading combined SARIF debug artifact
+2026-07-25T11:46:49.7263554Z ##[endgroup]
+2026-07-25T11:46:49.7474211Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:46:49.7476774Z Post job cleanup.
+2026-07-25T11:46:49.8539584Z [command]/usr/bin/git version
+2026-07-25T11:46:49.8597242Z git version 2.54.0
+2026-07-25T11:46:49.8645612Z Temporarily overriding HOME='/home/runner/work/_temp/5587f6b4-3572-48ee-adb3-c8c409842a37' before making global git config changes
+2026-07-25T11:46:49.8653769Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T11:46:49.8667678Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T11:46:49.8714546Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T11:46:49.8752950Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T11:46:49.9011557Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T11:46:49.9046382Z http.https://github.com/.extraheader
+2026-07-25T11:46:49.9058660Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-25T11:46:49.9099787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T11:46:49.9365118Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T11:46:49.9404027Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T11:46:49.9824061Z Cleaning up orphan processes
+2026-07-25T11:46:50.0291895Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5, github/codeql-action/upload-sarif@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

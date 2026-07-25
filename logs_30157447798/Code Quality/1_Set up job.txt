@@ -1,0 +1,33 @@
+﻿2026-07-25T12:08:00.0322803Z Current runner version: '2.336.0'
+2026-07-25T12:08:00.0349055Z ##[group]Runner Image Provisioner
+2026-07-25T12:08:00.0350020Z Hosted Compute Agent
+2026-07-25T12:08:00.0350658Z Version: 20260707.563
+2026-07-25T12:08:00.0351305Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T12:08:00.0352129Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T12:08:00.0352824Z Worker ID: {2b2b30b7-df6e-42dc-9f7a-777e97034730}
+2026-07-25T12:08:00.0353526Z Azure Region: westus
+2026-07-25T12:08:00.0354166Z ##[endgroup]
+2026-07-25T12:08:00.0356061Z ##[group]Operating System
+2026-07-25T12:08:00.0356856Z Ubuntu
+2026-07-25T12:08:00.0357408Z 24.04.4
+2026-07-25T12:08:00.0357936Z LTS
+2026-07-25T12:08:00.0358512Z ##[endgroup]
+2026-07-25T12:08:00.0359147Z ##[group]Runner Image
+2026-07-25T12:08:00.0359792Z Image: ubuntu-24.04
+2026-07-25T12:08:00.0360515Z Version: 20260720.247.2
+2026-07-25T12:08:00.0361581Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T12:08:00.0363755Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T12:08:00.0364931Z ##[endgroup]
+2026-07-25T12:08:00.0366271Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T12:08:00.0368226Z Contents: read
+2026-07-25T12:08:00.0368994Z Metadata: read
+2026-07-25T12:08:00.0369562Z SecurityEvents: write
+2026-07-25T12:08:00.0370229Z ##[endgroup]
+2026-07-25T12:08:00.0372386Z Secret source: Actions
+2026-07-25T12:08:00.0373549Z Prepare workflow directory
+2026-07-25T12:08:00.0794208Z Prepare all required actions
+2026-07-25T12:08:00.0838337Z Getting action download info
+2026-07-25T12:08:00.4420415Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T12:08:00.8620618Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T12:08:01.3290393Z Download action repository 'golangci/golangci-lint-action@v6' (SHA:55c2c1448f86e01eaae002a5a3a9624417608d84)
+2026-07-25T12:08:01.8767808Z Complete job name: Code Quality

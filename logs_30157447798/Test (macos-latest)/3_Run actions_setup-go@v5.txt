@@ -1,0 +1,80 @@
+﻿2026-07-25T12:08:02.8255330Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:08:02.8256640Z ##[group]Run actions/setup-go@v5
+2026-07-25T12:08:02.8256880Z with:
+2026-07-25T12:08:02.8257120Z   go-version: 1.23
+2026-07-25T12:08:02.8257280Z   cache: true
+2026-07-25T12:08:02.8257540Z   check-latest: false
+2026-07-25T12:08:02.8259550Z   token: ***
+2026-07-25T12:08:02.8259800Z env:
+2026-07-25T12:08:02.8259950Z   GO_VERSION: 1.23
+2026-07-25T12:08:02.8260120Z ##[endgroup]
+2026-07-25T12:08:02.9423060Z Setup go version spec 1.23
+2026-07-25T12:08:02.9487220Z Attempting to download 1.23...
+2026-07-25T12:08:02.9637650Z (node:77357) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:08:02.9641350Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:08:03.7294050Z matching 1.23...
+2026-07-25T12:08:03.7349470Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-darwin-arm64.tar.gz
+2026-07-25T12:08:04.5232110Z Extracting Go...
+2026-07-25T12:08:04.5353190Z [command]/usr/bin/tar xz -C /Users/runner/work/_temp/6661de36-7fbc-4ccc-acb4-d2543e3280a5 -f /Users/runner/work/_temp/bb69c85d-1e23-47eb-8aa2-777be232c761
+2026-07-25T12:08:06.7366650Z Successfully extracted go to /Users/runner/work/_temp/6661de36-7fbc-4ccc-acb4-d2543e3280a5
+2026-07-25T12:08:06.7367450Z Adding to the cache ...
+2026-07-25T12:08:11.6019270Z Successfully cached go to /Users/runner/hostedtoolcache/go/1.23.12/arm64
+2026-07-25T12:08:11.6119680Z Added go to the path
+2026-07-25T12:08:11.6178370Z Successfully set up Go version 1.23
+2026-07-25T12:08:16.2079220Z go: downloading go1.25.0 (darwin/arm64)
+2026-07-25T12:08:16.2548440Z [command]/Users/runner/hostedtoolcache/go/1.23.12/arm64/bin/go env GOMODCACHE
+2026-07-25T12:08:16.2560060Z [command]/Users/runner/hostedtoolcache/go/1.23.12/arm64/bin/go env GOCACHE
+2026-07-25T12:08:16.2739380Z /Users/runner/Library/Caches/go-build
+2026-07-25T12:08:16.2744620Z /Users/runner/go/pkg/mod
+2026-07-25T12:08:16.5760860Z Cache is not found
+2026-07-25T12:08:16.6043260Z go version go1.25.0 darwin/arm64
+2026-07-25T12:08:16.6043480Z 
+2026-07-25T12:08:16.6043810Z ##[group]go env
+2026-07-25T12:08:19.4119400Z AR='ar'
+2026-07-25T12:08:19.4120440Z CC='clang'
+2026-07-25T12:08:19.4121060Z CGO_CFLAGS='-O2 -g'
+2026-07-25T12:08:19.4121650Z CGO_CPPFLAGS=''
+2026-07-25T12:08:19.4125610Z CGO_CXXFLAGS='-O2 -g'
+2026-07-25T12:08:19.4126060Z CGO_ENABLED='1'
+2026-07-25T12:08:19.4126520Z CGO_FFLAGS='-O2 -g'
+2026-07-25T12:08:19.4126840Z CGO_LDFLAGS='-O2 -g'
+2026-07-25T12:08:19.4127120Z CXX='clang++'
+2026-07-25T12:08:19.4127390Z GCCGO='gccgo'
+2026-07-25T12:08:19.4127600Z GO111MODULE=''
+2026-07-25T12:08:19.4127900Z GOARCH='arm64'
+2026-07-25T12:08:19.4128190Z GOARM64='v8.0'
+2026-07-25T12:08:19.4128470Z GOAUTH='netrc'
+2026-07-25T12:08:19.4128700Z GOBIN=''
+2026-07-25T12:08:19.4129020Z GOCACHE='/Users/runner/Library/Caches/go-build'
+2026-07-25T12:08:19.4129410Z GOCACHEPROG=''
+2026-07-25T12:08:19.4129850Z GODEBUG=''
+2026-07-25T12:08:19.4130310Z GOENV='/Users/runner/Library/Application Support/go/env'
+2026-07-25T12:08:19.4130940Z GOEXE=''
+2026-07-25T12:08:19.4131320Z GOEXPERIMENT=''
+2026-07-25T12:08:19.4131680Z GOFIPS140='off'
+2026-07-25T12:08:19.4132000Z GOFLAGS=''
+2026-07-25T12:08:19.4136670Z GOGCCFLAGS='-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -ffile-prefix-map=/var/folders/8j/sfr9qqcj73j4p6nhwcfpr0th0000gn/T/go-build376699754=/tmp/go-build -gno-record-gcc-switches -fno-common'
+2026-07-25T12:08:19.4137900Z GOHOSTARCH='arm64'
+2026-07-25T12:08:19.4138160Z GOHOSTOS='darwin'
+2026-07-25T12:08:19.4138580Z GOINSECURE=''
+2026-07-25T12:08:19.4138980Z GOMOD='/Users/runner/work/devopshub-cli/devopshub-cli/go.mod'
+2026-07-25T12:08:19.4140000Z GOMODCACHE='/Users/runner/go/pkg/mod'
+2026-07-25T12:08:19.4140280Z GONOPROXY=''
+2026-07-25T12:08:19.4140550Z GONOSUMDB=''
+2026-07-25T12:08:19.4140760Z GOOS='darwin'
+2026-07-25T12:08:19.4141040Z GOPATH='/Users/runner/go'
+2026-07-25T12:08:19.4141290Z GOPRIVATE=''
+2026-07-25T12:08:19.4141650Z GOPROXY='https://proxy.golang.org,direct'
+2026-07-25T12:08:19.4142110Z GOROOT='/Users/runner/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.0.darwin-arm64'
+2026-07-25T12:08:19.4142590Z GOSUMDB='sum.golang.org'
+2026-07-25T12:08:19.4142860Z GOTELEMETRY='local'
+2026-07-25T12:08:19.4143270Z GOTELEMETRYDIR='/Users/runner/Library/Application Support/go/telemetry'
+2026-07-25T12:08:19.4143640Z GOTMPDIR=''
+2026-07-25T12:08:19.4143910Z GOTOOLCHAIN='auto'
+2026-07-25T12:08:19.4144370Z GOTOOLDIR='/Users/runner/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.0.darwin-arm64/pkg/tool/darwin_arm64'
+2026-07-25T12:08:19.4144880Z GOVCS=''
+2026-07-25T12:08:19.4145120Z GOVERSION='go1.25.0'
+2026-07-25T12:08:19.4145470Z GOWORK=''
+2026-07-25T12:08:19.4145740Z PKG_CONFIG='pkg-config'
+2026-07-25T12:08:19.4145940Z 
+2026-07-25T12:08:19.4146560Z ##[endgroup]

@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"text/tabwriter"
 
-	"github.com/devopshub-org/devopshub-cli/pkg/k8s"
 	"github.com/spf13/cobra"
+
+	"github.com/devopshub-org/devopshub-cli/pkg/k8s"
 )
 
 var kubeconfigPath string

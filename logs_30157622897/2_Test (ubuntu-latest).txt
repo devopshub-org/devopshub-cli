@@ -1,0 +1,556 @@
+﻿2026-07-25T12:14:37.9291772Z Current runner version: '2.336.0'
+2026-07-25T12:14:37.9328611Z ##[group]Runner Image Provisioner
+2026-07-25T12:14:37.9330214Z Hosted Compute Agent
+2026-07-25T12:14:37.9331196Z Version: 20260707.563
+2026-07-25T12:14:37.9332276Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T12:14:37.9333427Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T12:14:37.9334674Z Worker ID: {8866a7f2-212a-4a13-85d1-e20198d7fa99}
+2026-07-25T12:14:37.9335910Z Azure Region: eastus
+2026-07-25T12:14:37.9336835Z ##[endgroup]
+2026-07-25T12:14:37.9339701Z ##[group]Operating System
+2026-07-25T12:14:37.9340742Z Ubuntu
+2026-07-25T12:14:37.9342240Z 24.04.4
+2026-07-25T12:14:37.9343114Z LTS
+2026-07-25T12:14:37.9343875Z ##[endgroup]
+2026-07-25T12:14:37.9344963Z ##[group]Runner Image
+2026-07-25T12:14:37.9345969Z Image: ubuntu-24.04
+2026-07-25T12:14:37.9346976Z Version: 20260720.247.2
+2026-07-25T12:14:37.9349315Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T12:14:37.9352072Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T12:14:37.9353777Z ##[endgroup]
+2026-07-25T12:14:37.9355910Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T12:14:37.9359129Z Contents: read
+2026-07-25T12:14:37.9360116Z Metadata: read
+2026-07-25T12:14:37.9361071Z SecurityEvents: write
+2026-07-25T12:14:37.9361960Z ##[endgroup]
+2026-07-25T12:14:37.9365093Z Secret source: Actions
+2026-07-25T12:14:37.9367066Z Prepare workflow directory
+2026-07-25T12:14:37.9929176Z Prepare all required actions
+2026-07-25T12:14:37.9972135Z Getting action download info
+2026-07-25T12:14:38.1671695Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T12:14:38.4129537Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T12:14:38.6018616Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2026-07-25T12:14:38.8466718Z Complete job name: Test (ubuntu-latest)
+2026-07-25T12:14:38.9355912Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:14:38.9364861Z ##[group]Run actions/checkout@v4
+2026-07-25T12:14:38.9365625Z with:
+2026-07-25T12:14:38.9366100Z   repository: devopshub-org/devopshub-cli
+2026-07-25T12:14:38.9370221Z   token: ***
+2026-07-25T12:14:38.9370673Z   ssh-strict: true
+2026-07-25T12:14:38.9371112Z   ssh-user: git
+2026-07-25T12:14:38.9371552Z   persist-credentials: true
+2026-07-25T12:14:38.9372039Z   clean: true
+2026-07-25T12:14:38.9372473Z   sparse-checkout-cone-mode: true
+2026-07-25T12:14:38.9372983Z   fetch-depth: 1
+2026-07-25T12:14:38.9373406Z   fetch-tags: false
+2026-07-25T12:14:38.9373854Z   show-progress: true
+2026-07-25T12:14:38.9374324Z   lfs: false
+2026-07-25T12:14:38.9374765Z   submodules: false
+2026-07-25T12:14:38.9375208Z   set-safe-directory: true
+2026-07-25T12:14:38.9375709Z   allow-unsafe-pr-checkout: false
+2026-07-25T12:14:38.9376498Z env:
+2026-07-25T12:14:38.9376914Z   GO_VERSION: 1.23
+2026-07-25T12:14:38.9377341Z ##[endgroup]
+2026-07-25T12:14:39.0396187Z Syncing repository: devopshub-org/devopshub-cli
+2026-07-25T12:14:39.0399076Z ##[group]Getting Git version info
+2026-07-25T12:14:39.0400305Z Working directory is '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T12:14:39.0402033Z [command]/usr/bin/git version
+2026-07-25T12:14:39.0475034Z git version 2.54.0
+2026-07-25T12:14:39.0532750Z ##[endgroup]
+2026-07-25T12:14:39.0551461Z Temporarily overriding HOME='/home/runner/work/_temp/415376e1-afc1-4407-b5c3-913af0510ce8' before making global git config changes
+2026-07-25T12:14:39.0553933Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T12:14:39.0557958Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:14:39.0615221Z Deleting the contents of '/home/runner/work/devopshub-cli/devopshub-cli'
+2026-07-25T12:14:39.0622510Z ##[group]Initializing the repository
+2026-07-25T12:14:39.0628421Z [command]/usr/bin/git init /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:14:39.0745648Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-25T12:14:39.0747276Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-25T12:14:39.0748600Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-25T12:14:39.0749349Z hint: call:
+2026-07-25T12:14:39.0750029Z hint:
+2026-07-25T12:14:39.0750923Z hint: 	git config --global init.defaultBranch <name>
+2026-07-25T12:14:39.0752098Z hint:
+2026-07-25T12:14:39.0753238Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-25T12:14:39.0755177Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-25T12:14:39.0756650Z hint:
+2026-07-25T12:14:39.0757470Z hint: 	git branch -m <name>
+2026-07-25T12:14:39.0758626Z hint:
+2026-07-25T12:14:39.0759818Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-25T12:14:39.0761784Z Initialized empty Git repository in /home/runner/work/devopshub-cli/devopshub-cli/.git/
+2026-07-25T12:14:39.0766193Z [command]/usr/bin/git remote add origin https://github.com/devopshub-org/devopshub-cli
+2026-07-25T12:14:39.0815849Z ##[endgroup]
+2026-07-25T12:14:39.0817168Z ##[group]Disabling automatic garbage collection
+2026-07-25T12:14:39.0821119Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-25T12:14:39.0851839Z ##[endgroup]
+2026-07-25T12:14:39.0852608Z ##[group]Setting up auth
+2026-07-25T12:14:39.0860412Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T12:14:39.0897439Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T12:14:39.1292042Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T12:14:39.1333681Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T12:14:39.1564511Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T12:14:39.1603870Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T12:14:39.1828922Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-25T12:14:39.1868386Z ##[endgroup]
+2026-07-25T12:14:39.1870540Z ##[group]Fetching the repository
+2026-07-25T12:14:39.1880233Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d91dd7a249488f11e539512894ef17de375c718a:refs/remotes/origin/main
+2026-07-25T12:14:39.3731931Z From https://github.com/devopshub-org/devopshub-cli
+2026-07-25T12:14:39.3734706Z  * [new ref]         d91dd7a249488f11e539512894ef17de375c718a -> origin/main
+2026-07-25T12:14:39.3768485Z ##[endgroup]
+2026-07-25T12:14:39.3769663Z ##[group]Determining the checkout info
+2026-07-25T12:14:39.3771323Z ##[endgroup]
+2026-07-25T12:14:39.3777104Z [command]/usr/bin/git sparse-checkout disable
+2026-07-25T12:14:39.3826186Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-25T12:14:39.3858923Z ##[group]Checking out the ref
+2026-07-25T12:14:39.3863236Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-25T12:14:39.3966812Z Switched to a new branch 'main'
+2026-07-25T12:14:39.3970777Z branch 'main' set up to track 'origin/main'.
+2026-07-25T12:14:39.3977960Z ##[endgroup]
+2026-07-25T12:14:39.4020840Z [command]/usr/bin/git log -1 --format=%H
+2026-07-25T12:14:39.4047597Z d91dd7a249488f11e539512894ef17de375c718a
+2026-07-25T12:14:39.4381770Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:14:39.4387834Z ##[group]Run actions/setup-go@v5
+2026-07-25T12:14:39.4388918Z with:
+2026-07-25T12:14:39.4389696Z   go-version: 1.23
+2026-07-25T12:14:39.4390555Z   cache: true
+2026-07-25T12:14:39.4391378Z   check-latest: false
+2026-07-25T12:14:39.4401626Z   token: ***
+2026-07-25T12:14:39.4402412Z env:
+2026-07-25T12:14:39.4403148Z   GO_VERSION: 1.23
+2026-07-25T12:14:39.4403971Z ##[endgroup]
+2026-07-25T12:14:39.5700192Z Setup go version spec 1.23
+2026-07-25T12:14:39.5925535Z Attempting to download 1.23...
+2026-07-25T12:14:39.6033422Z (node:2253) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:14:39.6036927Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:14:39.9095715Z matching 1.23...
+2026-07-25T12:14:39.9183744Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-linux-x64.tar.gz
+2026-07-25T12:14:40.4314747Z Extracting Go...
+2026-07-25T12:14:40.4474488Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/803eb7c9-cc91-4cd3-82a6-ee9e8e8fad27 -f /home/runner/work/_temp/bd3515a3-770d-48b2-965c-8d22b5f8738a
+2026-07-25T12:14:42.2311874Z Successfully extracted go to /home/runner/work/_temp/803eb7c9-cc91-4cd3-82a6-ee9e8e8fad27
+2026-07-25T12:14:42.2312533Z Adding to the cache ...
+2026-07-25T12:14:49.0024978Z Successfully cached go to /opt/hostedtoolcache/go/1.23.12/x64
+2026-07-25T12:14:49.0027685Z Added go to the path
+2026-07-25T12:14:49.0030531Z Successfully set up Go version 1.23
+2026-07-25T12:14:49.0248981Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T12:14:49.0288473Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T12:14:49.0332396Z /home/runner/go/pkg/mod
+2026-07-25T12:14:49.0349799Z /home/runner/.cache/go-build
+2026-07-25T12:14:49.1023642Z Cache is not found
+2026-07-25T12:14:49.1047039Z go version go1.23.12 linux/amd64
+2026-07-25T12:14:49.1047384Z 
+2026-07-25T12:14:49.1048104Z ##[group]go env
+2026-07-25T12:14:49.2388462Z GO111MODULE=''
+2026-07-25T12:14:49.2389033Z GOARCH='amd64'
+2026-07-25T12:14:49.2389422Z GOBIN=''
+2026-07-25T12:14:49.2389745Z GOCACHE='/home/runner/.cache/go-build'
+2026-07-25T12:14:49.2390086Z GOENV='/home/runner/.config/go/env'
+2026-07-25T12:14:49.2390362Z GOEXE=''
+2026-07-25T12:14:49.2390571Z GOEXPERIMENT=''
+2026-07-25T12:14:49.2390787Z GOFLAGS=''
+2026-07-25T12:14:49.2390999Z GOHOSTARCH='amd64'
+2026-07-25T12:14:49.2391276Z GOHOSTOS='linux'
+2026-07-25T12:14:49.2391490Z GOINSECURE=''
+2026-07-25T12:14:49.2391746Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-07-25T12:14:49.2392050Z GONOPROXY=''
+2026-07-25T12:14:49.2392287Z GONOSUMDB=''
+2026-07-25T12:14:49.2392485Z GOOS='linux'
+2026-07-25T12:14:49.2392708Z GOPATH='/home/runner/go'
+2026-07-25T12:14:49.2392977Z GOPRIVATE=''
+2026-07-25T12:14:49.2393519Z GOPROXY='https://proxy.golang.org,direct'
+2026-07-25T12:14:49.2393965Z GOROOT='/opt/hostedtoolcache/go/1.23.12/x64'
+2026-07-25T12:14:49.2394293Z GOSUMDB='sum.golang.org'
+2026-07-25T12:14:49.2394537Z GOTMPDIR=''
+2026-07-25T12:14:49.2394749Z GOTOOLCHAIN='auto'
+2026-07-25T12:14:49.2395099Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.12/x64/pkg/tool/linux_amd64'
+2026-07-25T12:14:49.2395507Z GOVCS=''
+2026-07-25T12:14:49.2395714Z GOVERSION='go1.23.12'
+2026-07-25T12:14:49.2395962Z GODEBUG=''
+2026-07-25T12:14:49.2396185Z GOTELEMETRY='local'
+2026-07-25T12:14:49.2396494Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-07-25T12:14:49.2397160Z GCCGO='gccgo'
+2026-07-25T12:14:49.2397458Z GOAMD64='v1'
+2026-07-25T12:14:49.2398026Z AR='ar'
+2026-07-25T12:14:49.2398259Z CC='gcc'
+2026-07-25T12:14:49.2398740Z CXX='g++'
+2026-07-25T12:14:49.2398981Z CGO_ENABLED='1'
+2026-07-25T12:14:49.2399327Z GOMOD='/home/runner/work/devopshub-cli/devopshub-cli/go.mod'
+2026-07-25T12:14:49.2399719Z GOWORK=''
+2026-07-25T12:14:49.2399946Z CGO_CFLAGS='-O2 -g'
+2026-07-25T12:14:49.2400194Z CGO_CPPFLAGS=''
+2026-07-25T12:14:49.2400430Z CGO_CXXFLAGS='-O2 -g'
+2026-07-25T12:14:49.2400678Z CGO_FFLAGS='-O2 -g'
+2026-07-25T12:14:49.2400917Z CGO_LDFLAGS='-O2 -g'
+2026-07-25T12:14:49.2401171Z PKG_CONFIG='pkg-config'
+2026-07-25T12:14:49.2401963Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build76735287=/tmp/go-build -gno-record-gcc-switches'
+2026-07-25T12:14:49.2402709Z 
+2026-07-25T12:14:49.2403124Z ##[endgroup]
+2026-07-25T12:14:49.2593042Z ##[group]Run go test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
+2026-07-25T12:14:49.2593852Z [36;1mgo test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...[0m
+2026-07-25T12:14:49.2645030Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-07-25T12:14:49.2645484Z env:
+2026-07-25T12:14:49.2645725Z   GO_VERSION: 1.23
+2026-07-25T12:14:49.2645986Z ##[endgroup]
+2026-07-25T12:14:49.2845448Z go: downloading github.com/rs/zerolog v1.33.0
+2026-07-25T12:14:49.2859632Z go: downloading github.com/spf13/cobra v1.8.1
+2026-07-25T12:14:49.3102847Z go: downloading github.com/spf13/viper v1.19.0
+2026-07-25T12:14:49.3494605Z go: downloading k8s.io/api v0.31.0
+2026-07-25T12:14:49.3620169Z go: downloading k8s.io/apimachinery v0.31.0
+2026-07-25T12:14:49.3621648Z go: downloading k8s.io/client-go v0.31.0
+2026-07-25T12:14:49.9253252Z go: downloading github.com/fsnotify/fsnotify v1.7.0
+2026-07-25T12:14:49.9458354Z go: downloading github.com/mitchellh/mapstructure v1.5.0
+2026-07-25T12:14:49.9601431Z go: downloading github.com/sagikazarmark/slog-shim v0.1.0
+2026-07-25T12:14:49.9627217Z go: downloading github.com/spf13/afero v1.11.0
+2026-07-25T12:14:49.9628681Z go: downloading github.com/spf13/cast v1.6.0
+2026-07-25T12:14:49.9639265Z go: downloading github.com/spf13/pflag v1.0.5
+2026-07-25T12:14:49.9777617Z go: downloading github.com/mattn/go-colorable v0.1.13
+2026-07-25T12:14:49.9918552Z go: downloading github.com/gogo/protobuf v1.3.2
+2026-07-25T12:14:49.9930639Z go: downloading github.com/google/gofuzz v1.2.0
+2026-07-25T12:14:49.9949158Z go: downloading k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
+2026-07-25T12:14:50.0081273Z go: downloading gopkg.in/inf.v0 v0.9.1
+2026-07-25T12:14:50.0273378Z go: downloading golang.org/x/sys v0.28.0
+2026-07-25T12:14:50.0516695Z go: downloading github.com/imdario/mergo v0.3.6
+2026-07-25T12:14:50.0666386Z go: downloading golang.org/x/term v0.27.0
+2026-07-25T12:14:50.0813927Z go: downloading k8s.io/klog/v2 v2.130.1
+2026-07-25T12:14:50.1198790Z go: downloading github.com/subosito/gotenv v1.6.0
+2026-07-25T12:14:50.1368694Z go: downloading github.com/hashicorp/hcl v1.0.0
+2026-07-25T12:14:50.1713855Z go: downloading gopkg.in/ini.v1 v1.67.0
+2026-07-25T12:14:50.1948677Z go: downloading github.com/magiconair/properties v1.8.7
+2026-07-25T12:14:50.2091071Z go: downloading github.com/pelletier/go-toml/v2 v2.2.2
+2026-07-25T12:14:50.2541895Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2026-07-25T12:14:50.2594679Z go: downloading github.com/mattn/go-isatty v0.0.20
+2026-07-25T12:14:50.2734754Z go: downloading golang.org/x/text v0.21.0
+2026-07-25T12:14:50.3251788Z go: downloading sigs.k8s.io/structured-merge-diff/v4 v4.4.1
+2026-07-25T12:14:50.3656384Z go: downloading sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
+2026-07-25T12:14:50.3902577Z go: downloading github.com/golang/protobuf v1.5.4
+2026-07-25T12:14:50.4235048Z go: downloading github.com/google/gnostic-models v0.6.8
+2026-07-25T12:14:50.4565367Z go: downloading golang.org/x/net v0.33.0
+2026-07-25T12:14:50.6421944Z go: downloading golang.org/x/time v0.5.0
+2026-07-25T12:14:50.6568762Z go: downloading github.com/go-logr/logr v1.4.2
+2026-07-25T12:14:50.6789447Z go: downloading gopkg.in/evanphx/json-patch.v4 v4.12.0
+2026-07-25T12:14:50.6948413Z go: downloading sigs.k8s.io/yaml v1.4.0
+2026-07-25T12:14:50.8326815Z go: downloading github.com/json-iterator/go v1.1.12
+2026-07-25T12:14:50.8327526Z go: downloading gopkg.in/yaml.v2 v2.4.0
+2026-07-25T12:14:50.8328442Z go: downloading github.com/fxamacker/cbor/v2 v2.7.0
+2026-07-25T12:14:50.8329012Z go: downloading google.golang.org/protobuf v1.34.2
+2026-07-25T12:14:51.0142833Z go: downloading k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340
+2026-07-25T12:14:51.0310179Z go: downloading golang.org/x/oauth2 v0.21.0
+2026-07-25T12:14:51.1774562Z go: downloading github.com/pkg/errors v0.9.1
+2026-07-25T12:14:51.1785052Z go: downloading github.com/x448/float16 v0.8.4
+2026-07-25T12:14:51.1785753Z go: downloading github.com/modern-go/reflect2 v1.0.2
+2026-07-25T12:14:51.1786712Z go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+2026-07-25T12:14:51.1908574Z go: downloading github.com/google/go-cmp v0.6.0
+2026-07-25T12:14:51.1958631Z go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
+2026-07-25T12:14:51.1978063Z go: downloading github.com/google/uuid v1.6.0
+2026-07-25T12:14:51.1978868Z go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+2026-07-25T12:14:51.2118709Z go: downloading github.com/go-openapi/swag v0.22.4
+2026-07-25T12:14:51.2157344Z go: downloading github.com/go-openapi/jsonreference v0.20.2
+2026-07-25T12:14:51.2202868Z go: downloading github.com/emicklei/go-restful/v3 v3.11.0
+2026-07-25T12:14:51.2274476Z go: downloading github.com/mailru/easyjson v0.7.7
+2026-07-25T12:14:51.2338513Z go: downloading github.com/go-openapi/jsonpointer v0.19.6
+2026-07-25T12:14:51.2597087Z go: downloading github.com/josharian/intern v1.0.0
+2026-07-25T12:15:46.0983113Z === RUN   TestRootCmd_NoArgs_ShowsHelp
+2026-07-25T12:15:46.0983970Z --- PASS: TestRootCmd_NoArgs_ShowsHelp (0.01s)
+2026-07-25T12:15:46.0984828Z === RUN   TestRootCmd_Help_NoError
+2026-07-25T12:15:46.0985560Z --- PASS: TestRootCmd_Help_NoError (0.00s)
+2026-07-25T12:15:46.0986355Z === RUN   TestRootCmd_UnknownCommand_ReturnsError
+2026-07-25T12:15:46.0987125Z --- PASS: TestRootCmd_UnknownCommand_ReturnsError (0.00s)
+2026-07-25T12:15:46.0988083Z === RUN   TestRootCmd_HasVersionSubcommand
+2026-07-25T12:15:46.0988879Z --- PASS: TestRootCmd_HasVersionSubcommand (0.00s)
+2026-07-25T12:15:46.0989693Z === RUN   TestRootCmd_HasCheatSubcommand
+2026-07-25T12:15:46.0990478Z --- PASS: TestRootCmd_HasCheatSubcommand (0.00s)
+2026-07-25T12:15:46.0991326Z === RUN   TestRootCmd_HasCompletionSubcommand
+2026-07-25T12:15:46.0992233Z --- PASS: TestRootCmd_HasCompletionSubcommand (0.00s)
+2026-07-25T12:15:46.0993306Z === RUN   TestVersionCmd_DefaultOutput
+2026-07-25T12:15:46.0994283Z --- PASS: TestVersionCmd_DefaultOutput (0.00s)
+2026-07-25T12:15:46.0995212Z === RUN   TestVersionCmd_ContainsBuildVersion
+2026-07-25T12:15:46.0996133Z --- PASS: TestVersionCmd_ContainsBuildVersion (0.00s)
+2026-07-25T12:15:46.0997014Z === RUN   TestVersionCmd_JSONOutput_IsValidJSON
+2026-07-25T12:15:46.0998166Z --- PASS: TestVersionCmd_JSONOutput_IsValidJSON (0.00s)
+2026-07-25T12:15:46.0999449Z === RUN   TestVersionCmd_JSONOutput_ContainsRequiredFields
+2026-07-25T12:15:46.1000307Z --- PASS: TestVersionCmd_JSONOutput_ContainsRequiredFields (0.00s)
+2026-07-25T12:15:46.1000994Z === RUN   TestVersionCmd_VerboseOutput
+2026-07-25T12:15:46.1001555Z --- PASS: TestVersionCmd_VerboseOutput (0.00s)
+2026-07-25T12:15:46.1002168Z === RUN   TestVersionCmd_Alias
+2026-07-25T12:15:46.1002672Z --- PASS: TestVersionCmd_Alias (0.00s)
+2026-07-25T12:15:46.1003262Z === RUN   TestCompletionCmd_Bash_NoError
+2026-07-25T12:15:46.1003849Z --- PASS: TestCompletionCmd_Bash_NoError (0.00s)
+2026-07-25T12:15:46.1004397Z === RUN   TestCompletionCmd_Zsh_NoError
+2026-07-25T12:15:46.1004978Z --- PASS: TestCompletionCmd_Zsh_NoError (0.00s)
+2026-07-25T12:15:46.1005570Z === RUN   TestCompletionCmd_PowerShell_NoError
+2026-07-25T12:15:46.1006550Z --- PASS: TestCompletionCmd_PowerShell_NoError (0.00s)
+2026-07-25T12:15:46.1007221Z === RUN   TestCompletionCmd_InvalidShell_ReturnsError
+2026-07-25T12:15:46.1008418Z --- PASS: TestCompletionCmd_InvalidShell_ReturnsError (0.00s)
+2026-07-25T12:15:46.1009488Z === RUN   TestCompletionCmd_NoArgs_ReturnsError
+2026-07-25T12:15:46.1010205Z --- PASS: TestCompletionCmd_NoArgs_ReturnsError (0.00s)
+2026-07-25T12:15:46.1010775Z PASS
+2026-07-25T12:15:46.1011122Z coverage: 88.2% of statements
+2026-07-25T12:15:46.1011977Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub	1.083s	coverage: 88.2% of statements
+2026-07-25T12:15:46.3358452Z === RUN   TestNewCheatCmd_NotNil
+2026-07-25T12:15:46.3389880Z --- PASS: TestNewCheatCmd_NotNil (0.00s)
+2026-07-25T12:15:46.3418444Z === RUN   TestCheatCmd_HasExpectedSubcommands
+2026-07-25T12:15:46.3419613Z --- PASS: TestCheatCmd_HasExpectedSubcommands (0.00s)
+2026-07-25T12:15:46.3430847Z === RUN   TestDockerCheat_ContainsCoreCommands
+2026-07-25T12:15:46.3431629Z --- PASS: TestDockerCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:15:46.3433788Z === RUN   TestDockerCheat_ContainsSections
+2026-07-25T12:15:46.3457877Z --- PASS: TestDockerCheat_ContainsSections (0.00s)
+2026-07-25T12:15:46.3458759Z === RUN   TestDockerCheat_JSONOutputIsValid
+2026-07-25T12:15:46.3459747Z --- PASS: TestDockerCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:15:46.3460513Z === RUN   TestDockerCheat_JSONContainsTitleAndEntries
+2026-07-25T12:15:46.3461613Z --- PASS: TestDockerCheat_JSONContainsTitleAndEntries (0.00s)
+2026-07-25T12:15:46.3462419Z === RUN   TestK8sCheat_ContainsCoreCommands
+2026-07-25T12:15:46.3463348Z --- PASS: TestK8sCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:15:46.3464021Z === RUN   TestK8sCheat_JSONOutputIsValid
+2026-07-25T12:15:46.3464775Z --- PASS: TestK8sCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:15:46.3465522Z === RUN   TestK8sCheat_KubernetesAlias
+2026-07-25T12:15:46.3466196Z --- PASS: TestK8sCheat_KubernetesAlias (0.00s)
+2026-07-25T12:15:46.3467035Z === RUN   TestLinuxCheat_ContainsCoreCommands
+2026-07-25T12:15:46.3468013Z --- PASS: TestLinuxCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:15:46.3468768Z === RUN   TestLinuxCheat_JSONOutputIsValid
+2026-07-25T12:15:46.3469703Z --- PASS: TestLinuxCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:15:46.3470369Z === RUN   TestCheatCmd_NoArgs_PrintsHelp
+2026-07-25T12:15:46.3471273Z --- PASS: TestCheatCmd_NoArgs_PrintsHelp (0.00s)
+2026-07-25T12:15:46.3472027Z === RUN   TestCheatCmd_UnknownSubcommand_FallsBackToHelp
+2026-07-25T12:15:46.3473207Z --- PASS: TestCheatCmd_UnknownSubcommand_FallsBackToHelp (0.00s)
+2026-07-25T12:15:46.3473939Z PASS
+2026-07-25T12:15:46.3474654Z coverage: 100.0% of statements
+2026-07-25T12:15:46.3475622Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat	1.028s	coverage: 100.0% of statements
+2026-07-25T12:15:46.3477038Z === RUN   TestNewCloudCmd
+2026-07-25T12:15:46.3477793Z --- PASS: TestNewCloudCmd (0.00s)
+2026-07-25T12:15:46.3478520Z PASS
+2026-07-25T12:15:46.3478978Z coverage: 25.9% of statements
+2026-07-25T12:15:46.3480004Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud	1.015s	coverage: 25.9% of statements
+2026-07-25T12:15:47.8742876Z === RUN   TestNewClusterCmd
+2026-07-25T12:15:47.8743484Z --- PASS: TestNewClusterCmd (0.00s)
+2026-07-25T12:15:47.8743936Z PASS
+2026-07-25T12:15:47.8744272Z coverage: 26.1% of statements
+2026-07-25T12:15:47.8745151Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster	1.057s	coverage: 26.1% of statements
+2026-07-25T12:15:47.8746015Z === RUN   TestConfigCommands
+2026-07-25T12:15:47.8746510Z --- PASS: TestConfigCommands (0.01s)
+2026-07-25T12:15:47.8746991Z PASS
+2026-07-25T12:15:47.8747339Z coverage: 56.5% of statements
+2026-07-25T12:15:47.8748436Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/config	1.027s	coverage: 56.5% of statements
+2026-07-25T12:15:47.8749325Z === RUN   TestGet_ReturnsInfo
+2026-07-25T12:15:47.8749806Z --- PASS: TestGet_ReturnsInfo (0.00s)
+2026-07-25T12:15:47.8750319Z === RUN   TestGet_DefaultsArePopulated
+2026-07-25T12:15:47.8751154Z --- PASS: TestGet_DefaultsArePopulated (0.00s)
+2026-07-25T12:15:47.8751763Z === RUN   TestGet_GoVersionMatchesRuntime
+2026-07-25T12:15:47.8752331Z --- PASS: TestGet_GoVersionMatchesRuntime (0.00s)
+2026-07-25T12:15:47.8752928Z === RUN   TestGet_PlatformFormat
+2026-07-25T12:15:47.8753415Z --- PASS: TestGet_PlatformFormat (0.00s)
+2026-07-25T12:15:47.8753887Z PASS
+2026-07-25T12:15:47.8754236Z coverage: 100.0% of statements
+2026-07-25T12:15:47.8755077Z ok  	github.com/devopshub-org/devopshub-cli/internal/build	1.012s	coverage: 100.0% of statements
+2026-07-25T12:15:47.9474540Z === RUN   TestDefaultConfig
+2026-07-25T12:15:47.9492207Z --- PASS: TestDefaultConfig (0.00s)
+2026-07-25T12:15:47.9493598Z === RUN   TestGetConfigDir
+2026-07-25T12:15:47.9494800Z --- PASS: TestGetConfigDir (0.00s)
+2026-07-25T12:15:47.9495778Z === RUN   TestWriteAndInitConfig
+2026-07-25T12:15:47.9497085Z --- PASS: TestWriteAndInitConfig (0.00s)
+2026-07-25T12:15:47.9513759Z PASS
+2026-07-25T12:15:47.9514653Z coverage: 74.5% of statements
+2026-07-25T12:15:47.9515894Z ok  	github.com/devopshub-org/devopshub-cli/internal/config	1.014s	coverage: 74.5% of statements
+2026-07-25T12:15:49.2943152Z === RUN   TestSuccess_WritesToStdout
+2026-07-25T12:15:49.2944400Z --- PASS: TestSuccess_WritesToStdout (0.00s)
+2026-07-25T12:15:49.2945656Z === RUN   TestSuccess_QuietMode_WritesNothing
+2026-07-25T12:15:49.2946798Z --- PASS: TestSuccess_QuietMode_WritesNothing (0.00s)
+2026-07-25T12:15:49.2947983Z === RUN   TestError_WritesToStderr
+2026-07-25T12:15:49.2948811Z --- PASS: TestError_WritesToStderr (0.00s)
+2026-07-25T12:15:49.2949680Z === RUN   TestError_QuietMode_StillWritesToStderr
+2026-07-25T12:15:49.2950651Z --- PASS: TestError_QuietMode_StillWritesToStderr (0.00s)
+2026-07-25T12:15:49.2951567Z === RUN   TestInfo_WritesToStdout
+2026-07-25T12:15:49.2952360Z --- PASS: TestInfo_WritesToStdout (0.00s)
+2026-07-25T12:15:49.2953224Z === RUN   TestWarning_WritesToStdout
+2026-07-25T12:15:49.2954050Z --- PASS: TestWarning_WritesToStdout (0.00s)
+2026-07-25T12:15:49.2954914Z === RUN   TestHeader_IncludesTitle
+2026-07-25T12:15:49.2955713Z --- PASS: TestHeader_IncludesTitle (0.00s)
+2026-07-25T12:15:49.2956512Z === RUN   TestPrintln_WritesLine
+2026-07-25T12:15:49.2957300Z --- PASS: TestPrintln_WritesLine (0.00s)
+2026-07-25T12:15:49.2958433Z === RUN   TestPrintf_WritesFormattedOutput
+2026-07-25T12:15:49.2959333Z --- PASS: TestPrintf_WritesFormattedOutput (0.00s)
+2026-07-25T12:15:49.2960215Z === RUN   TestJSON_WritesValidJSON
+2026-07-25T12:15:49.2961017Z --- PASS: TestJSON_WritesValidJSON (0.00s)
+2026-07-25T12:15:49.2961863Z === RUN   TestTable_RendersHeaderAndRows
+2026-07-25T12:15:49.2962710Z --- PASS: TestTable_RendersHeaderAndRows (0.00s)
+2026-07-25T12:15:49.2963572Z === RUN   TestNew_Default_DoesNotPanic
+2026-07-25T12:15:49.2964392Z --- PASS: TestNew_Default_DoesNotPanic (0.00s)
+2026-07-25T12:15:49.2965194Z PASS
+2026-07-25T12:15:49.2965786Z coverage: 80.5% of statements
+2026-07-25T12:15:49.2966895Z ok  	github.com/devopshub-org/devopshub-cli/internal/output	1.019s	coverage: 80.5% of statements
+2026-07-25T12:16:01.8202163Z === RUN   TestCheckAWS
+2026-07-25T12:16:01.8202621Z --- PASS: TestCheckAWS (0.00s)
+2026-07-25T12:16:01.8202931Z === RUN   TestCheckGCP
+2026-07-25T12:16:01.8203183Z --- PASS: TestCheckGCP (7.75s)
+2026-07-25T12:16:01.8203445Z === RUN   TestCheckAzure
+2026-07-25T12:16:01.8203699Z --- PASS: TestCheckAzure (4.78s)
+2026-07-25T12:16:01.8203943Z PASS
+2026-07-25T12:16:01.8204149Z coverage: 74.3% of statements
+2026-07-25T12:16:01.8204614Z ok  	github.com/devopshub-org/devopshub-cli/pkg/cloud	13.545s	coverage: 74.3% of statements
+2026-07-25T12:16:01.8205104Z === RUN   TestK8sClientInspect
+2026-07-25T12:16:01.8205388Z --- PASS: TestK8sClientInspect (0.00s)
+2026-07-25T12:16:01.8205697Z === RUN   TestK8sClientListPods
+2026-07-25T12:16:01.8205989Z --- PASS: TestK8sClientListPods (0.00s)
+2026-07-25T12:16:01.8206324Z === RUN   TestK8sClientListNodes
+2026-07-25T12:16:01.8206621Z --- PASS: TestK8sClientListNodes (0.00s)
+2026-07-25T12:16:01.8206902Z PASS
+2026-07-25T12:16:01.8207376Z coverage: 62.1% of statements
+2026-07-25T12:16:01.8208202Z ok  	github.com/devopshub-org/devopshub-cli/pkg/k8s	1.053s	coverage: 62.1% of statements
+2026-07-25T12:16:01.8208691Z === RUN   TestPluginDiscovery
+2026-07-25T12:16:01.8208971Z --- PASS: TestPluginDiscovery (0.02s)
+2026-07-25T12:16:01.8209238Z PASS
+2026-07-25T12:16:01.8209436Z coverage: 65.6% of statements
+2026-07-25T12:16:01.8209881Z ok  	github.com/devopshub-org/devopshub-cli/pkg/plugin	1.025s	coverage: 65.6% of statements
+2026-07-25T12:16:02.0340788Z ##[group]Run go tool cover -func=coverage.out
+2026-07-25T12:16:02.0341197Z [36;1mgo tool cover -func=coverage.out[0m
+2026-07-25T12:16:02.0385733Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-07-25T12:16:02.0386136Z env:
+2026-07-25T12:16:02.0386349Z   GO_VERSION: 1.23
+2026-07-25T12:16:02.0386590Z ##[endgroup]
+2026-07-25T12:16:02.2517086Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/cheat.go:21:		NewCheatCmd		100.0%
+2026-07-25T12:16:02.2518594Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/cheat.go:58:		CobraCmd		100.0%
+2026-07-25T12:16:02.2519677Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/docker.go:122:	newDockerCmd		100.0%
+2026-07-25T12:16:02.2520822Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/docker.go:143:	run			100.0%
+2026-07-25T12:16:02.2522152Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/k8s.go:134:		newK8sCmd		100.0%
+2026-07-25T12:16:02.2523533Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/k8s.go:157:		run			100.0%
+2026-07-25T12:16:02.2524820Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/linux.go:173:	newLinuxCmd		100.0%
+2026-07-25T12:16:02.2526188Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat/linux.go:196:	run			100.0%
+2026-07-25T12:16:02.2527254Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud/cloud.go:13:		NewCloudCmd		100.0%
+2026-07-25T12:16:02.2528615Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud/cloud.go:25:		newAuthCmd		16.7%
+2026-07-25T12:16:02.2529968Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:15:	NewClusterCmd		100.0%
+2026-07-25T12:16:02.2531273Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:34:	getClient		0.0%
+2026-07-25T12:16:02.2532091Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:38:	newInspectCmd		6.7%
+2026-07-25T12:16:02.2532916Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:64:	newEventsCmd		36.4%
+2026-07-25T12:16:02.2533692Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:102:	newPodsCmd		26.7%
+2026-07-25T12:16:02.2534458Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster/cluster.go:132:	newNodesCmd		8.3%
+2026-07-25T12:16:02.2535221Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/completion.go:15:		newCompletionCmd	100.0%
+2026-07-25T12:16:02.2535883Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/completion.go:53:		run			66.7%
+2026-07-25T12:16:02.2536530Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/config/config.go:11:	NewConfigCmd		100.0%
+2026-07-25T12:16:02.2537181Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/config/config.go:28:	newInitCmd		85.7%
+2026-07-25T12:16:02.2538278Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/config/config.go:44:	newViewCmd		9.1%
+2026-07-25T12:16:02.2538979Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/config/config.go:65:	newGetCmd		63.6%
+2026-07-25T12:16:02.2539621Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/config/config.go:91:	newSetCmd		64.3%
+2026-07-25T12:16:02.2540213Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/main.go:14:		main			0.0%
+2026-07-25T12:16:02.2541129Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/main.go:23:		registerSubcommands	100.0%
+2026-07-25T12:16:02.2542159Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/root.go:34:		newRootCmd		94.1%
+2026-07-25T12:16:02.2543212Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/root.go:97:		Execute			0.0%
+2026-07-25T12:16:02.2544108Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/version.go:17:		newVersionCmd		100.0%
+2026-07-25T12:16:02.2544714Z github.com/devopshub-org/devopshub-cli/cmd/devopshub/version.go:40:		run			100.0%
+2026-07-25T12:16:02.2545297Z github.com/devopshub-org/devopshub-cli/internal/build/build.go:32:		Get			100.0%
+2026-07-25T12:16:02.2545913Z github.com/devopshub-org/devopshub-cli/internal/config/config.go:21:		DefaultConfig		100.0%
+2026-07-25T12:16:02.2546759Z github.com/devopshub-org/devopshub-cli/internal/config/config.go:35:		GetConfigDir		75.0%
+2026-07-25T12:16:02.2547401Z github.com/devopshub-org/devopshub-cli/internal/config/config.go:44:		GetConfigFile		75.0%
+2026-07-25T12:16:02.2548300Z github.com/devopshub-org/devopshub-cli/internal/config/config.go:53:		InitConfig		81.0%
+2026-07-25T12:16:02.2548922Z github.com/devopshub-org/devopshub-cli/internal/config/config.go:89:		WriteConfig		64.7%
+2026-07-25T12:16:02.2549541Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:44:		WithNoColor		100.0%
+2026-07-25T12:16:02.2550158Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:47:		WithJSON		100.0%
+2026-07-25T12:16:02.2550755Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:50:		WithQuiet		100.0%
+2026-07-25T12:16:02.2551361Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:53:		WithWriter		100.0%
+2026-07-25T12:16:02.2551993Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:56:		WithErrWriter		100.0%
+2026-07-25T12:16:02.2552603Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:59:		New			100.0%
+2026-07-25T12:16:02.2553187Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:73:		Default			100.0%
+2026-07-25T12:16:02.2553772Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:78:		color			66.7%
+2026-07-25T12:16:02.2554355Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:86:		bold			100.0%
+2026-07-25T12:16:02.2554932Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:91:		Success			100.0%
+2026-07-25T12:16:02.2555532Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:99:		Error			100.0%
+2026-07-25T12:16:02.2556107Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:104:		Info			66.7%
+2026-07-25T12:16:02.2556689Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:112:		Warning			66.7%
+2026-07-25T12:16:02.2557278Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:120:		Header			83.3%
+2026-07-25T12:16:02.2558234Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:131:		Println			66.7%
+2026-07-25T12:16:02.2558839Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:139:		Printf			66.7%
+2026-07-25T12:16:02.2559422Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:149:		JSONMode		0.0%
+2026-07-25T12:16:02.2560004Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:155:		JSON			100.0%
+2026-07-25T12:16:02.2560579Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:163:		Table			96.0%
+2026-07-25T12:16:02.2561164Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:210:		Section			0.0%
+2026-07-25T12:16:02.2561738Z github.com/devopshub-org/devopshub-cli/internal/output/output.go:219:		Command			0.0%
+2026-07-25T12:16:02.2562312Z github.com/devopshub-org/devopshub-cli/pkg/cloud/auth.go:21:			NewAuthHelper		100.0%
+2026-07-25T12:16:02.2562875Z github.com/devopshub-org/devopshub-cli/pkg/cloud/auth.go:25:			CheckAWS		66.7%
+2026-07-25T12:16:02.2563421Z github.com/devopshub-org/devopshub-cli/pkg/cloud/auth.go:64:			CheckGCP		75.0%
+2026-07-25T12:16:02.2563983Z github.com/devopshub-org/devopshub-cli/pkg/cloud/auth.go:101:			CheckAzure		80.0%
+2026-07-25T12:16:02.2564529Z github.com/devopshub-org/devopshub-cli/pkg/k8s/client.go:60:			NewClient		0.0%
+2026-07-25T12:16:02.2565060Z github.com/devopshub-org/devopshub-cli/pkg/k8s/client.go:84:			Inspect			82.8%
+2026-07-25T12:16:02.2565604Z github.com/devopshub-org/devopshub-cli/pkg/k8s/client.go:143:			ListEvents		0.0%
+2026-07-25T12:16:02.2566309Z github.com/devopshub-org/devopshub-cli/pkg/k8s/client.go:163:			ListPods		94.1%
+2026-07-25T12:16:02.2566854Z github.com/devopshub-org/devopshub-cli/pkg/k8s/client.go:200:			ListNodes		76.0%
+2026-07-25T12:16:02.2567414Z github.com/devopshub-org/devopshub-cli/pkg/plugin/plugin.go:20:			NewManager		75.0%
+2026-07-25T12:16:02.2568399Z github.com/devopshub-org/devopshub-cli/pkg/plugin/plugin.go:31:			DiscoverPlugins		81.8%
+2026-07-25T12:16:02.2569167Z github.com/devopshub-org/devopshub-cli/pkg/plugin/plugin.go:72:			ExecutePlugin		0.0%
+2026-07-25T12:16:02.2569620Z total:										(statements)		66.1%
+2026-07-25T12:16:02.2700578Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:16:02.2701902Z ##[group]Run codecov/codecov-action@v4
+2026-07-25T12:16:02.2702165Z with:
+2026-07-25T12:16:02.2702349Z   file: coverage.out
+2026-07-25T12:16:02.2702563Z   fail_ci_if_error: false
+2026-07-25T12:16:02.2702780Z env:
+2026-07-25T12:16:02.2702957Z   GO_VERSION: 1.23
+2026-07-25T12:16:02.2703148Z ##[endgroup]
+2026-07-25T12:16:02.3478573Z eventName: push
+2026-07-25T12:16:02.3490789Z ==> linux OS detected
+2026-07-25T12:16:02.6594898Z https://cli.codecov.io/latest/linux/codecov.SHA256SUM
+2026-07-25T12:16:02.8924076Z gpg: directory '/home/runner/.gnupg' created
+2026-07-25T12:16:02.8926240Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2026-07-25T12:16:02.9378939Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2026-07-25T12:16:02.9380145Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2026-07-25T12:16:02.9792352Z gpg: Total number processed: 1
+2026-07-25T12:16:02.9792846Z gpg:               imported: 1
+2026-07-25T12:16:02.9865228Z gpg: Signature made Thu Jul  9 01:37:57 2026 UTC
+2026-07-25T12:16:02.9865793Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2026-07-25T12:16:02.9869004Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2026-07-25T12:16:02.9870226Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-07-25T12:16:02.9870846Z gpg:          There is no indication that the signature belongs to the owner.
+2026-07-25T12:16:02.9871495Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2026-07-25T12:16:03.0105586Z ==> Uploader SHASUM verified (ca1d64196d2d34771084afe76ea657d581bf628e31d993ff8e52ea09cc88a56d  codecov)
+2026-07-25T12:16:03.0106795Z ==> Running version latest
+2026-07-25T12:16:03.0668010Z Could not pull latest version information: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+2026-07-25T12:16:03.0669901Z ==> Running git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:16:03.0703155Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:16:03.0777761Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-commit'
+2026-07-25T12:16:03.0779833Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-commit --git-service github
+2026-07-25T12:16:03.4404203Z info - 2026-07-25 12:16:03,439 -- ci service found: github-actions
+2026-07-25T12:16:03.4494004Z warning - 2026-07-25 12:16:03,449 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:03.4796905Z warning - 2026-07-25 12:16:03,479 -- Branch `main` is protected but no token was provided
+2026-07-25T12:16:03.4798535Z warning - 2026-07-25 12:16:03,479 -- For information on Codecov upload tokens, see https://docs.codecov.com/docs/codecov-tokens
+2026-07-25T12:16:03.6944335Z info - 2026-07-25 12:16:03,693 -- Commit creating complete
+2026-07-25T12:16:03.6949826Z error - 2026-07-25 12:16:03,694 -- Commit creating failed: {"message":"Token required - not valid tokenless upload"}
+2026-07-25T12:16:03.7775226Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-report'
+2026-07-25T12:16:03.7776487Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-report --git-service github
+2026-07-25T12:16:04.1235006Z info - 2026-07-25 12:16:04,123 -- ci service found: github-actions
+2026-07-25T12:16:04.1322059Z warning - 2026-07-25 12:16:04,131 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:04.3094668Z info - 2026-07-25 12:16:04,308 -- Report creating complete
+2026-07-25T12:16:04.3099769Z error - 2026-07-25 12:16:04,309 -- Report creating failed: {"message":"Token required - not valid tokenless upload"}
+2026-07-25T12:16:04.3790982Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov do-upload'
+2026-07-25T12:16:04.3792654Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov do-upload -f coverage.out --git-service github
+2026-07-25T12:16:04.7261711Z info - 2026-07-25 12:16:04,725 -- ci service found: github-actions
+2026-07-25T12:16:04.7352377Z warning - 2026-07-25 12:16:04,734 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:04.7665173Z warning - 2026-07-25 12:16:04,766 -- xcrun is not installed or can't be found.
+2026-07-25T12:16:04.7721518Z warning - 2026-07-25 12:16:04,771 -- No gcov data found.
+2026-07-25T12:16:04.7725471Z warning - 2026-07-25 12:16:04,772 -- coverage.py is not installed or can't be found.
+2026-07-25T12:16:04.7942841Z info - 2026-07-25 12:16:04,793 -- Found 1 coverage files to report
+2026-07-25T12:16:04.7943995Z info - 2026-07-25 12:16:04,794 -- > /home/runner/work/devopshub-cli/devopshub-cli/coverage.out
+2026-07-25T12:16:04.9985698Z info - 2026-07-25 12:16:04,998 -- Upload queued for processing complete
+2026-07-25T12:16:04.9987359Z error - 2026-07-25 12:16:04,998 -- Upload queued for processing failed: {"message":"Token required - not valid tokenless upload"}
+2026-07-25T12:16:05.0971387Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:16:05.0972653Z Post job cleanup.
+2026-07-25T12:16:05.2164095Z (node:10703) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T12:16:05.2165266Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T12:16:05.2253248Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2026-07-25T12:16:05.2300501Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2026-07-25T12:16:05.2329836Z /home/runner/go/pkg/mod
+2026-07-25T12:16:05.2350691Z /home/runner/.cache/go-build
+2026-07-25T12:16:05.2579360Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/devopshub-cli/devopshub-cli --files-from manifest.txt --use-compress-program zstdmt
+2026-07-25T12:16:07.1923951Z Failed to save: Unable to reserve cache with key setup-go-Linux-x64-ubuntu24-go-1.23.12-e36abb838196578da856bdb86f828eb86056a86299e1a206aef1f11c0a07ac3f, another job may be creating this cache.
+2026-07-25T12:16:07.2223438Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:16:07.2224707Z Post job cleanup.
+2026-07-25T12:16:07.3054031Z [command]/usr/bin/git version
+2026-07-25T12:16:07.3097447Z git version 2.54.0
+2026-07-25T12:16:07.3133867Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/a4bce2ec-ec03-4506-a6b1-4de7e5a375f6/.gitconfig'
+2026-07-25T12:16:07.3144062Z Temporarily overriding HOME='/home/runner/work/_temp/a4bce2ec-ec03-4506-a6b1-4de7e5a375f6' before making global git config changes
+2026-07-25T12:16:07.3145726Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-25T12:16:07.3151266Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:16:07.3191111Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-25T12:16:07.3226060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-25T12:16:07.3483980Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-25T12:16:07.3515356Z http.https://github.com/.extraheader
+2026-07-25T12:16:07.3527043Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-25T12:16:07.3561903Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-25T12:16:07.3835347Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-25T12:16:07.3874728Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-25T12:16:07.4294976Z Cleaning up orphan processes
+2026-07-25T12:16:07.4623873Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5, codecov/codecov-action@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

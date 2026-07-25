@@ -31,7 +31,7 @@ func DefaultConfig() Config {
 	}
 }
 
-// GetConfigDir returns the path to ~/.devopshub
+// GetConfigDir returns the path to ~/.devopshub.
 func GetConfigDir() (string, error) {
 	home, err := os.UserHomeDir()
 	if err != nil {
@@ -40,7 +40,7 @@ func GetConfigDir() (string, error) {
 	return filepath.Join(home, ".devopshub"), nil
 }
 
-// GetConfigFile returns the path to ~/.devopshub/config.yaml
+// GetConfigFile returns the path to ~/.devopshub/config.yaml.
 func GetConfigFile() (string, error) {
 	dir, err := GetConfigDir()
 	if err != nil {
@@ -85,14 +85,14 @@ func InitConfig() (*Config, error) {
 	return &cfg, nil
 }
 
-// WriteConfig creates or updates ~/.devopshub/config.yaml
+// WriteConfig creates or updates ~/.devopshub/config.yaml.
 func WriteConfig(cfg *Config) error {
 	dir, err := GetConfigDir()
 	if err != nil {
 		return err
 	}
 
-	if err := os.MkdirAll(dir, 0755); err != nil {
+	if err := os.MkdirAll(dir, 0o755); err != nil {
 		return fmt.Errorf("failed to create config directory: %w", err)
 	}
 

@@ -1,0 +1,82 @@
+﻿2026-07-25T11:56:25.3681785Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T11:56:25.3685200Z ##[group]Run actions/setup-go@v5
+2026-07-25T11:56:25.3685486Z with:
+2026-07-25T11:56:25.3685691Z   go-version: 1.23
+2026-07-25T11:56:25.3685893Z   cache: true
+2026-07-25T11:56:25.3686086Z   check-latest: false
+2026-07-25T11:56:25.3689307Z   token: ***
+2026-07-25T11:56:25.3689524Z env:
+2026-07-25T11:56:25.3689746Z   GO_VERSION: 1.23
+2026-07-25T11:56:25.3689951Z ##[endgroup]
+2026-07-25T11:56:25.5371494Z Setup go version spec 1.23
+2026-07-25T11:56:25.5577417Z Attempting to download 1.23...
+2026-07-25T11:56:25.5794597Z (node:8820) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-25T11:56:25.5796145Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-25T11:56:26.0567972Z matching 1.23...
+2026-07-25T11:56:26.0610406Z Acquiring 1.23.12 from https://github.com/actions/go-versions/releases/download/1.23.12-16792118003/go-1.23.12-win32-x64.zip
+2026-07-25T11:56:26.7259362Z Extracting Go...
+2026-07-25T11:56:26.8400524Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.23.12-win32-x64.zip', 'D:\a\_temp\ab8eef6f-088d-4d70-9879-ce907d65618b', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.23.12-win32-x64.zip' -DestinationPath 'D:\a\_temp\ab8eef6f-088d-4d70-9879-ce907d65618b' -Force } else { throw $_ } } ;"
+2026-07-25T11:56:36.0440513Z Successfully extracted go to D:\a\_temp\ab8eef6f-088d-4d70-9879-ce907d65618b
+2026-07-25T11:56:36.0441015Z Adding to the cache ...
+2026-07-25T11:56:45.6914634Z Created link C:\hostedtoolcache\windows\go\1.23.12\x64 => D:\hostedtoolcache\windows\go\1.23.12\x64
+2026-07-25T11:56:45.6923669Z Created link C:\hostedtoolcache\windows\go\1.23.12\x64.complete => D:\hostedtoolcache\windows\go\1.23.12\x64.complete
+2026-07-25T11:56:45.6924506Z Successfully cached go to C:\hostedtoolcache\windows\go\1.23.12\x64
+2026-07-25T11:56:45.6931619Z Added go to the path
+2026-07-25T11:56:45.6934760Z Successfully set up Go version 1.23
+2026-07-25T11:57:02.2907479Z go: downloading go1.25.0 (windows/amd64)
+2026-07-25T11:57:02.5432548Z [command]C:\hostedtoolcache\windows\go\1.23.12\x64\bin\go.exe env GOMODCACHE
+2026-07-25T11:57:02.5482943Z [command]C:\hostedtoolcache\windows\go\1.23.12\x64\bin\go.exe env GOCACHE
+2026-07-25T11:57:02.6311830Z C:\Users\runneradmin\go\pkg\mod
+2026-07-25T11:57:02.6343177Z C:\Users\runneradmin\AppData\Local\go-build
+2026-07-25T11:57:02.8650257Z Cache is not found
+2026-07-25T11:57:02.8673782Z go version go1.25.0 windows/amd64
+2026-07-25T11:57:02.8674032Z 
+2026-07-25T11:57:02.8674339Z ##[group]go env
+2026-07-25T11:57:05.4147861Z set AR=ar
+2026-07-25T11:57:05.4148345Z set CC=gcc
+2026-07-25T11:57:05.4148686Z set CGO_CFLAGS=-O2 -g
+2026-07-25T11:57:05.4149022Z set CGO_CPPFLAGS=
+2026-07-25T11:57:05.4149341Z set CGO_CXXFLAGS=-O2 -g
+2026-07-25T11:57:05.4149688Z set CGO_ENABLED=1
+2026-07-25T11:57:05.4149979Z set CGO_FFLAGS=-O2 -g
+2026-07-25T11:57:05.4150304Z set CGO_LDFLAGS=-O2 -g
+2026-07-25T11:57:05.4150627Z set CXX=g++
+2026-07-25T11:57:05.4150946Z set GCCGO=gccgo
+2026-07-25T11:57:05.4151251Z set GO111MODULE=
+2026-07-25T11:57:05.4151536Z set GOAMD64=v1
+2026-07-25T11:57:05.4151857Z set GOARCH=amd64
+2026-07-25T11:57:05.4152148Z set GOAUTH=netrc
+2026-07-25T11:57:05.4152455Z set GOBIN=
+2026-07-25T11:57:05.4155964Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+2026-07-25T11:57:05.4156461Z set GOCACHEPROG=
+2026-07-25T11:57:05.4156736Z set GODEBUG=
+2026-07-25T11:57:05.4157102Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+2026-07-25T11:57:05.4157849Z set GOEXE=.exe
+2026-07-25T11:57:05.4158147Z set GOEXPERIMENT=
+2026-07-25T11:57:05.4158455Z set GOFIPS140=off
+2026-07-25T11:57:05.4158732Z set GOFLAGS=
+2026-07-25T11:57:05.4159935Z set GOGCCFLAGS=-m64 -mthreads -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build1720839466=/tmp/go-build -gno-record-gcc-switches
+2026-07-25T11:57:05.4161230Z set GOHOSTARCH=amd64
+2026-07-25T11:57:05.4161524Z set GOHOSTOS=windows
+2026-07-25T11:57:05.4161819Z set GOINSECURE=
+2026-07-25T11:57:05.4162192Z set GOMOD=D:\a\devopshub-cli\devopshub-cli\go.mod
+2026-07-25T11:57:05.4162736Z set GOMODCACHE=C:\Users\runneradmin\go\pkg\mod
+2026-07-25T11:57:05.4163177Z set GONOPROXY=
+2026-07-25T11:57:05.4163469Z set GONOSUMDB=
+2026-07-25T11:57:05.4163737Z set GOOS=windows
+2026-07-25T11:57:05.4164077Z set GOPATH=C:\Users\runneradmin\go
+2026-07-25T11:57:05.4164583Z set GOPRIVATE=
+2026-07-25T11:57:05.4165008Z set GOPROXY=https://proxy.golang.org,direct
+2026-07-25T11:57:05.4165754Z set GOROOT=C:\Users\runneradmin\go\pkg\mod\golang.org\toolchain@v0.0.1-go1.25.0.windows-amd64
+2026-07-25T11:57:05.4166799Z set GOSUMDB=sum.golang.org
+2026-07-25T11:57:05.4167157Z set GOTELEMETRY=local
+2026-07-25T11:57:05.4167684Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+2026-07-25T11:57:05.4168270Z set GOTMPDIR=
+2026-07-25T11:57:05.4168567Z set GOTOOLCHAIN=auto
+2026-07-25T11:57:05.4169356Z set GOTOOLDIR=C:\Users\runneradmin\go\pkg\mod\golang.org\toolchain@v0.0.1-go1.25.0.windows-amd64\pkg\tool\windows_amd64
+2026-07-25T11:57:05.4170195Z set GOVCS=
+2026-07-25T11:57:05.4170470Z set GOVERSION=go1.25.0
+2026-07-25T11:57:05.4170800Z set GOWORK=
+2026-07-25T11:57:05.4171121Z set PKG_CONFIG=pkg-config
+2026-07-25T11:57:05.4171381Z 
+2026-07-25T11:57:05.4172045Z ##[endgroup]

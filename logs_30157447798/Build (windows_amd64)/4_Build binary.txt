@@ -1,0 +1,18 @@
+﻿2026-07-25T12:08:15.1812436Z ##[group]Run go build \
+2026-07-25T12:08:15.1812765Z [36;1mgo build \[0m
+2026-07-25T12:08:15.1813008Z [36;1m  -trimpath \[0m
+2026-07-25T12:08:15.1813262Z [36;1m  -ldflags="-s -w \[0m
+2026-07-25T12:08:15.1813820Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Version=ci-5de0e470ffb2f5c01f572b39e2ef33db64da592d \[0m
+2026-07-25T12:08:15.1814640Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Commit=5de0e470ffb2f5c01f572b39e2ef33db64da592d \[0m
+2026-07-25T12:08:15.1815377Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) \[0m
+2026-07-25T12:08:15.1816028Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.BuiltBy=github-actions" \[0m
+2026-07-25T12:08:15.1816498Z [36;1m  -o bin/devopshub-windows-amd64 \[0m
+2026-07-25T12:08:15.1816818Z [36;1m  ./cmd/devopshub[0m
+2026-07-25T12:08:15.1872241Z shell: /usr/bin/bash -e {0}
+2026-07-25T12:08:15.1872523Z env:
+2026-07-25T12:08:15.1872740Z   GO_VERSION: 1.23
+2026-07-25T12:08:15.1873002Z   GOOS: windows
+2026-07-25T12:08:15.1873214Z   GOARCH: amd64
+2026-07-25T12:08:15.1873414Z   CGO_ENABLED: 0
+2026-07-25T12:08:15.1873620Z ##[endgroup]
+2026-07-25T12:08:15.2258237Z go: downloading github.com/inconshreveable/mousetrap v1.1.0

@@ -1,0 +1,40 @@
+﻿2026-07-25T11:56:25.4025464Z ##[group]Pull down action image 'ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0'
+2026-07-25T11:56:25.4065340Z ##[command]/usr/bin/docker pull ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:56:26.7703098Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0: Pulling from securego/gosec
+2026-07-25T11:56:27.0492794Z 55afa1ecc21d: Already exists
+2026-07-25T11:56:27.0614002Z 6563b0ba6ce9: Pulling fs layer
+2026-07-25T11:56:27.0614908Z cea3d467f844: Pulling fs layer
+2026-07-25T11:56:27.0615649Z 56bd32640bdf: Pulling fs layer
+2026-07-25T11:56:27.0616344Z 4f4fb700ef54: Pulling fs layer
+2026-07-25T11:56:27.0616720Z db03667ab1c3: Pulling fs layer
+2026-07-25T11:56:27.0617114Z f8b1d69f1c0f: Pulling fs layer
+2026-07-25T11:56:27.0617519Z efbc8bb3a63f: Pulling fs layer
+2026-07-25T11:56:27.0618290Z f8b1d69f1c0f: Waiting
+2026-07-25T11:56:27.0618952Z 4f4fb700ef54: Waiting
+2026-07-25T11:56:27.0619540Z db03667ab1c3: Waiting
+2026-07-25T11:56:27.0619886Z efbc8bb3a63f: Waiting
+2026-07-25T11:56:27.4442861Z 6563b0ba6ce9: Verifying Checksum
+2026-07-25T11:56:27.4443737Z 6563b0ba6ce9: Download complete
+2026-07-25T11:56:27.4469144Z 56bd32640bdf: Verifying Checksum
+2026-07-25T11:56:27.4469608Z 56bd32640bdf: Download complete
+2026-07-25T11:56:27.7145250Z 4f4fb700ef54: Verifying Checksum
+2026-07-25T11:56:27.7146174Z 4f4fb700ef54: Download complete
+2026-07-25T11:56:28.4280858Z f8b1d69f1c0f: Verifying Checksum
+2026-07-25T11:56:28.4281585Z f8b1d69f1c0f: Download complete
+2026-07-25T11:56:28.7739046Z efbc8bb3a63f: Verifying Checksum
+2026-07-25T11:56:28.7739925Z efbc8bb3a63f: Download complete
+2026-07-25T11:56:29.3298683Z cea3d467f844: Verifying Checksum
+2026-07-25T11:56:29.3299471Z cea3d467f844: Download complete
+2026-07-25T11:56:29.6102426Z 6563b0ba6ce9: Pull complete
+2026-07-25T11:56:30.0008641Z db03667ab1c3: Verifying Checksum
+2026-07-25T11:56:30.0009708Z db03667ab1c3: Download complete
+2026-07-25T11:56:35.1301618Z cea3d467f844: Pull complete
+2026-07-25T11:56:35.1416487Z 56bd32640bdf: Pull complete
+2026-07-25T11:56:35.1510841Z 4f4fb700ef54: Pull complete
+2026-07-25T11:56:37.7446653Z db03667ab1c3: Pull complete
+2026-07-25T11:56:38.2260206Z f8b1d69f1c0f: Pull complete
+2026-07-25T11:56:38.2398081Z efbc8bb3a63f: Pull complete
+2026-07-25T11:56:38.2444848Z Digest: sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:56:38.2454065Z Status: Downloaded newer image for ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:56:38.2466327Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:56:38.2493858Z ##[endgroup]

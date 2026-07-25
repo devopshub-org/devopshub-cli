@@ -1,0 +1,207 @@
+﻿2026-07-25T11:46:08.7589711Z ##[group]Run go test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
+2026-07-25T11:46:08.7590405Z [36;1mgo test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...[0m
+2026-07-25T11:46:08.7625078Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-07-25T11:46:08.7625448Z env:
+2026-07-25T11:46:08.7625649Z   GO_VERSION: 1.23
+2026-07-25T11:46:08.7625861Z ##[endgroup]
+2026-07-25T11:46:08.7799085Z go: downloading github.com/spf13/cobra v1.8.1
+2026-07-25T11:46:08.7818778Z go: downloading github.com/spf13/viper v1.19.0
+2026-07-25T11:46:08.7860628Z go: downloading k8s.io/api v0.31.0
+2026-07-25T11:46:08.7928552Z go: downloading k8s.io/apimachinery v0.31.0
+2026-07-25T11:46:08.8896478Z go: downloading k8s.io/client-go v0.31.0
+2026-07-25T11:46:09.2915263Z go: downloading github.com/rs/zerolog v1.33.0
+2026-07-25T11:46:09.3591817Z go: downloading github.com/fsnotify/fsnotify v1.7.0
+2026-07-25T11:46:09.3651380Z go: downloading github.com/sagikazarmark/slog-shim v0.1.0
+2026-07-25T11:46:09.3652601Z go: downloading github.com/mitchellh/mapstructure v1.5.0
+2026-07-25T11:46:09.3655509Z go: downloading github.com/spf13/afero v1.11.0
+2026-07-25T11:46:09.3880043Z go: downloading github.com/spf13/cast v1.6.0
+2026-07-25T11:46:09.3915481Z go: downloading github.com/spf13/pflag v1.0.5
+2026-07-25T11:46:09.3964540Z go: downloading github.com/gogo/protobuf v1.3.2
+2026-07-25T11:46:09.4085546Z go: downloading github.com/google/gofuzz v1.2.0
+2026-07-25T11:46:09.4173075Z go: downloading k8s.io/utils v0.0.0-20240711033017-18e509b52bc8
+2026-07-25T11:46:09.4293135Z go: downloading gopkg.in/inf.v0 v0.9.1
+2026-07-25T11:46:09.4565468Z go: downloading github.com/mattn/go-colorable v0.1.13
+2026-07-25T11:46:09.4834722Z go: downloading github.com/imdario/mergo v0.3.6
+2026-07-25T11:46:09.4859118Z go: downloading golang.org/x/term v0.21.0
+2026-07-25T11:46:09.5000287Z go: downloading k8s.io/klog/v2 v2.130.1
+2026-07-25T11:46:09.5048917Z go: downloading golang.org/x/text v0.16.0
+2026-07-25T11:46:09.6668932Z go: downloading github.com/subosito/gotenv v1.6.0
+2026-07-25T11:46:09.6823826Z go: downloading github.com/hashicorp/hcl v1.0.0
+2026-07-25T11:46:09.7097861Z go: downloading gopkg.in/ini.v1 v1.67.0
+2026-07-25T11:46:09.7318489Z go: downloading github.com/magiconair/properties v1.8.7
+2026-07-25T11:46:09.7497411Z go: downloading github.com/pelletier/go-toml/v2 v2.2.2
+2026-07-25T11:46:09.7944825Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2026-07-25T11:46:09.8196928Z go: downloading golang.org/x/sys v0.24.0
+2026-07-25T11:46:09.9804850Z go: downloading sigs.k8s.io/structured-merge-diff/v4 v4.4.1
+2026-07-25T11:46:10.0236496Z go: downloading sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
+2026-07-25T11:46:10.0462991Z go: downloading github.com/mattn/go-isatty v0.0.20
+2026-07-25T11:46:10.0607118Z go: downloading github.com/golang/protobuf v1.5.4
+2026-07-25T11:46:10.0634554Z go: downloading github.com/google/gnostic-models v0.6.8
+2026-07-25T11:46:10.0640483Z go: downloading golang.org/x/net v0.26.0
+2026-07-25T11:46:10.0660603Z go: downloading golang.org/x/time v0.5.0
+2026-07-25T11:46:10.0912398Z go: downloading gopkg.in/evanphx/json-patch.v4 v4.12.0
+2026-07-25T11:46:10.0998819Z go: downloading sigs.k8s.io/yaml v1.4.0
+2026-07-25T11:46:10.1011049Z go: downloading github.com/go-logr/logr v1.4.2
+2026-07-25T11:46:10.1114380Z go: downloading github.com/json-iterator/go v1.1.12
+2026-07-25T11:46:10.1317016Z go: downloading gopkg.in/yaml.v2 v2.4.0
+2026-07-25T11:46:10.1403110Z go: downloading github.com/fxamacker/cbor/v2 v2.7.0
+2026-07-25T11:46:10.1473064Z go: downloading k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340
+2026-07-25T11:46:10.2641733Z go: downloading golang.org/x/oauth2 v0.21.0
+2026-07-25T11:46:10.3325353Z go: downloading google.golang.org/protobuf v1.34.2
+2026-07-25T11:46:10.4824169Z go: downloading github.com/pkg/errors v0.9.1
+2026-07-25T11:46:10.4836524Z go: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+2026-07-25T11:46:10.4837506Z go: downloading github.com/modern-go/reflect2 v1.0.2
+2026-07-25T11:46:10.4838515Z go: downloading github.com/x448/float16 v0.8.4
+2026-07-25T11:46:10.5048543Z go: downloading github.com/google/go-cmp v0.6.0
+2026-07-25T11:46:10.5133204Z go: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
+2026-07-25T11:46:10.5154430Z go: downloading github.com/google/uuid v1.6.0
+2026-07-25T11:46:10.5156992Z go: downloading github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
+2026-07-25T11:46:10.5268196Z go: downloading github.com/go-openapi/swag v0.22.4
+2026-07-25T11:46:10.5306134Z go: downloading github.com/go-openapi/jsonreference v0.20.2
+2026-07-25T11:46:10.5325470Z go: downloading github.com/emicklei/go-restful/v3 v3.11.0
+2026-07-25T11:46:10.5453631Z go: downloading github.com/go-openapi/jsonpointer v0.19.6
+2026-07-25T11:46:10.5472813Z go: downloading github.com/mailru/easyjson v0.7.7
+2026-07-25T11:46:10.5687027Z go: downloading github.com/josharian/intern v1.0.0
+2026-07-25T11:47:02.0813729Z 	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster		coverage: 0.0% of statements
+2026-07-25T11:47:02.0815132Z 	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud		coverage: 0.0% of statements
+2026-07-25T11:47:02.9738746Z === RUN   TestRootCmd_NoArgs_ShowsHelp
+2026-07-25T11:47:02.9739490Z --- PASS: TestRootCmd_NoArgs_ShowsHelp (0.00s)
+2026-07-25T11:47:02.9740130Z === RUN   TestRootCmd_Help_NoError
+2026-07-25T11:47:02.9740632Z --- PASS: TestRootCmd_Help_NoError (0.00s)
+2026-07-25T11:47:02.9741164Z === RUN   TestRootCmd_UnknownCommand_ReturnsError
+2026-07-25T11:47:02.9741673Z --- PASS: TestRootCmd_UnknownCommand_ReturnsError (0.00s)
+2026-07-25T11:47:02.9742360Z === RUN   TestRootCmd_HasVersionSubcommand
+2026-07-25T11:47:02.9743015Z --- PASS: TestRootCmd_HasVersionSubcommand (0.00s)
+2026-07-25T11:47:02.9743433Z === RUN   TestRootCmd_HasCheatSubcommand
+2026-07-25T11:47:02.9743815Z --- PASS: TestRootCmd_HasCheatSubcommand (0.00s)
+2026-07-25T11:47:02.9744253Z === RUN   TestRootCmd_HasCompletionSubcommand
+2026-07-25T11:47:02.9744799Z --- PASS: TestRootCmd_HasCompletionSubcommand (0.00s)
+2026-07-25T11:47:02.9745327Z === RUN   TestVersionCmd_DefaultOutput
+2026-07-25T11:47:02.9745920Z --- PASS: TestVersionCmd_DefaultOutput (0.00s)
+2026-07-25T11:47:02.9746431Z === RUN   TestVersionCmd_ContainsBuildVersion
+2026-07-25T11:47:02.9746880Z --- PASS: TestVersionCmd_ContainsBuildVersion (0.00s)
+2026-07-25T11:47:02.9747434Z === RUN   TestVersionCmd_JSONOutput_IsValidJSON
+2026-07-25T11:47:02.9747924Z --- PASS: TestVersionCmd_JSONOutput_IsValidJSON (0.00s)
+2026-07-25T11:47:02.9748375Z === RUN   TestVersionCmd_JSONOutput_ContainsRequiredFields
+2026-07-25T11:47:02.9749035Z --- PASS: TestVersionCmd_JSONOutput_ContainsRequiredFields (0.00s)
+2026-07-25T11:47:02.9749648Z === RUN   TestVersionCmd_VerboseOutput
+2026-07-25T11:47:02.9750193Z --- PASS: TestVersionCmd_VerboseOutput (0.00s)
+2026-07-25T11:47:02.9750799Z === RUN   TestVersionCmd_Alias
+2026-07-25T11:47:02.9751273Z --- PASS: TestVersionCmd_Alias (0.00s)
+2026-07-25T11:47:02.9751818Z === RUN   TestCompletionCmd_Bash_NoError
+2026-07-25T11:47:02.9752422Z --- PASS: TestCompletionCmd_Bash_NoError (0.00s)
+2026-07-25T11:47:02.9753226Z === RUN   TestCompletionCmd_Zsh_NoError
+2026-07-25T11:47:02.9753751Z --- PASS: TestCompletionCmd_Zsh_NoError (0.00s)
+2026-07-25T11:47:02.9754234Z === RUN   TestCompletionCmd_PowerShell_NoError
+2026-07-25T11:47:02.9754661Z --- PASS: TestCompletionCmd_PowerShell_NoError (0.00s)
+2026-07-25T11:47:02.9755211Z === RUN   TestCompletionCmd_InvalidShell_ReturnsError
+2026-07-25T11:47:02.9755705Z --- PASS: TestCompletionCmd_InvalidShell_ReturnsError (0.00s)
+2026-07-25T11:47:02.9756205Z === RUN   TestCompletionCmd_NoArgs_ReturnsError
+2026-07-25T11:47:02.9756739Z --- PASS: TestCompletionCmd_NoArgs_ReturnsError (0.00s)
+2026-07-25T11:47:02.9757099Z PASS
+2026-07-25T11:47:02.9757595Z coverage: 88.2% of statements
+2026-07-25T11:47:02.9758247Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub	1.051s	coverage: 88.2% of statements
+2026-07-25T11:47:03.1106004Z === RUN   TestNewCheatCmd_NotNil
+2026-07-25T11:47:03.1107241Z --- PASS: TestNewCheatCmd_NotNil (0.00s)
+2026-07-25T11:47:03.1107939Z === RUN   TestCheatCmd_HasExpectedSubcommands
+2026-07-25T11:47:03.1108716Z --- PASS: TestCheatCmd_HasExpectedSubcommands (0.00s)
+2026-07-25T11:47:03.1109514Z === RUN   TestDockerCheat_ContainsCoreCommands
+2026-07-25T11:47:03.1110232Z --- PASS: TestDockerCheat_ContainsCoreCommands (0.00s)
+2026-07-25T11:47:03.1110898Z === RUN   TestDockerCheat_ContainsSections
+2026-07-25T11:47:03.1112777Z --- PASS: TestDockerCheat_ContainsSections (0.00s)
+2026-07-25T11:47:03.1113472Z === RUN   TestDockerCheat_JSONOutputIsValid
+2026-07-25T11:47:03.1114167Z --- PASS: TestDockerCheat_JSONOutputIsValid (0.00s)
+2026-07-25T11:47:03.1114949Z === RUN   TestDockerCheat_JSONContainsTitleAndEntries
+2026-07-25T11:47:03.1115721Z --- PASS: TestDockerCheat_JSONContainsTitleAndEntries (0.00s)
+2026-07-25T11:47:03.1116457Z === RUN   TestK8sCheat_ContainsCoreCommands
+2026-07-25T11:47:03.1117141Z --- PASS: TestK8sCheat_ContainsCoreCommands (0.00s)
+2026-07-25T11:47:03.1117834Z === RUN   TestK8sCheat_JSONOutputIsValid
+2026-07-25T11:47:03.1118624Z --- PASS: TestK8sCheat_JSONOutputIsValid (0.00s)
+2026-07-25T11:47:03.1119884Z === RUN   TestK8sCheat_KubernetesAlias
+2026-07-25T11:47:03.1120772Z --- PASS: TestK8sCheat_KubernetesAlias (0.00s)
+2026-07-25T11:47:03.1121780Z === RUN   TestLinuxCheat_ContainsCoreCommands
+2026-07-25T11:47:03.1123031Z --- PASS: TestLinuxCheat_ContainsCoreCommands (0.00s)
+2026-07-25T11:47:03.1123935Z === RUN   TestLinuxCheat_JSONOutputIsValid
+2026-07-25T11:47:03.1124844Z --- PASS: TestLinuxCheat_JSONOutputIsValid (0.00s)
+2026-07-25T11:47:03.1125738Z === RUN   TestCheatCmd_NoArgs_PrintsHelp
+2026-07-25T11:47:03.1126539Z --- PASS: TestCheatCmd_NoArgs_PrintsHelp (0.00s)
+2026-07-25T11:47:03.1127293Z === RUN   TestCheatCmd_UnknownSubcommand_FallsBackToHelp
+2026-07-25T11:47:03.1128090Z --- PASS: TestCheatCmd_UnknownSubcommand_FallsBackToHelp (0.00s)
+2026-07-25T11:47:03.1128697Z PASS
+2026-07-25T11:47:03.1129076Z coverage: 100.0% of statements
+2026-07-25T11:47:03.1129963Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat	1.031s	coverage: 100.0% of statements
+2026-07-25T11:47:03.4824794Z === RUN   TestConfigCommands
+2026-07-25T11:47:03.4825521Z --- PASS: TestConfigCommands (0.03s)
+2026-07-25T11:47:03.4826005Z PASS
+2026-07-25T11:47:03.4826469Z coverage: 56.5% of statements
+2026-07-25T11:47:03.4827278Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/config	1.041s	coverage: 56.5% of statements
+2026-07-25T11:47:03.4828098Z === RUN   TestGet_ReturnsInfo
+2026-07-25T11:47:03.4828635Z --- PASS: TestGet_ReturnsInfo (0.00s)
+2026-07-25T11:47:03.4829175Z === RUN   TestGet_DefaultsArePopulated
+2026-07-25T11:47:03.4829896Z --- PASS: TestGet_DefaultsArePopulated (0.00s)
+2026-07-25T11:47:03.4830516Z === RUN   TestGet_GoVersionMatchesRuntime
+2026-07-25T11:47:03.4831102Z --- PASS: TestGet_GoVersionMatchesRuntime (0.00s)
+2026-07-25T11:47:03.4831770Z === RUN   TestGet_PlatformFormat
+2026-07-25T11:47:03.4832543Z --- PASS: TestGet_PlatformFormat (0.00s)
+2026-07-25T11:47:03.4833060Z PASS
+2026-07-25T11:47:03.4833356Z coverage: 100.0% of statements
+2026-07-25T11:47:03.4834377Z ok  	github.com/devopshub-org/devopshub-cli/internal/build	1.010s	coverage: 100.0% of statements
+2026-07-25T11:47:04.3434723Z === RUN   TestDefaultConfig
+2026-07-25T11:47:04.3435301Z --- PASS: TestDefaultConfig (0.00s)
+2026-07-25T11:47:04.3435778Z === RUN   TestGetConfigDir
+2026-07-25T11:47:04.3436172Z --- PASS: TestGetConfigDir (0.00s)
+2026-07-25T11:47:04.3436574Z === RUN   TestWriteAndInitConfig
+2026-07-25T11:47:04.3437001Z --- PASS: TestWriteAndInitConfig (0.00s)
+2026-07-25T11:47:04.3437394Z PASS
+2026-07-25T11:47:04.3437679Z coverage: 74.5% of statements
+2026-07-25T11:47:04.3438324Z ok  	github.com/devopshub-org/devopshub-cli/internal/config	1.015s	coverage: 74.5% of statements
+2026-07-25T11:47:04.4142885Z === RUN   TestSuccess_WritesToStdout
+2026-07-25T11:47:04.4143758Z --- PASS: TestSuccess_WritesToStdout (0.00s)
+2026-07-25T11:47:04.4144530Z === RUN   TestSuccess_QuietMode_WritesNothing
+2026-07-25T11:47:04.4145522Z --- PASS: TestSuccess_QuietMode_WritesNothing (0.00s)
+2026-07-25T11:47:04.4146331Z === RUN   TestError_WritesToStderr
+2026-07-25T11:47:04.4146952Z --- PASS: TestError_WritesToStderr (0.00s)
+2026-07-25T11:47:04.4147625Z === RUN   TestError_QuietMode_StillWritesToStderr
+2026-07-25T11:47:04.4148379Z --- PASS: TestError_QuietMode_StillWritesToStderr (0.00s)
+2026-07-25T11:47:04.4149066Z === RUN   TestInfo_WritesToStdout
+2026-07-25T11:47:04.4149640Z --- PASS: TestInfo_WritesToStdout (0.00s)
+2026-07-25T11:47:04.4150160Z === RUN   TestWarning_WritesToStdout
+2026-07-25T11:47:04.4150742Z --- PASS: TestWarning_WritesToStdout (0.00s)
+2026-07-25T11:47:04.4151303Z === RUN   TestHeader_IncludesTitle
+2026-07-25T11:47:04.4152856Z --- PASS: TestHeader_IncludesTitle (0.00s)
+2026-07-25T11:47:04.4153295Z === RUN   TestPrintln_WritesLine
+2026-07-25T11:47:04.4153749Z --- PASS: TestPrintln_WritesLine (0.00s)
+2026-07-25T11:47:04.4154042Z === RUN   TestPrintf_WritesFormattedOutput
+2026-07-25T11:47:04.4154526Z --- PASS: TestPrintf_WritesFormattedOutput (0.00s)
+2026-07-25T11:47:04.4154836Z === RUN   TestJSON_WritesValidJSON
+2026-07-25T11:47:04.4155265Z --- PASS: TestJSON_WritesValidJSON (0.00s)
+2026-07-25T11:47:04.4155550Z === RUN   TestTable_RendersHeaderAndRows
+2026-07-25T11:47:04.4155962Z --- PASS: TestTable_RendersHeaderAndRows (0.00s)
+2026-07-25T11:47:04.4156284Z === RUN   TestNew_Default_DoesNotPanic
+2026-07-25T11:47:04.4156669Z --- PASS: TestNew_Default_DoesNotPanic (0.00s)
+2026-07-25T11:47:04.4156975Z PASS
+2026-07-25T11:47:04.4157178Z coverage: 80.5% of statements
+2026-07-25T11:47:04.4157747Z ok  	github.com/devopshub-org/devopshub-cli/internal/output	1.011s	coverage: 80.5% of statements
+2026-07-25T11:47:14.9924360Z === RUN   TestCheckAWS
+2026-07-25T11:47:14.9924795Z --- PASS: TestCheckAWS (0.00s)
+2026-07-25T11:47:14.9925058Z === RUN   TestCheckGCP
+2026-07-25T11:47:14.9925286Z --- PASS: TestCheckGCP (5.34s)
+2026-07-25T11:47:14.9925525Z === RUN   TestCheckAzure
+2026-07-25T11:47:14.9925760Z --- PASS: TestCheckAzure (4.94s)
+2026-07-25T11:47:14.9926021Z PASS
+2026-07-25T11:47:14.9926221Z coverage: 74.3% of statements
+2026-07-25T11:47:14.9926640Z ok  	github.com/devopshub-org/devopshub-cli/pkg/cloud	11.298s	coverage: 74.3% of statements
+2026-07-25T11:47:14.9927054Z === RUN   TestK8sClientInspect
+2026-07-25T11:47:14.9927315Z --- PASS: TestK8sClientInspect (0.00s)
+2026-07-25T11:47:14.9927584Z === RUN   TestK8sClientListPods
+2026-07-25T11:47:14.9927841Z --- PASS: TestK8sClientListPods (0.00s)
+2026-07-25T11:47:14.9928110Z === RUN   TestK8sClientListNodes
+2026-07-25T11:47:14.9928374Z --- PASS: TestK8sClientListNodes (0.00s)
+2026-07-25T11:47:14.9928619Z PASS
+2026-07-25T11:47:14.9928814Z coverage: 62.1% of statements
+2026-07-25T11:47:14.9929187Z ok  	github.com/devopshub-org/devopshub-cli/pkg/k8s	1.053s	coverage: 62.1% of statements
+2026-07-25T11:47:14.9929590Z === RUN   TestPluginDiscovery
+2026-07-25T11:47:14.9929849Z --- PASS: TestPluginDiscovery (0.01s)
+2026-07-25T11:47:14.9930091Z PASS
+2026-07-25T11:47:14.9930288Z coverage: 65.6% of statements
+2026-07-25T11:47:14.9930683Z ok  	github.com/devopshub-org/devopshub-cli/pkg/plugin	1.023s	coverage: 65.6% of statements

@@ -1,0 +1,27 @@
+﻿2026-07-25T12:08:21.8813330Z ##[group]Run go mod tidy
+2026-07-25T12:08:21.8813707Z [36;1mgo mod tidy[0m
+2026-07-25T12:08:21.8813983Z [36;1mgit diff --exit-code go.mod go.sum[0m
+2026-07-25T12:08:21.8862791Z shell: /usr/bin/bash -e {0}
+2026-07-25T12:08:21.8863085Z env:
+2026-07-25T12:08:21.8863284Z   GO_VERSION: 1.23
+2026-07-25T12:08:21.8863508Z ##[endgroup]
+2026-07-25T12:08:21.9205399Z go: downloading github.com/inconshreveable/mousetrap v1.1.0
+2026-07-25T12:08:21.9581374Z go: downloading github.com/sagikazarmark/locafero v0.4.0
+2026-07-25T12:08:22.0503119Z go: downloading golang.org/x/exp v0.0.0-20230905200255-921286631fa9
+2026-07-25T12:08:22.0838994Z go: downloading github.com/stretchr/testify v1.9.0
+2026-07-25T12:08:22.0879141Z go: downloading github.com/frankban/quicktest v1.14.6
+2026-07-25T12:08:22.1236136Z go: downloading gopkg.in/evanphx/json-patch.v4 v4.12.0
+2026-07-25T12:08:22.1340340Z go: downloading github.com/sourcegraph/conc v0.3.0
+2026-07-25T12:08:22.1341339Z go: downloading github.com/kr/pretty v0.3.1
+2026-07-25T12:08:22.1344273Z go: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
+2026-07-25T12:08:22.1463964Z go: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2
+2026-07-25T12:08:22.1563207Z go: downloading github.com/pkg/errors v0.9.1
+2026-07-25T12:08:22.1563918Z go: downloading github.com/kr/text v0.2.0
+2026-07-25T12:08:22.1564962Z go: downloading github.com/rogpeppe/go-internal v1.12.0
+2026-07-25T12:08:22.1651198Z go: downloading github.com/onsi/ginkgo/v2 v2.19.0
+2026-07-25T12:08:22.1651854Z go: downloading go.uber.org/multierr v1.9.0
+2026-07-25T12:08:22.1652482Z go: downloading github.com/onsi/gomega v1.19.0
+2026-07-25T12:08:22.1775748Z go: downloading go.uber.org/atomic v1.9.0
+2026-07-25T12:08:22.2875840Z go: downloading github.com/go-task/slim-sprig/v3 v3.0.0
+2026-07-25T12:08:22.2877178Z go: downloading github.com/google/pprof v0.0.0-20240525223248-4bfdf5a9a2af
+2026-07-25T12:08:22.2877656Z go: downloading golang.org/x/tools v0.47.0

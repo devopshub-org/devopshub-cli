@@ -1,0 +1,39 @@
+﻿2026-07-25T11:45:54.6238531Z ##[group]Pull down action image 'ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0'
+2026-07-25T11:45:54.6299500Z ##[command]/usr/bin/docker pull ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:45:55.0999369Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0: Pulling from securego/gosec
+2026-07-25T11:45:55.2125044Z 55afa1ecc21d: Already exists
+2026-07-25T11:45:55.2163263Z 6563b0ba6ce9: Pulling fs layer
+2026-07-25T11:45:55.2164146Z cea3d467f844: Pulling fs layer
+2026-07-25T11:45:55.2165039Z 56bd32640bdf: Pulling fs layer
+2026-07-25T11:45:55.2165853Z 4f4fb700ef54: Pulling fs layer
+2026-07-25T11:45:55.2166643Z db03667ab1c3: Pulling fs layer
+2026-07-25T11:45:55.2167075Z f8b1d69f1c0f: Pulling fs layer
+2026-07-25T11:45:55.2167544Z efbc8bb3a63f: Pulling fs layer
+2026-07-25T11:45:55.2167946Z db03667ab1c3: Waiting
+2026-07-25T11:45:55.2168334Z 4f4fb700ef54: Waiting
+2026-07-25T11:45:55.2168760Z f8b1d69f1c0f: Waiting
+2026-07-25T11:45:55.2169144Z efbc8bb3a63f: Waiting
+2026-07-25T11:45:55.4245749Z 56bd32640bdf: Verifying Checksum
+2026-07-25T11:45:55.4246914Z 56bd32640bdf: Download complete
+2026-07-25T11:45:55.4499096Z 6563b0ba6ce9: Download complete
+2026-07-25T11:45:55.5626018Z 4f4fb700ef54: Verifying Checksum
+2026-07-25T11:45:55.5627145Z 4f4fb700ef54: Download complete
+2026-07-25T11:45:56.0115285Z f8b1d69f1c0f: Verifying Checksum
+2026-07-25T11:45:56.0119519Z f8b1d69f1c0f: Download complete
+2026-07-25T11:45:56.2539381Z efbc8bb3a63f: Verifying Checksum
+2026-07-25T11:45:56.2540022Z efbc8bb3a63f: Download complete
+2026-07-25T11:45:57.3857373Z cea3d467f844: Verifying Checksum
+2026-07-25T11:45:57.3857943Z cea3d467f844: Download complete
+2026-07-25T11:45:58.0459821Z db03667ab1c3: Verifying Checksum
+2026-07-25T11:45:58.0461217Z db03667ab1c3: Download complete
+2026-07-25T11:45:58.6475055Z 6563b0ba6ce9: Pull complete
+2026-07-25T11:46:03.9269302Z cea3d467f844: Pull complete
+2026-07-25T11:46:03.9380050Z 56bd32640bdf: Pull complete
+2026-07-25T11:46:03.9480996Z 4f4fb700ef54: Pull complete
+2026-07-25T11:46:05.5580961Z db03667ab1c3: Pull complete
+2026-07-25T11:46:05.8094157Z f8b1d69f1c0f: Pull complete
+2026-07-25T11:46:05.8184146Z efbc8bb3a63f: Pull complete
+2026-07-25T11:46:05.8224222Z Digest: sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8231329Z Status: Downloaded newer image for ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8238147Z ghcr.io/securego/gosec@sha256:4342ad119a7c69f3f4e4ce78d81ba183dc774a70a7a4c6eeb15fe9e511f214f0
+2026-07-25T11:46:05.8261717Z ##[endgroup]

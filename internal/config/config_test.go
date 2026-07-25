@@ -48,18 +48,18 @@ func TestWriteAndInitConfig(t *testing.T) {
 		},
 	}
 
-	if err := config.WriteConfig(cfg); err != nil {
-		t.Fatalf("failed to write config: %v", err)
+	if wErr := config.WriteConfig(cfg); wErr != nil {
+		t.Fatalf("failed to write config: %v", wErr)
 	}
 
 	configFile := filepath.Join(tmpDir, ".devopshub", "config.yaml")
-	if _, err := os.Stat(configFile); os.IsNotExist(err) {
+	if _, sErr := os.Stat(configFile); os.IsNotExist(sErr) {
 		t.Errorf("config file was not created at expected path: %s", configFile)
 	}
 
-	loaded, err := config.InitConfig()
-	if err != nil {
-		t.Fatalf("failed to init config: %v", err)
+	loaded, lErr := config.InitConfig()
+	if lErr != nil {
+		t.Fatalf("failed to init config: %v", lErr)
 	}
 
 	if loaded.DefaultNamespace != "test-ns" {

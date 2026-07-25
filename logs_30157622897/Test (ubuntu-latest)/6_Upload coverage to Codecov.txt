@@ -1,0 +1,53 @@
+﻿2026-07-25T12:16:02.2700565Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-25T12:16:02.2701898Z ##[group]Run codecov/codecov-action@v4
+2026-07-25T12:16:02.2702162Z with:
+2026-07-25T12:16:02.2702346Z   file: coverage.out
+2026-07-25T12:16:02.2702561Z   fail_ci_if_error: false
+2026-07-25T12:16:02.2702777Z env:
+2026-07-25T12:16:02.2702955Z   GO_VERSION: 1.23
+2026-07-25T12:16:02.2703145Z ##[endgroup]
+2026-07-25T12:16:02.3478529Z eventName: push
+2026-07-25T12:16:02.3490775Z ==> linux OS detected
+2026-07-25T12:16:02.6594854Z https://cli.codecov.io/latest/linux/codecov.SHA256SUM
+2026-07-25T12:16:02.8924036Z gpg: directory '/home/runner/.gnupg' created
+2026-07-25T12:16:02.8926222Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2026-07-25T12:16:02.9378781Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2026-07-25T12:16:02.9380140Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2026-07-25T12:16:02.9792322Z gpg: Total number processed: 1
+2026-07-25T12:16:02.9792840Z gpg:               imported: 1
+2026-07-25T12:16:02.9865196Z gpg: Signature made Thu Jul  9 01:37:57 2026 UTC
+2026-07-25T12:16:02.9865789Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2026-07-25T12:16:02.9868996Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2026-07-25T12:16:02.9870222Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-07-25T12:16:02.9870843Z gpg:          There is no indication that the signature belongs to the owner.
+2026-07-25T12:16:02.9871490Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2026-07-25T12:16:03.0105504Z ==> Uploader SHASUM verified (ca1d64196d2d34771084afe76ea657d581bf628e31d993ff8e52ea09cc88a56d  codecov)
+2026-07-25T12:16:03.0106790Z ==> Running version latest
+2026-07-25T12:16:03.0667968Z Could not pull latest version information: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+2026-07-25T12:16:03.0669895Z ==> Running git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:16:03.0703141Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/devopshub-cli/devopshub-cli
+2026-07-25T12:16:03.0777733Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-commit'
+2026-07-25T12:16:03.0779826Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-commit --git-service github
+2026-07-25T12:16:03.4404165Z info - 2026-07-25 12:16:03,439 -- ci service found: github-actions
+2026-07-25T12:16:03.4493948Z warning - 2026-07-25 12:16:03,449 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:03.4796867Z warning - 2026-07-25 12:16:03,479 -- Branch `main` is protected but no token was provided
+2026-07-25T12:16:03.4798528Z warning - 2026-07-25 12:16:03,479 -- For information on Codecov upload tokens, see https://docs.codecov.com/docs/codecov-tokens
+2026-07-25T12:16:03.6944296Z info - 2026-07-25 12:16:03,693 -- Commit creating complete
+2026-07-25T12:16:03.6949811Z error - 2026-07-25 12:16:03,694 -- Commit creating failed: {"message":"Token required - not valid tokenless upload"}
+2026-07-25T12:16:03.7775187Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-report'
+2026-07-25T12:16:03.7776482Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov create-report --git-service github
+2026-07-25T12:16:04.1234978Z info - 2026-07-25 12:16:04,123 -- ci service found: github-actions
+2026-07-25T12:16:04.1322035Z warning - 2026-07-25 12:16:04,131 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:04.3094127Z info - 2026-07-25 12:16:04,308 -- Report creating complete
+2026-07-25T12:16:04.3099754Z error - 2026-07-25 12:16:04,309 -- Report creating failed: {"message":"Token required - not valid tokenless upload"}
+2026-07-25T12:16:04.3790941Z ==> Running command '/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov do-upload'
+2026-07-25T12:16:04.3792649Z [command]/home/runner/work/_actions/codecov/codecov-action/v4/dist/codecov do-upload -f coverage.out --git-service github
+2026-07-25T12:16:04.7261660Z info - 2026-07-25 12:16:04,725 -- ci service found: github-actions
+2026-07-25T12:16:04.7352359Z warning - 2026-07-25 12:16:04,734 -- No config file could be found. Ignoring config.
+2026-07-25T12:16:04.7665153Z warning - 2026-07-25 12:16:04,766 -- xcrun is not installed or can't be found.
+2026-07-25T12:16:04.7721503Z warning - 2026-07-25 12:16:04,771 -- No gcov data found.
+2026-07-25T12:16:04.7725458Z warning - 2026-07-25 12:16:04,772 -- coverage.py is not installed or can't be found.
+2026-07-25T12:16:04.7942782Z info - 2026-07-25 12:16:04,793 -- Found 1 coverage files to report
+2026-07-25T12:16:04.7943977Z info - 2026-07-25 12:16:04,794 -- > /home/runner/work/devopshub-cli/devopshub-cli/coverage.out
+2026-07-25T12:16:04.9985652Z info - 2026-07-25 12:16:04,998 -- Upload queued for processing complete
+2026-07-25T12:16:04.9987351Z error - 2026-07-25 12:16:04,998 -- Upload queued for processing failed: {"message":"Token required - not valid tokenless upload"}

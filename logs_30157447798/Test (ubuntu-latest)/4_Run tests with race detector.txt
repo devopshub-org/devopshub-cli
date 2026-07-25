@@ -1,0 +1,159 @@
+﻿2026-07-25T12:08:16.1246912Z ##[group]Run go test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
+2026-07-25T12:08:16.1247628Z [36;1mgo test -v -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...[0m
+2026-07-25T12:08:16.1305732Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-07-25T12:08:16.1306133Z env:
+2026-07-25T12:08:16.1306348Z   GO_VERSION: 1.23
+2026-07-25T12:08:16.1306578Z ##[endgroup]
+2026-07-25T12:08:16.2243780Z go: downloading gopkg.in/evanphx/json-patch.v4 v4.12.0
+2026-07-25T12:08:16.2825706Z go: downloading github.com/pkg/errors v0.9.1
+2026-07-25T12:09:14.1684990Z === RUN   TestRootCmd_NoArgs_ShowsHelp
+2026-07-25T12:09:14.1685630Z --- PASS: TestRootCmd_NoArgs_ShowsHelp (0.00s)
+2026-07-25T12:09:14.1686151Z === RUN   TestRootCmd_Help_NoError
+2026-07-25T12:09:14.1686560Z --- PASS: TestRootCmd_Help_NoError (0.00s)
+2026-07-25T12:09:14.1687108Z === RUN   TestRootCmd_UnknownCommand_ReturnsError
+2026-07-25T12:09:14.1687640Z --- PASS: TestRootCmd_UnknownCommand_ReturnsError (0.00s)
+2026-07-25T12:09:14.1688268Z === RUN   TestRootCmd_HasVersionSubcommand
+2026-07-25T12:09:14.1688689Z --- PASS: TestRootCmd_HasVersionSubcommand (0.00s)
+2026-07-25T12:09:14.1689267Z === RUN   TestRootCmd_HasCheatSubcommand
+2026-07-25T12:09:14.1689731Z --- PASS: TestRootCmd_HasCheatSubcommand (0.00s)
+2026-07-25T12:09:14.1690445Z === RUN   TestRootCmd_HasCompletionSubcommand
+2026-07-25T12:09:14.1690989Z --- PASS: TestRootCmd_HasCompletionSubcommand (0.00s)
+2026-07-25T12:09:14.1691493Z === RUN   TestVersionCmd_DefaultOutput
+2026-07-25T12:09:14.1692014Z --- PASS: TestVersionCmd_DefaultOutput (0.00s)
+2026-07-25T12:09:14.1692517Z === RUN   TestVersionCmd_ContainsBuildVersion
+2026-07-25T12:09:14.1693073Z --- PASS: TestVersionCmd_ContainsBuildVersion (0.00s)
+2026-07-25T12:09:14.1693617Z === RUN   TestVersionCmd_JSONOutput_IsValidJSON
+2026-07-25T12:09:14.1694527Z --- PASS: TestVersionCmd_JSONOutput_IsValidJSON (0.00s)
+2026-07-25T12:09:14.1695196Z === RUN   TestVersionCmd_JSONOutput_ContainsRequiredFields
+2026-07-25T12:09:14.1695928Z --- PASS: TestVersionCmd_JSONOutput_ContainsRequiredFields (0.00s)
+2026-07-25T12:09:14.1696592Z === RUN   TestVersionCmd_VerboseOutput
+2026-07-25T12:09:14.1697053Z --- PASS: TestVersionCmd_VerboseOutput (0.00s)
+2026-07-25T12:09:14.1697509Z === RUN   TestVersionCmd_Alias
+2026-07-25T12:09:14.1697900Z --- PASS: TestVersionCmd_Alias (0.00s)
+2026-07-25T12:09:14.1698371Z === RUN   TestCompletionCmd_Bash_NoError
+2026-07-25T12:09:14.1698837Z --- PASS: TestCompletionCmd_Bash_NoError (0.00s)
+2026-07-25T12:09:14.1699499Z === RUN   TestCompletionCmd_Zsh_NoError
+2026-07-25T12:09:14.1700116Z --- PASS: TestCompletionCmd_Zsh_NoError (0.00s)
+2026-07-25T12:09:14.1700606Z === RUN   TestCompletionCmd_PowerShell_NoError
+2026-07-25T12:09:14.1701297Z --- PASS: TestCompletionCmd_PowerShell_NoError (0.00s)
+2026-07-25T12:09:14.1701850Z === RUN   TestCompletionCmd_InvalidShell_ReturnsError
+2026-07-25T12:09:14.1702467Z --- PASS: TestCompletionCmd_InvalidShell_ReturnsError (0.00s)
+2026-07-25T12:09:14.1703057Z === RUN   TestCompletionCmd_NoArgs_ReturnsError
+2026-07-25T12:09:14.1706229Z --- PASS: TestCompletionCmd_NoArgs_ReturnsError (0.00s)
+2026-07-25T12:09:14.1706994Z PASS
+2026-07-25T12:09:14.1707319Z coverage: 88.2% of statements
+2026-07-25T12:09:14.1708086Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub	1.082s	coverage: 88.2% of statements
+2026-07-25T12:09:14.4791237Z === RUN   TestNewCheatCmd_NotNil
+2026-07-25T12:09:14.4808463Z --- PASS: TestNewCheatCmd_NotNil (0.00s)
+2026-07-25T12:09:14.4838520Z === RUN   TestCheatCmd_HasExpectedSubcommands
+2026-07-25T12:09:14.4880965Z --- PASS: TestCheatCmd_HasExpectedSubcommands (0.00s)
+2026-07-25T12:09:14.4890502Z === RUN   TestDockerCheat_ContainsCoreCommands
+2026-07-25T12:09:14.4922908Z --- PASS: TestDockerCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:09:14.4940469Z === RUN   TestDockerCheat_ContainsSections
+2026-07-25T12:09:14.4971046Z --- PASS: TestDockerCheat_ContainsSections (0.00s)
+2026-07-25T12:09:14.4981115Z === RUN   TestDockerCheat_JSONOutputIsValid
+2026-07-25T12:09:14.5000828Z --- PASS: TestDockerCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:09:14.5013679Z === RUN   TestDockerCheat_JSONContainsTitleAndEntries
+2026-07-25T12:09:14.5014498Z --- PASS: TestDockerCheat_JSONContainsTitleAndEntries (0.00s)
+2026-07-25T12:09:14.5018967Z === RUN   TestK8sCheat_ContainsCoreCommands
+2026-07-25T12:09:14.5019697Z --- PASS: TestK8sCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:09:14.5020746Z === RUN   TestK8sCheat_JSONOutputIsValid
+2026-07-25T12:09:14.5021429Z --- PASS: TestK8sCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:09:14.5022166Z === RUN   TestK8sCheat_KubernetesAlias
+2026-07-25T12:09:14.5022898Z --- PASS: TestK8sCheat_KubernetesAlias (0.00s)
+2026-07-25T12:09:14.5023519Z === RUN   TestLinuxCheat_ContainsCoreCommands
+2026-07-25T12:09:14.5024348Z --- PASS: TestLinuxCheat_ContainsCoreCommands (0.00s)
+2026-07-25T12:09:14.5025051Z === RUN   TestLinuxCheat_JSONOutputIsValid
+2026-07-25T12:09:14.5025923Z --- PASS: TestLinuxCheat_JSONOutputIsValid (0.00s)
+2026-07-25T12:09:14.5026565Z === RUN   TestCheatCmd_NoArgs_PrintsHelp
+2026-07-25T12:09:14.5027174Z --- PASS: TestCheatCmd_NoArgs_PrintsHelp (0.00s)
+2026-07-25T12:09:14.5028105Z === RUN   TestCheatCmd_UnknownSubcommand_FallsBackToHelp
+2026-07-25T12:09:14.5028932Z --- PASS: TestCheatCmd_UnknownSubcommand_FallsBackToHelp (0.00s)
+2026-07-25T12:09:14.5029850Z PASS
+2026-07-25T12:09:14.5030437Z coverage: 100.0% of statements
+2026-07-25T12:09:14.5031230Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat	1.029s	coverage: 100.0% of statements
+2026-07-25T12:09:14.5031999Z === RUN   TestNewCloudCmd
+2026-07-25T12:09:14.5032395Z --- PASS: TestNewCloudCmd (0.00s)
+2026-07-25T12:09:14.5032780Z PASS
+2026-07-25T12:09:14.5033085Z coverage: 25.9% of statements
+2026-07-25T12:09:14.5033809Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud	1.013s	coverage: 25.9% of statements
+2026-07-25T12:09:16.1686880Z === RUN   TestNewClusterCmd
+2026-07-25T12:09:16.1693019Z --- PASS: TestNewClusterCmd (0.00s)
+2026-07-25T12:09:16.1695468Z PASS
+2026-07-25T12:09:16.1696150Z coverage: 26.1% of statements
+2026-07-25T12:09:16.1697227Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster	1.053s	coverage: 26.1% of statements
+2026-07-25T12:09:16.1698285Z === RUN   TestConfigCommands
+2026-07-25T12:09:16.1698884Z --- PASS: TestConfigCommands (0.02s)
+2026-07-25T12:09:16.1699458Z PASS
+2026-07-25T12:09:16.1700139Z coverage: 56.5% of statements
+2026-07-25T12:09:16.1700987Z ok  	github.com/devopshub-org/devopshub-cli/cmd/devopshub/config	1.036s	coverage: 56.5% of statements
+2026-07-25T12:09:16.1701915Z === RUN   TestGet_ReturnsInfo
+2026-07-25T12:09:16.1702721Z --- PASS: TestGet_ReturnsInfo (0.00s)
+2026-07-25T12:09:16.1703325Z === RUN   TestGet_DefaultsArePopulated
+2026-07-25T12:09:16.1703976Z --- PASS: TestGet_DefaultsArePopulated (0.00s)
+2026-07-25T12:09:16.1704606Z === RUN   TestGet_GoVersionMatchesRuntime
+2026-07-25T12:09:16.1705337Z --- PASS: TestGet_GoVersionMatchesRuntime (0.00s)
+2026-07-25T12:09:16.1706012Z === RUN   TestGet_PlatformFormat
+2026-07-25T12:09:16.1706597Z --- PASS: TestGet_PlatformFormat (0.00s)
+2026-07-25T12:09:16.1707187Z PASS
+2026-07-25T12:09:16.1708171Z coverage: 100.0% of statements
+2026-07-25T12:09:16.1709527Z ok  	github.com/devopshub-org/devopshub-cli/internal/build	1.017s	coverage: 100.0% of statements
+2026-07-25T12:09:16.2306077Z === RUN   TestDefaultConfig
+2026-07-25T12:09:16.2306963Z --- PASS: TestDefaultConfig (0.00s)
+2026-07-25T12:09:16.2307670Z === RUN   TestGetConfigDir
+2026-07-25T12:09:16.2308336Z --- PASS: TestGetConfigDir (0.00s)
+2026-07-25T12:09:16.2308924Z === RUN   TestWriteAndInitConfig
+2026-07-25T12:09:16.2309485Z --- PASS: TestWriteAndInitConfig (0.00s)
+2026-07-25T12:09:16.2310805Z PASS
+2026-07-25T12:09:16.2311184Z coverage: 74.5% of statements
+2026-07-25T12:09:16.2311950Z ok  	github.com/devopshub-org/devopshub-cli/internal/config	1.015s	coverage: 74.5% of statements
+2026-07-25T12:09:17.6486606Z === RUN   TestSuccess_WritesToStdout
+2026-07-25T12:09:17.6487395Z --- PASS: TestSuccess_WritesToStdout (0.00s)
+2026-07-25T12:09:17.6488309Z === RUN   TestSuccess_QuietMode_WritesNothing
+2026-07-25T12:09:17.6488853Z --- PASS: TestSuccess_QuietMode_WritesNothing (0.00s)
+2026-07-25T12:09:17.6489363Z === RUN   TestError_WritesToStderr
+2026-07-25T12:09:17.6489808Z --- PASS: TestError_WritesToStderr (0.00s)
+2026-07-25T12:09:17.6490523Z === RUN   TestError_QuietMode_StillWritesToStderr
+2026-07-25T12:09:17.6491065Z --- PASS: TestError_QuietMode_StillWritesToStderr (0.00s)
+2026-07-25T12:09:17.6491584Z === RUN   TestInfo_WritesToStdout
+2026-07-25T12:09:17.6492016Z --- PASS: TestInfo_WritesToStdout (0.00s)
+2026-07-25T12:09:17.6492492Z === RUN   TestWarning_WritesToStdout
+2026-07-25T12:09:17.6492900Z --- PASS: TestWarning_WritesToStdout (0.00s)
+2026-07-25T12:09:17.6493293Z === RUN   TestHeader_IncludesTitle
+2026-07-25T12:09:17.6493664Z --- PASS: TestHeader_IncludesTitle (0.00s)
+2026-07-25T12:09:17.6494123Z === RUN   TestPrintln_WritesLine
+2026-07-25T12:09:17.6494556Z --- PASS: TestPrintln_WritesLine (0.00s)
+2026-07-25T12:09:17.6495033Z === RUN   TestPrintf_WritesFormattedOutput
+2026-07-25T12:09:17.6495524Z --- PASS: TestPrintf_WritesFormattedOutput (0.00s)
+2026-07-25T12:09:17.6496029Z === RUN   TestJSON_WritesValidJSON
+2026-07-25T12:09:17.6496493Z --- PASS: TestJSON_WritesValidJSON (0.00s)
+2026-07-25T12:09:17.6496943Z === RUN   TestTable_RendersHeaderAndRows
+2026-07-25T12:09:17.6497434Z --- PASS: TestTable_RendersHeaderAndRows (0.00s)
+2026-07-25T12:09:17.6497937Z === RUN   TestNew_Default_DoesNotPanic
+2026-07-25T12:09:17.6498407Z --- PASS: TestNew_Default_DoesNotPanic (0.00s)
+2026-07-25T12:09:17.6498842Z PASS
+2026-07-25T12:09:17.6499179Z coverage: 80.5% of statements
+2026-07-25T12:09:17.6500142Z ok  	github.com/devopshub-org/devopshub-cli/internal/output	1.023s	coverage: 80.5% of statements
+2026-07-25T12:09:30.8320329Z === RUN   TestCheckAWS
+2026-07-25T12:09:30.8320876Z --- PASS: TestCheckAWS (0.00s)
+2026-07-25T12:09:30.8321572Z === RUN   TestCheckGCP
+2026-07-25T12:09:30.8321947Z --- PASS: TestCheckGCP (8.52s)
+2026-07-25T12:09:30.8322239Z === RUN   TestCheckAzure
+2026-07-25T12:09:30.8322534Z --- PASS: TestCheckAzure (4.67s)
+2026-07-25T12:09:30.8322866Z PASS
+2026-07-25T12:09:30.8323082Z coverage: 74.3% of statements
+2026-07-25T12:09:30.8323643Z ok  	github.com/devopshub-org/devopshub-cli/pkg/cloud	14.204s	coverage: 74.3% of statements
+2026-07-25T12:09:30.8324519Z === RUN   TestK8sClientInspect
+2026-07-25T12:09:30.8324809Z --- PASS: TestK8sClientInspect (0.00s)
+2026-07-25T12:09:30.8325246Z === RUN   TestK8sClientListPods
+2026-07-25T12:09:30.8325543Z --- PASS: TestK8sClientListPods (0.00s)
+2026-07-25T12:09:30.8325930Z === RUN   TestK8sClientListNodes
+2026-07-25T12:09:30.8326254Z --- PASS: TestK8sClientListNodes (0.00s)
+2026-07-25T12:09:30.8326527Z PASS
+2026-07-25T12:09:30.8326843Z coverage: 62.1% of statements
+2026-07-25T12:09:30.8327269Z ok  	github.com/devopshub-org/devopshub-cli/pkg/k8s	1.066s	coverage: 62.1% of statements
+2026-07-25T12:09:30.8327872Z === RUN   TestPluginDiscovery
+2026-07-25T12:09:30.8328166Z --- PASS: TestPluginDiscovery (0.02s)
+2026-07-25T12:09:30.8328544Z PASS
+2026-07-25T12:09:30.8328752Z coverage: 65.6% of statements
+2026-07-25T12:09:30.8329296Z ok  	github.com/devopshub-org/devopshub-cli/pkg/plugin	1.033s	coverage: 65.6% of statements

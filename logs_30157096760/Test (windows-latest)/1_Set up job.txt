@@ -1,0 +1,33 @@
+﻿2026-07-25T11:56:19.4123947Z Current runner version: '2.336.0'
+2026-07-25T11:56:19.4181584Z ##[group]Runner Image Provisioner
+2026-07-25T11:56:19.4182872Z Hosted Compute Agent
+2026-07-25T11:56:19.4183792Z Version: 20260707.563
+2026-07-25T11:56:19.4184887Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T11:56:19.4186104Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T11:56:19.4187234Z Worker ID: {ff64704f-23b7-49e1-9abd-001cccc86736}
+2026-07-25T11:56:19.4188410Z Azure Region: northcentralus
+2026-07-25T11:56:19.4189356Z ##[endgroup]
+2026-07-25T11:56:19.4191626Z ##[group]Operating System
+2026-07-25T11:56:19.4193052Z Microsoft Windows Server 2025
+2026-07-25T11:56:19.4194030Z 10.0.26100
+2026-07-25T11:56:19.4194871Z Datacenter
+2026-07-25T11:56:19.4195639Z ##[endgroup]
+2026-07-25T11:56:19.4196472Z ##[group]Runner Image
+2026-07-25T11:56:19.4197420Z Image: windows-2025-vs2026
+2026-07-25T11:56:19.4198364Z Version: 20260714.173.1
+2026-07-25T11:56:19.4200747Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20260714.173/images/windows/Windows2025-VS2026-Readme.md
+2026-07-25T11:56:19.4204599Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20260714.173
+2026-07-25T11:56:19.4206380Z ##[endgroup]
+2026-07-25T11:56:19.4208429Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T11:56:19.4211462Z Contents: read
+2026-07-25T11:56:19.4212397Z Metadata: read
+2026-07-25T11:56:19.4213294Z SecurityEvents: write
+2026-07-25T11:56:19.4214176Z ##[endgroup]
+2026-07-25T11:56:19.4217488Z Secret source: Actions
+2026-07-25T11:56:19.4219632Z Prepare workflow directory
+2026-07-25T11:56:19.4688168Z Prepare all required actions
+2026-07-25T11:56:19.4732891Z Getting action download info
+2026-07-25T11:56:19.6616484Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T11:56:19.9732221Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T11:56:20.2888246Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2026-07-25T11:56:20.6502346Z Complete job name: Test (windows-latest)

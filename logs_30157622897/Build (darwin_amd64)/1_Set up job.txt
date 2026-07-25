@@ -1,0 +1,32 @@
+﻿2026-07-25T12:14:38.0783533Z Current runner version: '2.336.0'
+2026-07-25T12:14:38.0808734Z ##[group]Runner Image Provisioner
+2026-07-25T12:14:38.0809798Z Hosted Compute Agent
+2026-07-25T12:14:38.0810438Z Version: 20260707.563
+2026-07-25T12:14:38.0811054Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-07-25T12:14:38.0812114Z Build Date: 2026-07-07T19:33:50Z
+2026-07-25T12:14:38.0812809Z Worker ID: {48d5d72d-5bef-433a-9f30-4cda5e6a6bb0}
+2026-07-25T12:14:38.0813575Z Azure Region: northcentralus
+2026-07-25T12:14:38.0814242Z ##[endgroup]
+2026-07-25T12:14:38.0815743Z ##[group]Operating System
+2026-07-25T12:14:38.0816472Z Ubuntu
+2026-07-25T12:14:38.0817003Z 24.04.4
+2026-07-25T12:14:38.0817520Z LTS
+2026-07-25T12:14:38.0818105Z ##[endgroup]
+2026-07-25T12:14:38.0818699Z ##[group]Runner Image
+2026-07-25T12:14:38.0819321Z Image: ubuntu-24.04
+2026-07-25T12:14:38.0819901Z Version: 20260720.247.2
+2026-07-25T12:14:38.0820961Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-25T12:14:38.0822937Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-07-25T12:14:38.0824302Z ##[endgroup]
+2026-07-25T12:14:38.0825561Z ##[group]GITHUB_TOKEN Permissions
+2026-07-25T12:14:38.0827597Z Contents: read
+2026-07-25T12:14:38.0828286Z Metadata: read
+2026-07-25T12:14:38.0828856Z SecurityEvents: write
+2026-07-25T12:14:38.0829500Z ##[endgroup]
+2026-07-25T12:14:38.0831792Z Secret source: Actions
+2026-07-25T12:14:38.0832942Z Prepare workflow directory
+2026-07-25T12:14:38.1297371Z Prepare all required actions
+2026-07-25T12:14:38.1355873Z Getting action download info
+2026-07-25T12:14:38.3865986Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-07-25T12:14:38.7530155Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+2026-07-25T12:14:39.2170831Z Complete job name: Build (darwin/amd64)

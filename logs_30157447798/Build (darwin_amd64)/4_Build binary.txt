@@ -1,0 +1,17 @@
+﻿2026-07-25T12:08:18.6062985Z ##[group]Run go build \
+2026-07-25T12:08:18.6063345Z [36;1mgo build \[0m
+2026-07-25T12:08:18.6063593Z [36;1m  -trimpath \[0m
+2026-07-25T12:08:18.6063839Z [36;1m  -ldflags="-s -w \[0m
+2026-07-25T12:08:18.6064364Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Version=ci-5de0e470ffb2f5c01f572b39e2ef33db64da592d \[0m
+2026-07-25T12:08:18.6065095Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Commit=5de0e470ffb2f5c01f572b39e2ef33db64da592d \[0m
+2026-07-25T12:08:18.6065752Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) \[0m
+2026-07-25T12:08:18.6066327Z [36;1m    -X github.com/devopshub-org/devopshub-cli/internal/build.BuiltBy=github-actions" \[0m
+2026-07-25T12:08:18.6067048Z [36;1m  -o bin/devopshub-darwin-amd64 \[0m
+2026-07-25T12:08:18.6067383Z [36;1m  ./cmd/devopshub[0m
+2026-07-25T12:08:18.6101098Z shell: /usr/bin/bash -e {0}
+2026-07-25T12:08:18.6101410Z env:
+2026-07-25T12:08:18.6101616Z   GO_VERSION: 1.23
+2026-07-25T12:08:18.6101900Z   GOOS: darwin
+2026-07-25T12:08:18.6102143Z   GOARCH: amd64
+2026-07-25T12:08:18.6102352Z   CGO_ENABLED: 0
+2026-07-25T12:08:18.6102561Z ##[endgroup]
