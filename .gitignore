@@ -34,3 +34,11 @@ Thumbs.db
 # Environment variables file
 .env
 .env.local
+
+# Coverage artifacts
+coverage
+coverage.html
+coverage.out
+
+# Local development prompts and AI context (not part of the codebase)
+prompts/
