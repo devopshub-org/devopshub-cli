@@ -150,24 +150,24 @@ docker_manifests:
       - "ghcr.io/devopshub-org/devopshub-cli:latest-amd64"
       - "ghcr.io/devopshub-org/devopshub-cli:latest-arm64"
 
-brews:
-  - name: devopshub
-    homepage: "https://github.com/devopshub-org/devopshub-cli"
-    description: "The open-source DevOps toolkit for engineers"
-    license: "Apache-2.0"
-    repository:
-      owner: devopshub-org
-      name: homebrew-tap
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    commit_author:
-      name: "DevOpsHub Release Bot"
-      email: "release-bot@devopshub.org"
-    directory: Formula
-    test: |
-      system "#{bin}/devopshub", "version"
-    install: |
-      bin.install "devopshub"
-      generate_completions_from_executable(bin/"devopshub", "completion")
+# brews:
+#   - name: devopshub
+#     homepage: "https://github.com/devopshub-org/devopshub-cli"
+#     description: "The open-source DevOps toolkit for engineers"
+#     license: "Apache-2.0"
+#     repository:
+#       owner: devopshub-org
+#       name: homebrew-tap
+#       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+#     commit_author:
+#       name: "DevOpsHub Release Bot"
+#       email: "release-bot@devopshub.org"
+#     directory: Formula
+#     test: |
+#       system "#{bin}/devopshub", "version"
+#     install: |
+#       bin.install "devopshub"
+#       generate_completions_from_executable(bin/"devopshub", "completion")
 
 release:
   github:
