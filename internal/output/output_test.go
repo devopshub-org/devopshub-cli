@@ -16,7 +16,7 @@ func newTestPrinter(opts ...output.Option) (p *output.Printer, outBuf *bytes.Buf
 		output.WithErrWriter(&errOut),
 		output.WithNoColor(true), // disable ANSI in tests for clean assertions
 	}
-	p := output.New(append(base, opts...)...)
+	p = output.New(append(base, opts...)...)
 	return p, &out, &errOut
 }
 

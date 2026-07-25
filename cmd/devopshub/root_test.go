@@ -38,14 +38,14 @@ func TestRootCmd_NoArgs_ShowsHelp(t *testing.T) {
 }
 
 func TestRootCmd_Help_NoError(t *testing.T) {
-	_, _, err := executeRoot([]string{"--help"})
+	_, err := executeRoot([]string{"--help"})
 	if err != nil {
 		t.Fatalf("--help returned error: %v", err)
 	}
 }
 
 func TestRootCmd_UnknownCommand_ReturnsError(t *testing.T) {
-	_, _, err := executeRoot([]string{"nonexistent"})
+	_, err := executeRoot([]string{"nonexistent"})
 	if err == nil {
 		t.Error("expected error for unknown command, got nil")
 	}
@@ -168,35 +168,35 @@ func TestVersionCmd_Alias(t *testing.T) {
 // --- Completion ---
 
 func TestCompletionCmd_Bash_NoError(t *testing.T) {
-	_, _, err := executeRoot([]string{"completion", "bash"})
+	_, err := executeRoot([]string{"completion", "bash"})
 	if err != nil {
 		t.Fatalf("completion bash returned error: %v", err)
 	}
 }
 
 func TestCompletionCmd_Zsh_NoError(t *testing.T) {
-	_, _, err := executeRoot([]string{"completion", "zsh"})
+	_, err := executeRoot([]string{"completion", "zsh"})
 	if err != nil {
 		t.Fatalf("completion zsh returned error: %v", err)
 	}
 }
 
 func TestCompletionCmd_PowerShell_NoError(t *testing.T) {
-	_, _, err := executeRoot([]string{"completion", "powershell"})
+	_, err := executeRoot([]string{"completion", "powershell"})
 	if err != nil {
 		t.Fatalf("completion powershell returned error: %v", err)
 	}
 }
 
 func TestCompletionCmd_InvalidShell_ReturnsError(t *testing.T) {
-	_, _, err := executeRoot([]string{"completion", "nushell"})
+	_, err := executeRoot([]string{"completion", "nushell"})
 	if err == nil {
 		t.Error("expected error for unsupported shell 'nushell'")
 	}
 }
 
 func TestCompletionCmd_NoArgs_ReturnsError(t *testing.T) {
-	_, _, err := executeRoot([]string{"completion"})
+	_, err := executeRoot([]string{"completion"})
 	if err == nil {
 		t.Error("expected error when no shell argument is provided")
 	}
