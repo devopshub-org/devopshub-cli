@@ -45,15 +45,15 @@ type PodSummary struct {
 }
 
 type NodeSummary struct {
-	Name            string
-	Status          string
-	Role            string
-	KubeletVersion  string
-	CPUCapacity     string
-	MemoryCapacity  string
-	MemoryPressure  bool
-	DiskPressure    bool
-	PIDPressure     bool
+	Name           string
+	Status         string
+	Role           string
+	KubeletVersion string
+	CPUCapacity    string
+	MemoryCapacity string
+	MemoryPressure bool
+	DiskPressure   bool
+	PIDPressure    bool
 }
 
 // NewClient creates a new Kubernetes client using the active kubeconfig.
