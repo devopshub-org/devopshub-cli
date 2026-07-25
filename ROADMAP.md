@@ -9,11 +9,14 @@ To provide a unified, developer-friendly CLI interface for managing modern DevOp
 
 ## 🎯 Release Milestones
 
-### Phase 1: Core Foundation (v0.1.0 - Current)
-- [x] Initial repository structure and scaffolding
-- [ ] Core CLI framework integration (Cobra/Viper setup)
-- [ ] Basic configuration loader (`.devopshub.yaml`)
-- [ ] Plugin/Extension architecture design
+### v0.1.0
+Initial release of DevOpsHub CLI.
+
+- [ ] CLI
+- [ ] Docker cheatsheet
+- [ ] Kubernetes cheatsheet
+- [ ] Linux cheatsheet
+- [ ] Version command
 
 ### Phase 2: Cloud & Kubernetes Integration (v0.2.0)
 - [ ] Cluster inspection & diagnostic commands
