@@ -6,6 +6,9 @@ import (
 	"os"
 
 	"github.com/devopshub-org/devopshub-cli/cmd/devopshub/cheat"
+	cloudcmd "github.com/devopshub-org/devopshub-cli/cmd/devopshub/cloud"
+	"github.com/devopshub-org/devopshub-cli/cmd/devopshub/cluster"
+	configcmd "github.com/devopshub-org/devopshub-cli/cmd/devopshub/config"
 )
 
 func main() {
@@ -22,5 +25,8 @@ func registerSubcommands(root *rootCmd) {
 		newVersionCmd(root).cmd,
 		newCompletionCmd(root).cmd,
 		cheat.NewCheatCmd(root.printer).CobraCmd(),
+		cluster.NewClusterCmd(),
+		cloudcmd.NewCloudCmd(),
+		configcmd.NewConfigCmd(),
 	)
 }

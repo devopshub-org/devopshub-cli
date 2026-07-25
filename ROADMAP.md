@@ -39,17 +39,17 @@ The architectural foundation. A compilable, testable, releasable CLI.
 
 ---
 
-### 🚧 v0.2.0 — Kubernetes & Cloud (Milestone 2)
-**Status:** Planned
+### ✅ v0.2.0 — Kubernetes & Cloud (Milestone 2)
+**Status:** Completed
 
-- [ ] `cluster inspect` — Kubernetes cluster health overview
-- [ ] `cluster events` — Recent cluster events with filtering
-- [ ] `cluster pods` — Pod status with resource usage
-- [ ] `cluster nodes` — Node capacity and conditions
-- [ ] `cloud auth` — Cloud provider credential helper (AWS/GCP/Azure)
-- [ ] `config` command — User configuration file (`~/.devopshub/config.yaml`)
-- [ ] Viper integration for config file support
-- [ ] Plugin system foundation (ADR required)
+- [x] `cluster inspect` — Kubernetes cluster health overview
+- [x] `cluster events` — Recent cluster events with filtering
+- [x] `cluster pods` — Pod status with resource usage
+- [x] `cluster nodes` — Node capacity and conditions
+- [x] `cloud auth` — Cloud provider credential helper (AWS/GCP/Azure)
+- [x] `config` command — User configuration file (`~/.devopshub/config.yaml`)
+- [x] Viper integration for config file support
+- [x] Plugin system foundation (ADR required)
 
 ---
 
