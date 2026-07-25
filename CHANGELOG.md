@@ -9,6 +9,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-25
+
+### Added
+
+**Kubernetes Cluster Inspection (`cluster`)**
+- `devopshub cluster inspect` — Comprehensive health summary (status, node count, pod count, warning events)
+- `devopshub cluster events` — Fetch and filter cluster warning/normal events (`--type`, `--namespace`, `--limit`)
+- `devopshub cluster pods` — List pod status with resource request details (`--namespace`)
+- `devopshub cluster nodes` — List node capacity, roles, and conditions (`CPUCapacity`, `MemoryCapacity`, `KubeletVersion`)
+- `pkg/k8s` package — Client-go integration with fake client test suites
+
+**Cloud Provider Authentication (`cloud`)**
+- `devopshub cloud auth` — Credential status and identity helper for AWS, GCP, and Azure (`--provider`)
+- `pkg/cloud` package — AWS STS, GCP Application Default Credentials, and Azure CLI credential verification
+
+**CLI Configuration Management (`config`)**
+- `devopshub config init` — Initialize default `~/.devopshub/config.yaml`
+- `devopshub config view` — Display active configuration settings
+- `devopshub config get <key>` — Query individual config key values
+- `devopshub config set <key> <value>` — Persist configuration changes
+- `internal/config` package — Viper integration with environment variable override support (`DEVOPSHUB_*`)
+
+**Plugin System Foundation (`plugin`)**
+- `pkg/plugin` package — Executable-based plugin discovery scanning PATH and `~/.devopshub/plugins` for `devopshub-*` binaries
+- Architectural Decision Record (`docs/adr/002-plugin-architecture.md`)
+
+---
+
 ## [0.1.0] - 2026-07-25
 
 ### Added
@@ -68,5 +96,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/devopshub-org/devopshub-cli/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/devopshub-org/devopshub-cli/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/devopshub-org/devopshub-cli/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/devopshub-org/devopshub-cli/releases/tag/v0.1.0

@@ -13,7 +13,7 @@ To become the GitHub standard DevOps CLI — the first tool every DevOps enginee
 ## 🗺️ Release Milestones
 
 ### ✅ v0.1.0 — Foundation (Milestone 1)
-**Status:** In Progress
+**Status:** Completed
 
 The architectural foundation. A compilable, testable, releasable CLI.
 
@@ -49,7 +49,7 @@ The architectural foundation. A compilable, testable, releasable CLI.
 - [x] `cloud auth` — Cloud provider credential helper (AWS/GCP/Azure)
 - [x] `config` command — User configuration file (`~/.devopshub/config.yaml`)
 - [x] Viper integration for config file support
-- [x] Plugin system foundation (ADR required)
+- [x] Plugin system foundation (ADR 002)
 
 ---
 

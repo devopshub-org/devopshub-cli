@@ -11,11 +11,17 @@ DevOpsHub CLI is a single static binary built in Go. It uses the Cobra command f
 ```
 cmd/devopshub/          → Binary entry point + top-level commands
   cheat/                → Cheatsheet command package
+  cloud/                → Cloud provider auth helper command package
+  cluster/              → Kubernetes cluster inspection command package
+  config/               → Configuration management command package
 
 internal/build/         → Version metadata (ldflags injection)
+internal/config/        → User configuration management (Viper integration)
 internal/output/        → Terminal output primitives (single source of truth)
 
-pkg/                    → Public library packages (future — none in v0.1.0)
+pkg/cloud/              → AWS/GCP/Azure credential verification logic
+pkg/k8s/                → Kubernetes client wrappers and health inspect logic
+pkg/plugin/             → Executable-based plugin discovery manager
 ```
 
 ## Architecture Decision Records
@@ -54,11 +60,11 @@ pkg/                    → Public library packages (future — none in v0.1.0)
 
 ---
 
-### ADR-005 — Configuration: No Viper in v0.1.0
+### ADR-005 — Configuration: Viper Integration in v0.2.0
 
 **Status:** Accepted  
-**Decision:** No Viper. Plain Cobra persistent flags only.  
-**Rationale:** No persistent config file needed at this milestone. YAGNI. Viper will be added in v0.2.0 when a config file (`~/.devopshub/config.yaml`) is required for cloud provider credentials.
+**Decision:** Use `github.com/spf13/viper` for configuration file loading and management (`~/.devopshub/config.yaml`).  
+**Rationale:** Viper provides seamless fallback between config files, environment variables (`DEVOPSHUB_*`), and CLI flag defaults. Essential for managing cluster defaults and cloud profile settings across environments.
 
 ---
 
@@ -68,6 +74,14 @@ pkg/                    → Public library packages (future — none in v0.1.0)
 **Decision:** Cheatsheet data is declared as typed Go structs in each command file. No external files, no `embed.FS`.  
 **Rationale:** The data is small (< 200 entries per sheet). Struct embedding allows Go's type system to enforce JSON field names via struct tags. No I/O, no error handling, no deployment complexity.  
 **Future:** If cheatsheets grow beyond ~500 entries, migrate to `embed.FS` with YAML/JSON source files.
+
+---
+
+### ADR-007 — Executable-Based Plugin Architecture
+
+**Status:** Accepted  
+**Decision:** Implement executable binary plugin discovery (similar to `kubectl` and `git`).  
+**Rationale:** Binaries matching `devopshub-*` in `$PATH` or `~/.devopshub/plugins` are discovered dynamically. Allows extension in any programming language (Go, Python, Bash, Rust) without recompiling the main CLI binary. See [docs/adr/002-plugin-architecture.md](adr/002-plugin-architecture.md).
 
 ---
 
@@ -129,8 +143,8 @@ push v* tag
 
 ## Security Model
 
-- No network access at runtime (cheatsheets are embedded).
-- No file I/O at runtime (no config file in v0.1.0).
+- No network access at runtime unless executing cloud or k8s inspection commands.
+- Config directory permissions restricted to `0o755` (`~/.devopshub/config.yaml`).
 - Binary is built with `-trimpath` (no local paths in binary).
 - Binary is built with `-s -w` (stripped symbols + DWARF).
 - Docker image uses distroless/static with `nonroot` user.
@@ -144,8 +158,11 @@ push v* tag
 | Layer | Type | Target Coverage |
 |---|---|---|
 | `internal/build` | Unit | 100% |
+| `internal/config` | Unit | 90%+ |
 | `internal/output` | Unit | 90%+ |
-| `cmd/devopshub` (root, version, completion) | Integration | 85%+ |
-| `cmd/devopshub/cheat` | Integration | 85%+ |
+| `pkg/cloud` | Unit | 85%+ |
+| `pkg/k8s` | Unit | 85%+ |
+| `pkg/plugin` | Unit | 85%+ |
+| `cmd/devopshub` (root, version, completion, cheat, cloud, cluster, config) | Integration | 85%+ |
 
-All tests use injected `io.Writer` — no global state, no `os.Stdout` capture.
+All tests use injected `io.Writer` or fake clients — no global state, no `os.Stdout` capture.

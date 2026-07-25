@@ -5,7 +5,7 @@
 **The world's best open-source DevOps toolkit for engineers.**
 
 [![CI](https://github.com/devopshub-org/devopshub-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/devopshub-org/devopshub-cli/actions/workflows/ci.yml)
-[![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat&logo=go)](https://golang.org/)
+[![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)](https://golang.org/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/devopshub-org/devopshub-cli)](https://github.com/devopshub-org/devopshub-cli/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/devopshub-org/devopshub-cli)](https://goreportcard.com/report/github.com/devopshub-org/devopshub-cli)
@@ -28,10 +28,14 @@ A powerful, extensible CLI designed to streamline DevOps workflows, manage cloud
 | Single binary | ✅ | Varies |
 | No runtime deps | ✅ | Often requires runtime |
 | Cross-platform | ✅ Linux · macOS · Windows | Often Linux-only |
+| K8s cluster inspection | ✅ `cluster inspect/events/pods/nodes` | Requires kubectl + plugins |
+| Cloud credential helper | ✅ AWS, GCP, Azure authentication | Fragmented SDK tools |
+| Config management | ✅ `~/.devopshub/config.yaml` | Manual file editing |
+| Plugin system | ✅ Binary plugin discovery | Closed ecosystem |
 | JSON output | ✅ `--json` on every command | Rarely consistent |
 | No-color mode | ✅ `--no-color` | Often missing |
 | Shell completions | ✅ bash/zsh/fish/powershell | Varies |
-| Docker/K8s/Linux cheatsheets | ✅ Embedded in binary | External references |
+| Embedded cheatsheets | ✅ Docker, K8s, Linux | External references |
 | Open source | ✅ Apache 2.0 | Varies |
 
 ---
@@ -45,17 +49,20 @@ curl -sSfL https://raw.githubusercontent.com/devopshub-org/devopshub-cli/main/sc
 # Verify installation
 devopshub version
 
+# Inspect Kubernetes cluster health
+devopshub cluster inspect
+
+# Check active cloud provider authentication
+devopshub cloud auth
+
+# Initialize user configuration
+devopshub config init
+
 # Docker cheatsheet
 devopshub cheat docker
 
-# Kubernetes cheatsheet
-devopshub cheat k8s
-
-# Linux cheatsheet
-devopshub cheat linux
-
-# JSON output for scripting
-devopshub cheat docker --json | jq '.[] | .title'
+# Structured JSON output for automation
+devopshub cluster pods --json | jq '.[] | select(.Status != "Running")'
 ```
 
 ---
@@ -74,7 +81,7 @@ curl -sSfL https://raw.githubusercontent.com/devopshub-org/devopshub-cli/main/sc
 
 ### Docker
 ```bash
-docker run --rm ghcr.io/devopshub-org/devopshub-cli:latest cheat docker
+docker run --rm ghcr.io/devopshub-org/devopshub-cli:latest version
 ```
 
 ### Build from source
@@ -94,6 +101,34 @@ go install github.com/devopshub-org/devopshub-cli/cmd/devopshub@latest
 ---
 
 ## 🛠️ Commands
+
+### `devopshub cluster`
+Inspect and monitor Kubernetes clusters.
+
+```bash
+devopshub cluster inspect                # Health overview (Nodes, Pods, Warning Events)
+devopshub cluster events                 # Recent cluster events (--type Warning --limit 50)
+devopshub cluster pods                   # Pod status and resource requests (--namespace)
+devopshub cluster nodes                  # Node capacity, conditions, and roles
+```
+
+### `devopshub cloud`
+Cloud provider credential inspection and authentication helper.
+
+```bash
+devopshub cloud auth                     # Check AWS, GCP, and Azure credentials
+devopshub cloud auth --provider aws      # Filter by specific cloud provider
+```
+
+### `devopshub config`
+Manage user configuration settings (`~/.devopshub/config.yaml`).
+
+```bash
+devopshub config init                    # Create default configuration file
+devopshub config view                    # View current active configuration
+devopshub config get default_namespace   # Read specific configuration value
+devopshub config set default_namespace app # Update configuration key value
+```
 
 ### `devopshub version`
 Print version and build metadata.
@@ -142,19 +177,24 @@ All commands support:
 devopshub-cli/
 ├── cmd/devopshub/           # CLI entry point + command definitions
 │   ├── cheat/               # cheat subcommand package
+│   ├── cloud/               # cloud subcommand package
+│   ├── cluster/             # cluster subcommand package
+│   ├── config/              # config subcommand package
 │   ├── main.go              # Binary entry point
 │   ├── root.go              # Root Cobra command
 │   ├── version.go           # version command
 │   └── completion.go        # shell completion command
 ├── internal/
 │   ├── build/               # Build metadata (ldflags injection)
+│   ├── config/              # User configuration loading (Viper)
 │   └── output/              # Terminal output primitives
-├── pkg/                     # Public library code (future)
+├── pkg/                     # Core library packages
+│   ├── cloud/               # Cloud provider authentication providers
+│   ├── k8s/                 # Kubernetes client wrappers and Fake inspect suites
+│   └── plugin/              # Executable-based plugin discovery manager
 ├── docs/                    # Architecture + command documentation
-├── examples/                # Example usage and configurations
-├── assets/                  # Logos, diagrams, media
+│   └── adr/                 # Architecture Decision Records
 ├── scripts/                 # Install script, build helpers
-├── tests/                   # Integration + E2E tests
 └── .github/                 # CI/CD, issue templates, automation
 ```
 
@@ -185,24 +225,15 @@ make lint
 make test-coverage
 ```
 
-### Conventional Commits
-This project follows [Conventional Commits](https://www.conventionalcommits.org/):
-```
-feat: add new command
-fix: resolve panic in version command
-docs: update installation guide
-chore(deps): bump cobra to v1.9.0
-```
-
 ---
 
 ## 🗺️ Roadmap
 
 | Version | Status | Features |
 |---|---|---|
-| v0.1.0 | 🚧 In Progress | CLI foundation, version, cheat commands, full CI/CD |
-| v0.2.0 | 📋 Planned | Kubernetes cluster inspection, cloud credential helpers |
-| v0.3.0 | 📋 Planned | CI/CD pipeline helpers, infrastructure drift detection |
+| v0.1.0 | ✅ Completed | CLI foundation, version, cheat commands, full CI/CD |
+| v0.2.0 | ✅ Completed | Kubernetes cluster inspection, cloud credential helpers, config, plugins |
+| v0.3.0 | 📋 Planned | CI/CD pipeline helpers, infrastructure drift detection, TUI |
 | v1.0.0 | 🎯 Goal | Stable API, plugin marketplace, VSCode extension |
 
 See [ROADMAP.md](ROADMAP.md) for full details.
