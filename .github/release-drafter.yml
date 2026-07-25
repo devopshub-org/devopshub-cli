@@ -1,0 +1,66 @@
+name-template: "v$RESOLVED_VERSION 🚀"
+tag-template: "v$RESOLVED_VERSION"
+change-title-escapes: '\<*_&'
+
+categories:
+  - title: "🚀 Features"
+    labels:
+      - "enhancement"
+      - "feature"
+      - "feature request"
+  - title: "🐛 Bug Fixes"
+    labels:
+      - "bug"
+      - "fix"
+  - title: "⚡ Performance"
+    labels:
+      - "performance"
+  - title: "🔒 Security"
+    labels:
+      - "security"
+  - title: "📖 Documentation"
+    labels:
+      - "documentation"
+      - "docs"
+  - title: "🏗️ Build System & CI"
+    labels:
+      - "ci"
+      - "build"
+      - "github-actions"
+  - title: "📦 Dependencies"
+    labels:
+      - "dependencies"
+  - title: "🔧 Maintenance"
+    labels:
+      - "chore"
+      - "refactor"
+      - "maintenance"
+
+version-resolver:
+  major:
+    labels:
+      - "breaking-change"
+      - "major"
+  minor:
+    labels:
+      - "enhancement"
+      - "feature"
+      - "feature request"
+  patch:
+    labels:
+      - "bug"
+      - "fix"
+      - "documentation"
+      - "dependencies"
+      - "chore"
+  default: patch
+
+exclude-labels:
+  - "skip-changelog"
+
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/devopshub-org/devopshub-cli/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION

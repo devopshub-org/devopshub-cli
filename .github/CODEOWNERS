@@ -1,0 +1,30 @@
+# CODEOWNERS
+# Each line is a file pattern followed by one or more owners.
+# Owners are automatically added as reviewers for pull requests.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners — required reviewers for all changes.
+*                               @devopshub-org/maintainers
+
+# Core CLI architecture
+cmd/                            @devopshub-org/maintainers
+internal/                       @devopshub-org/maintainers
+pkg/                            @devopshub-org/maintainers
+
+# Go module dependencies
+go.mod                          @devopshub-org/maintainers
+go.sum                          @devopshub-org/maintainers
+
+# CI/CD and release infrastructure
+.github/                        @devopshub-org/maintainers
+.goreleaser.yaml                @devopshub-org/maintainers
+Makefile                        @devopshub-org/maintainers
+Dockerfile                      @devopshub-org/maintainers
+
+# Documentation
+docs/                           @devopshub-org/maintainers
+README.md                       @devopshub-org/maintainers
+CONTRIBUTING.md                 @devopshub-org/maintainers
+
+# Security policy
+SECURITY.md                     @devopshub-org/maintainers

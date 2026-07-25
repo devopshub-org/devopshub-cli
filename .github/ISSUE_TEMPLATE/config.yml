@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/devopshub-org/devopshub-cli/discussions
+    about: General questions and community discussion
+  - name: 📖 Documentation
+    url: https://github.com/devopshub-org/devopshub-cli/tree/main/docs
+    about: Read the documentation
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/devopshub-org/devopshub-cli/security/advisories/new
+    about: Report a security vulnerability privately
