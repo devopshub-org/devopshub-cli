@@ -1,0 +1,113 @@
+run:
+  timeout: 5m
+  tests: true
+  modules-download-mode: readonly
+
+output:
+  formats:
+    - format: colored-line-number
+  sort-results: true
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - gosimple
+    - ineffassign
+    - unused
+    - gofmt
+    - goimports
+    - misspell
+    - gocritic
+    - revive
+    - godot
+    - noctx
+    - bodyclose
+    - exhaustive
+    - goconst
+    - godox
+    - nilerr
+    - nilnil
+    - unparam
+    - unconvert
+    - wastedassign
+    - whitespace
+
+linters-settings:
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment  # Intentionally disabled: readability > micro-optimization
+
+  staticcheck:
+    checks: ["all"]
+
+  goimports:
+    local-prefixes: github.com/devopshub-org/devopshub-cli
+
+  revive:
+    rules:
+      - name: exported
+        arguments:
+          - disableStutteringCheck
+      - name: error-return
+      - name: error-strings
+      - name: error-naming
+      - name: if-return
+      - name: var-naming
+      - name: indent-error-flow
+      - name: unexported-return
+      - name: blank-imports
+      - name: context-as-argument
+      - name: context-keys-type
+      - name: dot-imports
+      - name: empty-block
+      - name: increment-decrement
+      - name: range
+      - name: receiver-naming
+      - name: time-naming
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - style
+      - performance
+    disabled-checks:
+      - hugeParam
+      - rangeValCopy
+
+  misspell:
+    locale: US
+
+  goconst:
+    min-len: 3
+    min-occurrences: 3
+
+  godot:
+    scope: declarations
+    capital: true
+
+  godox:
+    keywords:
+      - FIXME
+      - HACK
+      - BUG
+
+issues:
+  exclude-rules:
+    # Test files are excluded from some strict checks.
+    - path: "_test\\.go$"
+      linters:
+        - errcheck
+        - goconst
+        - godot
+        - nilnil
+
+    # main.go import of cobra is expected.
+    - path: "cmd/devopshub/main\\.go$"
+      linters:
+        - godox
+
+  max-issues-per-linter: 0
+  max-same-issues: 0

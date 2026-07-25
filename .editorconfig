@@ -1,0 +1,47 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Go source files: tabs as per gofmt
+[*.go]
+indent_style = tab
+indent_size = 4
+
+# YAML files: 2-space indent
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# JSON files: 2-space indent
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = 120
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+shell_variant = bash
+
+# Makefile: tabs required
+[Makefile]
+indent_style = tab
+
+# Dockerfile
+[Dockerfile*]
+indent_style = space
+indent_size = 2
+
+# goreleaser config
+[.goreleaser.yaml]
+indent_style = space
+indent_size = 2

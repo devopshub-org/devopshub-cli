@@ -1,0 +1,197 @@
+version: 2
+
+project_name: devopshub
+
+before:
+  hooks:
+    - go mod tidy
+    - go mod verify
+
+builds:
+  - id: devopshub
+    binary: devopshub
+    main: ./cmd/devopshub
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X github.com/devopshub-org/devopshub-cli/internal/build.Version={{ .Version }}
+      - -X github.com/devopshub-org/devopshub-cli/internal/build.Commit={{ .Commit }}
+      - -X github.com/devopshub-org/devopshub-cli/internal/build.Date={{ .Date }}
+      - -X github.com/devopshub-org/devopshub-cli/internal/build.BuiltBy=goreleaser
+    mod_timestamp: "{{ .CommitTimestamp }}"
+
+archives:
+  - id: default
+    ids: [devopshub]
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "arm64" }}aarch64
+      {{- else }}{{ .Arch }}{{ end }}
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+      - LICENSE
+      - CHANGELOG.md
+
+checksum:
+  name_template: "checksums.txt"
+  algorithm: sha256
+
+sboms:
+  - artifacts: archive
+    args: ["$artifact", "--output", "cyclonedx-json=$document"]
+    documents:
+      - "{{ .ArtifactName }}.sbom.json"
+
+signs:
+  - cmd: cosign
+    env:
+      - COSIGN_EXPERIMENTAL=1
+    certificate: "${artifact}.pem"
+    args:
+      - sign-blob
+      - "--output-certificate=${certificate}"
+      - "--output-signature=${signature}"
+      - "${artifact}"
+      - "--yes"
+    artifacts: checksum
+    output: true
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+changelog:
+  use: github
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore\\(deps\\)"
+      - "Merge pull request"
+      - "Merge branch"
+  groups:
+    - title: "🚀 Features"
+      regexp: "^feat"
+      order: 0
+    - title: "🐛 Bug Fixes"
+      regexp: "^fix"
+      order: 1
+    - title: "⚡ Performance"
+      regexp: "^perf"
+      order: 2
+    - title: "🔒 Security"
+      regexp: "^security"
+      order: 3
+    - title: "🏗️ Build & CI"
+      regexp: "^(build|ci)"
+      order: 4
+    - title: "🔧 Other"
+      order: 999
+
+dockers:
+  - image_templates:
+      - "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}-amd64"
+      - "ghcr.io/devopshub-org/devopshub-cli:latest-amd64"
+    use: buildx
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--platform=linux/amd64"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+      - "--label=org.opencontainers.image.source=https://github.com/devopshub-org/devopshub-cli"
+      - "--label=org.opencontainers.image.licenses=Apache-2.0"
+    extra_files:
+      - README.md
+
+  - image_templates:
+      - "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}-arm64"
+      - "ghcr.io/devopshub-org/devopshub-cli:latest-arm64"
+    use: buildx
+    goarch: arm64
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--platform=linux/arm64"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+      - "--label=org.opencontainers.image.source=https://github.com/devopshub-org/devopshub-cli"
+      - "--label=org.opencontainers.image.licenses=Apache-2.0"
+
+docker_manifests:
+  - name_template: "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}"
+    image_templates:
+      - "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}-amd64"
+      - "ghcr.io/devopshub-org/devopshub-cli:{{ .Tag }}-arm64"
+  - name_template: "ghcr.io/devopshub-org/devopshub-cli:latest"
+    image_templates:
+      - "ghcr.io/devopshub-org/devopshub-cli:latest-amd64"
+      - "ghcr.io/devopshub-org/devopshub-cli:latest-arm64"
+
+brews:
+  - name: devopshub
+    homepage: "https://github.com/devopshub-org/devopshub-cli"
+    description: "The open-source DevOps toolkit for engineers"
+    license: "Apache-2.0"
+    tap:
+      owner: devopshub-org
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    commit_author:
+      name: "DevOpsHub Release Bot"
+      email: "release-bot@devopshub.org"
+    directory: Formula
+    test: |
+      system "#{bin}/devopshub", "version"
+    install: |
+      bin.install "devopshub"
+      generate_completions_from_executable(bin/"devopshub", "completion")
+
+release:
+  github:
+    owner: devopshub-org
+    name: devopshub-cli
+  draft: false
+  prerelease: auto
+  name_template: "{{.ProjectName}} v{{.Version}}"
+  footer: |
+    ## Installation
+
+    ### Homebrew (macOS/Linux)
+    ```bash
+    brew install devopshub-org/tap/devopshub
+    ```
+
+    ### Direct Download
+    Download the appropriate binary for your platform from the assets below.
+    Verify the checksum with `checksums.txt`.
+
+    ### Docker
+    ```bash
+    docker pull ghcr.io/devopshub-org/devopshub-cli:v{{ .Version }}
+    ```
+
+    ---
+    **Full Changelog**: https://github.com/devopshub-org/devopshub-cli/blob/main/CHANGELOG.md

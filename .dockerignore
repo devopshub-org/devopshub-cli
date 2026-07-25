@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Build artifacts
+bin/
+dist/
+
+# Go test/coverage artifacts
+*.out
+*.test
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CI configs (not needed in image)
+.github/
+.pre-commit-config.yaml
+.golangci.yml
+
+# Development docs
+docs/
+examples/
+assets/
+tests/
+scripts/
+
+# Prompts and planning
+prompts/
